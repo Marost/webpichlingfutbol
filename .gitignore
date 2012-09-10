@@ -163,6 +163,8 @@ pip-log.txt
 .DS_Store
 
 #MIS ARCHIVOS
-*.fla
 recursos/
+less/
 _notes/
+*.less
+*.fla
