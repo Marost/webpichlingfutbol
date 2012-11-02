@@ -248,8 +248,12 @@ nav{
 		width: 100%;
 
 		#icons-lista{
-			width: 100%;
+			background: url("../imagenes/slider-fondo.png");
+			background-position: bottom;
+			background-repeat: no-repeat;
 			float: left;
+			padding-bottom: 30px;
+			width: 100%;			
 
 			ul{
 				display: inline-block;
@@ -268,21 +272,66 @@ nav{
 					text-align: center;
 					width: 260px;
 
-					h2{
+					a{
+						background-image: url("../imagenes/iconos.png");
+						background-repeat: no-repeat;
 						color: #990000;
+						float: left;
 						font-family: 'Exo', sans-serif;
 						font-size: 28px;
-						letter-spacing: 2px;
+						font-weight: bold;
+						letter-spacing: 2px;						
+						margin-left: 18px;
+						padding-top: 135px;
+						width: 220px;
 					}
 
-					p{					
-						font-size: 12px;
-						margin-top: 7px;
+					a#enl-lista-jugadores{
+						background-position: 0 0;
+					}
+
+					a#enl-lista-entrevista{
+						background-position: 0 -180px;
 					}
 				}
 
 				li.last{
 					border: none;
+				}
+			}
+		}
+
+		#icons-contenido{
+			float: left;
+			width: 100%;
+
+			#lista-jugadores{
+				float: left;
+				display: none;
+				width: 100%;
+
+				aside{
+					float: left;
+					width: 245px;
+
+					ul{
+						list-style: none;
+						margin: 0;
+						padding: 0;
+
+						li{
+							background: url("../imagenes/icon-lista.png") no-repeat;
+							background-position: 0 5px;
+							list-style: none;
+							margin: 0;
+							padding: 3px 0;
+
+							a{
+								font-size: 14px;
+								padding-left: 20px;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -353,4 +402,8 @@ nav{
 
 .clearfix {
     *zoom: 1;
+}
+
+.ocultar{
+	display: none;
 }

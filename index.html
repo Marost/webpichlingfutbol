@@ -16,7 +16,41 @@
         <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Exo:400,600,700,800' rel='stylesheet' type='text/css'>
 
+        <!-- MODERNIZR -->
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+
+        <!-- LISTA JUGADORES -->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+        var jLisJug=jQuery.noConflict();
+        jLisJug(document).ready(function(){
+            jLisJug("#enl-lista-jugadores").click(function(){
+                jLisJug("#progressbar").removeClass("ocultar");
+                jLisJug("#lista-jugadores").slideDown(1000).show();
+
+                //ALTO DE DIV <[
+                function equalHeight(group) {
+                   tallest = 0;
+                   group.each(function() {
+                      thisHeight = jLisJug(this).height();
+                      if(thisHeight > tallest) {
+                         tallest = thisHeight;
+                      }
+                   });
+                   group.height(tallest);
+                }
+
+                jLisJug(document).ready(function() {
+                   equalHeight(jLisJug("#lista-jugadores aside"));
+                });
+                //]>
+
+                jLisJug("#progressbar").addClass("ocultar");
+
+            })
+        });
+        </script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -83,22 +117,120 @@
 
                             <ul>
                                 <li>
-                                    <a href=""><img src="imagenes/icon-jugadores.png" width="220" height="140"></a>
-                                    <h2>Jugadores</h2>
+                                    <a id="enl-lista-jugadores" href="javascript:;">Jugadores</a>
                                 </li>
                                 <li>
-                                    <a href=""><img src="imagenes/icon-entrevistas.png" width="139" height="140"></a>
-                                    <h2>Entrevistas</h2>
+                                    <a id="enl-lista-entrevista" href="javascript:;">Entrevista</a>
                                 </li>
                                 <li class="last">
-                                    <a href=""><img src="imagenes/icon-galeria.png" width="197" height="140"></a>
-                                    <h2>Galería</h2>
+                                    <a id="enl-lista-galeria" href="javascript:;">Galería</a>
                                 </li>
                             </ul>
 
                         </div>
 
                         <div id="icons-contenido">
+
+                            <img id="progressbar" src="imagenes/progressbar.gif" width="220" height="19" class="ocultar">
+
+                            <div id="lista-jugadores">
+
+                                <aside>
+                                    <h3>Arqueros</h3>
+                                    <ul>
+                                        <li><a href="">Cisneros, Jesús</a></li>
+                                        <li><a href="">Goyoneche, Juan</a></li>
+                                        <li><a href="">Guevara, Fisher</a></li>
+                                        <li><a href="">Pinto, Joel</a></li>
+                                        <li><a href="">Rodriguez, Leonardo</a></li>
+                                        <li><a href="">Romucho, Jefferson</a></li>
+                                        <li><a href="">Rosales, Exar</a></li>
+                                    </ul>
+                                </aside>
+
+                                <aside>
+                                    <h3>Defensas Centrales</h3>
+                                    <ul>
+                                        <li><a href="">Canova, Jose</a></li>
+                                        <li><a href="">Lojas, Juan Diego</a></li>
+                                        <li><a href="">Romero, Luis</a></li>
+                                        <li><a href="">Solis, Carlos</a></li>
+                                    </ul>
+                                </aside>
+
+                                <aside>
+                                    <h3>Marcadores Izquierdos</h3>
+                                    <ul>
+                                        <li><a href="">Chumpitaz, Javier</a></li>
+                                        <li><a href="">Garcia, Cristian</a></li>
+                                        <li><a href="">Moisela, Jose</a></li>
+                                        <li><a href="">Ojeda, Luis Roman</a></li>
+                                        <li><a href="">Reyes, Jeickson</a></li>
+                                    </ul>
+                                </aside>
+
+                                <aside>
+                                    <h3>Marcadores Derechos</h3>
+                                    <ul>
+                                        <li><a href="">Arce, Juan</a></li>
+                                        <li><a href="">Cancar, Jean Pierre</a></li>
+                                        <li><a href="">Llanos, Miguel Angel</a></li>
+                                        <li><a href="">Lopez, Andres</a></li>
+                                    </ul>
+                                </aside>
+
+                                <aside>
+                                    <h3>Volantes Contencion</h3>
+                                    <ul>
+                                        <li><a href="">Anicama, Saul</a></li>
+                                        <li><a href="">Casas, Yancarlo</a></li>
+                                        <li><a href="">Corcuera, Jose</a></li>
+                                        <li><a href="">Fuentes, Jean Pierre</a></li>
+                                        <li><a href="">Linares, Jaime</a></li>
+                                        <li><a href="">Lizarbe, Antonio</a></li>
+                                        <li><a href="">Quintanilla, Hector</a></li>
+                                        <li><a href="">Santamaria, Anderson</a></li>
+                                        <li><a href="">Seminario, Crifford</a></li>
+                                    </ul>
+                                </aside>
+
+                                <aside>
+                                    <h3>Volantes Mixtos</h3>
+                                    <ul>
+                                        <li><a href="">Morales, Juan</a></li>
+                                        <li><a href="">Rivas, Jose</a></li>
+                                        <li><a href="">Salazar, Ryan</a></li>
+                                        <li><a href="">Vilchez, Oscar</a></li>
+                                    </ul>
+                                </aside>
+
+                                <aside>
+                                    <h3>Volantes Creación</h3>
+                                    <ul>
+                                        <li><a href="">Aliaga, Romario</a></li>
+                                        <li><a href="">Chavez, Jesus</a></li>
+                                        <li><a href="">Elias, Carlos</a></li>
+                                        <li><a href="">Gomez, Rai</a></li>
+                                        <li><a href="">Landauri, Julio</a></li>
+                                        <li><a href="">Mariño, Juan Carlos</a></li>
+                                        <li><a href="">Sheput, Renzo</a></li>
+                                    </ul>
+                                </aside>
+
+                                <aside>
+                                    <h3>Delanteros</h3>
+                                    <ul>
+                                        <li><a href="">Ascoy, Pedro</a></li>
+                                        <li><a href="">Carranza, Christian</a></li>
+                                        <li><a href="">Ibarra, Sergio</a></li>
+                                        <li><a href="">Leiva, Jorge</a></li>
+                                        <li><a href="">Lozada, Jorge</a></li>
+                                        <li><a href="">Perez, Ricky</a></li>
+                                        <li><a href="">Recalde, Francesco</a></li>
+                                    </ul>
+                                </aside>
+
+                            </div>
 
                         </div>
 
