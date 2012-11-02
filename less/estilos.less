@@ -1,3 +1,5 @@
+/* PICHLING REPRESENTACIONES */
+
 .border-redondeado(@valor: 10px){
     border-radius: @valor;
     -moz-border-radius: @valor;
@@ -240,119 +242,53 @@ nav{
 		}
 	}
 
-#main-cont-icons{
-	float: left;
-	padding-top: 15px;
+	#main-cont-icons{
+		float: left;
+		padding-top: 15px;
+		width: 100%;
 
-	#icons-lista{
-		width: 330px;
-
-		ul{
-			list-style: none;
-			margin: 0;
-			padding: 0;
-
-			li{
-				border-right: 1px solid #999;
-				display: block;
-				float: left;
-				height: 170px;
-				padding: 10px 0;
-				text-align: center;
-				width: 260px;
-
-				h2{
-					color: #990000;
-					font-family: 'Exo', sans-serif;
-					font-size: 28px;
-					letter-spacing: 2px;
-				}
-
-				p{					
-					font-size: 12px;
-					margin-top: 7px;
-				}
-			}
-
-			.centro{
-				border-top: 1px solid #999;
-				border-bottom: 1px solid #999;
-			}
-		}
-	}
-
-	}
-}
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-/*@media screen and (max-width:1000px){
-
-    .wrapper {
-    	width: 100%;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width:999px){
-	header{
-		#header-izq{
+		#icons-lista{
 			width: 100%;
-			text-align: center;
-
-			h1{
-				float: none;
-				margin: 0 auto;
-			}
-		}
-
-		#header-der{
 			float: left;
-			width: 100%;
+
+			ul{
+				display: inline-block;
+				float: left;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				width: 100%;
+
+				li{
+					border-right: 1px solid #999;
+					display: inline-block;
+					height: 170px;
+					padding: 10px 0;
+					text-align: center;
+					width: 260px;
+
+					h2{
+						color: #990000;
+						font-family: 'Exo', sans-serif;
+						font-size: 28px;
+						letter-spacing: 2px;
+					}
+
+					p{					
+						font-size: 12px;
+						margin-top: 7px;
+					}
+				}
+
+				li.last{
+					border: none;
+				}
+			}
 		}
 	}
 }
 
-@media screen and (max-width:768px){
-	nav{
-
-	    a {
-	    	width: 30%;
-		}
-
-	}
-}
-
-@media screen and (max-width:480px){
-
-	body{
-		background: url("../imagenes/body-fondo-sup-480.jpg") repeat-x;
-	}
-
-	nav{
-
-	    a {
-	    	width: 45%;
-		}
-
-	}
-
-}
-
-@media screen and (max-width:320px){
-
-	nav{
-
-	    a {
-	    	width: 80%;
-		}
-
-	}	
-	
-}
-*/
 /* ===========================================================
    CLASES
    =========================================================== */
