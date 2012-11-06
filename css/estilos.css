@@ -225,8 +225,23 @@ nav a:hover {
 #main-contenido #main-cont-icons #icons-lista ul li a#enl-lista-jugadores {
   background-position: 0 0;
 }
+#main-contenido #main-cont-icons #icons-lista ul li a#enl-lista-jugadores:hover,
+#main-contenido #main-cont-icons #icons-lista ul li a#enl-lista-jugadores.active {
+  background-position: -240px 0;
+}
 #main-contenido #main-cont-icons #icons-lista ul li a#enl-lista-entrevista {
   background-position: 0 -180px;
+}
+#main-contenido #main-cont-icons #icons-lista ul li a#enl-lista-entrevista:hover,
+#main-contenido #main-cont-icons #icons-lista ul li a#enl-lista-entrevista.active {
+  background-position: -240px -180px;
+}
+#main-contenido #main-cont-icons #icons-lista ul li a#enl-lista-galeria {
+  background-position: 0 -360px;
+}
+#main-contenido #main-cont-icons #icons-lista ul li a#enl-lista-galeria:hover,
+#main-contenido #main-cont-icons #icons-lista ul li a#enl-lista-galeria.active {
+  background-position: -240px -360px;
 }
 #main-contenido #main-cont-icons #icons-lista ul li.last {
   border: none;
@@ -235,28 +250,39 @@ nav a:hover {
   float: left;
   width: 100%;
 }
-#main-contenido #main-cont-icons #icons-contenido #lista-jugadores {
-  float: left;
+#main-contenido #main-cont-icons #icons-contenido .ic-contenido {
   display: none;
+  float: left;
+  text-align: justify;
   width: 100%;
 }
-#main-contenido #main-cont-icons #icons-contenido #lista-jugadores aside {
+#main-contenido #main-cont-icons #icons-contenido .ic-contenido h2 {
+  color: #900;
+  font-family: 'Exo', sans-serif;
+  font-size: 36px;
+}
+#main-contenido #main-cont-icons #icons-contenido .ic-contenido img {
+  float: left;
+  margin: 0 10px 10px 0;
+  border: 5px solid #666;
+}
+#main-contenido #main-cont-icons #icons-contenido .ic-contenido aside {
   float: left;
   width: 245px;
 }
-#main-contenido #main-cont-icons #icons-contenido #lista-jugadores aside ul {
+#main-contenido #main-cont-icons #icons-contenido .ic-contenido aside ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-#main-contenido #main-cont-icons #icons-contenido #lista-jugadores aside ul li {
+#main-contenido #main-cont-icons #icons-contenido .ic-contenido aside ul li {
   background: url("../imagenes/icon-lista.png") no-repeat;
   background-position: 0 5px;
   list-style: none;
   margin: 0;
   padding: 3px 0;
 }
-#main-contenido #main-cont-icons #icons-contenido #lista-jugadores aside ul li a {
+#main-contenido #main-cont-icons #icons-contenido .ic-contenido aside ul li a {
   font-size: 14px;
   padding-left: 20px;
 }

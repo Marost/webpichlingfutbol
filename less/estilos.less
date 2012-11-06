@@ -290,8 +290,27 @@ nav{
 						background-position: 0 0;
 					}
 
+					a#enl-lista-jugadores:hover,
+					a#enl-lista-jugadores.active{
+						background-position: -240px 0;
+					}
+
 					a#enl-lista-entrevista{
 						background-position: 0 -180px;
+					}
+
+					a#enl-lista-entrevista:hover,
+					a#enl-lista-entrevista.active{
+						background-position: -240px -180px;
+					}
+
+					a#enl-lista-galeria{
+						background-position: 0 -360px;
+					}
+
+					a#enl-lista-galeria:hover,
+					a#enl-lista-galeria.active{
+						background-position: -240px -360px;
 					}
 				}
 
@@ -305,10 +324,23 @@ nav{
 			float: left;
 			width: 100%;
 
-			#lista-jugadores{
-				float: left;
+			.ic-contenido{
 				display: none;
+				float: left;
+				text-align: justify;
 				width: 100%;
+
+				h2{
+					color: #900;
+					font-family: 'Exo', sans-serif;
+					font-size: 36px;
+				}
+
+				img{
+					float: left;
+					margin: 0 10px 10px 0;
+					border: 5px solid #666;
+				}
 
 				aside{
 					float: left;
