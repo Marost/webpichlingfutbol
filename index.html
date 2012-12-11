@@ -32,8 +32,8 @@
             jFotOfic(document).ready(function() {
                 jFotOfic('#slider-oficina').allinone_bannerRotator({
                     skin: 'universal',
-                    width: 360,
-                    height: 370,
+                    width: 350,
+                    height: 360,
                     numberOfStripes:4,
                     numberOfRows:5,
                     numberOfColumns:5,              
@@ -51,6 +51,7 @@
         jLisJug(document).ready(function(){
             jLisJug("#enl-lista-jugadores").click(function(){
                 jLisJug("#progressbar").removeClass("ocultar");
+                jLisEnt("#lista-entrevista").slideUp(500).hide();
                 jLisJug("#lista-jugadores").slideDown(1000).show();
 
                 function equalHeight(group) {
@@ -81,6 +82,7 @@
         jLisEnt(document).ready(function(){
             jLisEnt("#enl-lista-entrevista").click(function(){
                 jLisEnt("#progressbar").removeClass("ocultar");
+                jLisEnt("#lista-jugadores").slideUp(500).hide();
                 jLisEnt("#lista-entrevista").slideDown(1000).show();
                 jLisEnt(this).addClass("active");
                 jLisEnt("#progressbar").addClass("ocultar");
