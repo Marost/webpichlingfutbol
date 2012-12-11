@@ -51,7 +51,7 @@
         jLisJug(document).ready(function(){
             jLisJug("#enl-lista-jugadores").click(function(){
                 jLisJug("#progressbar").removeClass("ocultar");
-                jLisEnt("#lista-entrevista").slideUp(500).hide();
+                jLisEnt("#lista-entrevista").slideUp(500);
                 jLisJug("#lista-jugadores").slideDown(1000).show();
 
                 function equalHeight(group) {
@@ -82,7 +82,7 @@
         jLisEnt(document).ready(function(){
             jLisEnt("#enl-lista-entrevista").click(function(){
                 jLisEnt("#progressbar").removeClass("ocultar");
-                jLisEnt("#lista-jugadores").slideUp(500).hide();
+                jLisEnt("#lista-jugadores").slideUp(500);
                 jLisEnt("#lista-entrevista").slideDown(1000).show();
                 jLisEnt(this).addClass("active");
                 jLisEnt("#progressbar").addClass("ocultar");
