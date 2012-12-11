@@ -28,8 +28,9 @@
         <script src="/libs/allinone_banner/sidebar/js/allinone_bannerRotator.js" type="text/javascript" charset="utf-8"></script>
         <!--[if IE]><script src="/libs/allinone_banner/sidebar/js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
         <script>
-            $(function() {
-                $('#allinone_bannerRotator_universal').allinone_bannerRotator({
+            var jFotOfic=jQuery.noConflict();
+            jFotOfic(document).readey(function() {
+                jFotOfic('#slider-oficina').allinone_bannerRotator({
                     skin: 'universal',
                     width: 360,
                     height: 370,
