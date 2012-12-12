@@ -39,7 +39,6 @@ a{
 body {
     margin: 0  !important;
     padding: 0  !important;
-    height: 1900px;
 }
 
 ::-moz-selection {
@@ -229,150 +228,175 @@ nav{
 
 #main-contenido{
 	float: left;
+}
 
-	#main-cont-bienvenido{
-		border-bottom: 1px solid #fff;
+#main-cont-bienvenido{
+	border-bottom: 1px solid #fff;
+	float: left;
+	margin: 0 25px;
+	width: 940px;
+
+	h2{
+		color: #990000;
+		font-family: 'Exo', sans-serif;
+		font-size: 40px;
+		letter-spacing: 2px;
+	}
+
+	p{
+		font-size: 16px;
+	}
+}
+
+#main-cont-icons{
+	float: left;
+	padding-top: 15px;
+	width: 100%;
+
+	#icons-lista{
+		background: url("../imagenes/slider-fondo.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
 		float: left;
-		margin: 0 25px;
-		width: 940px;
+		padding-bottom: 30px;
+		width: 100%;			
 
-		h2{
-			color: #990000;
-			font-family: 'Exo', sans-serif;
-			font-size: 40px;
-			letter-spacing: 2px;
-		}
+		ul{
+			display: inline-block;
+			float: left;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			width: 100%;
 
-		p{
-			font-size: 16px;
+			li{
+				border-right: 1px solid #999;
+				display: inline-block;
+				height: 170px;
+				padding: 10px 0;
+				text-align: center;
+				width: 260px;
+
+				a{
+					background-image: url("../imagenes/iconos.png");
+					background-repeat: no-repeat;
+					color: #990000;
+					float: left;
+					font-family: 'Exo', sans-serif;
+					font-size: 28px;
+					font-weight: bold;
+					letter-spacing: 2px;						
+					margin-left: 18px;
+					padding-top: 135px;
+					width: 220px;
+				}
+
+				a#enl-lista-jugadores{
+					background-position: 0 0;
+				}
+
+				a#enl-lista-jugadores:hover,
+				a#enl-lista-jugadores.active{
+					background-position: -240px 0;
+				}
+
+				a#enl-lista-entrevista{
+					background-position: 0 -180px;
+				}
+
+				a#enl-lista-entrevista:hover,
+				a#enl-lista-entrevista.active{
+					background-position: -240px -180px;
+				}
+
+				a#enl-lista-galeria{
+					background-position: 0 -360px;
+				}
+
+				a#enl-lista-galeria:hover,
+				a#enl-lista-galeria.active{
+					background-position: -240px -360px;
+				}
+			}
+
+			li.last{
+				border: none;
+			}
 		}
 	}
 
-	#main-cont-icons{
+	#icons-contenido{
 		float: left;
-		padding-top: 15px;
 		width: 100%;
 
-		#icons-lista{
-			background: url("../imagenes/slider-fondo.png");
-			background-position: bottom;
-			background-repeat: no-repeat;
-			float: left;
-			padding-bottom: 30px;
-			width: 100%;			
-
-			ul{
-				display: inline-block;
-				float: left;
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				text-align: center;
-				width: 100%;
-
-				li{
-					border-right: 1px solid #999;
-					display: inline-block;
-					height: 170px;
-					padding: 10px 0;
-					text-align: center;
-					width: 260px;
-
-					a{
-						background-image: url("../imagenes/iconos.png");
-						background-repeat: no-repeat;
-						color: #990000;
-						float: left;
-						font-family: 'Exo', sans-serif;
-						font-size: 28px;
-						font-weight: bold;
-						letter-spacing: 2px;						
-						margin-left: 18px;
-						padding-top: 135px;
-						width: 220px;
-					}
-
-					a#enl-lista-jugadores{
-						background-position: 0 0;
-					}
-
-					a#enl-lista-jugadores:hover,
-					a#enl-lista-jugadores.active{
-						background-position: -240px 0;
-					}
-
-					a#enl-lista-entrevista{
-						background-position: 0 -180px;
-					}
-
-					a#enl-lista-entrevista:hover,
-					a#enl-lista-entrevista.active{
-						background-position: -240px -180px;
-					}
-
-					a#enl-lista-galeria{
-						background-position: 0 -360px;
-					}
-
-					a#enl-lista-galeria:hover,
-					a#enl-lista-galeria.active{
-						background-position: -240px -360px;
-					}
-				}
-
-				li.last{
-					border: none;
-				}
-			}
-		}
-
-		#icons-contenido{
-			float: left;
+		.ic-contenido{
+			display: none;
+			text-align: justify;
+			margin: 0 auto;
 			width: 100%;
 
-			.ic-contenido{
-				display: none;
+			#lista-entrevista{
+				width: 80%;
+			}
+
+			h2{
+				color: #900;
+				font-family: 'Exo', sans-serif;
+				font-size: 36px;
+			}
+
+			img{
 				float: left;
-				text-align: justify;
-				width: 100%;
+				margin: 0 10px 10px 0;
+				border: 5px solid #666;
+			}
 
-				h2{
-					color: #900;
-					font-family: 'Exo', sans-serif;
-					font-size: 36px;
-				}
+			aside{
+				float: left;
+				width: 245px;
 
-				img{
-					float: left;
-					margin: 0 10px 10px 0;
-					border: 5px solid #666;
-				}
+				ul{
+					list-style: none;
+					margin: 0;
+					padding: 0;
 
-				aside{
-					float: left;
-					width: 245px;
-
-					ul{
+					li{
+						background: url("../imagenes/icon-lista.png") no-repeat;
+						background-position: 0 5px;
 						list-style: none;
 						margin: 0;
-						padding: 0;
+						padding: 3px 0;
 
-						li{
-							background: url("../imagenes/icon-lista.png") no-repeat;
-							background-position: 0 5px;
-							list-style: none;
-							margin: 0;
-							padding: 3px 0;
-
-							a{
-								font-size: 14px;
-								padding-left: 20px;
-							}
+						a{
+							font-size: 14px;
+							padding-left: 20px;
 						}
 					}
 				}
 			}
 		}
+	}
+}
+
+#main-news{
+	float: left;
+	margin: 0 10px;
+	padding-top: 15px;
+	width: 970px;
+
+	#mnew-video{
+		float: left;
+		border-right: 1px solid #ccc;
+		padding-right: 9px;
+		width: 475px;
+	}
+
+	#mnew-noticias{
+		float: left;
+		border-left: 1px solid #ccc;
+		padding-left: 9px;
+		width: 475px;
 	}
 }
 
