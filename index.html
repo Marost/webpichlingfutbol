@@ -49,30 +49,41 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script>
         var jLisJug=jQuery.noConflict();
-        jLisJug(document).on("ready", startJugadores());
+        jLisJug(document).on("ready", startJugadores);
 
         function startJugadores(){
-            jLisJug("#enl-lista-jugadores").on("click", clickJugadores);
+            jLisJug("#enl-lista-jugadores").on("click", MostrarJugadores);
         }
 
-        function clickJugadores(){
+        function MostrarJugadores(){            
             jLisJug("#progressbar").removeClass("ocultar");
             jLisJug("#lista-entrevista").slideUp(500);
             jLisJug("#lista-jugadores").slideDown(1000).show();
+            equalHeight(jLisJug("#lista-jugadores aside"));
             jLisJug("#enl-lista-jugadores").addClass("active");
             jLisJug("#progressbar").addClass("ocultar");
+
+            if(jLisJug("#lista-jugadores").is(":visible")){
+                jLisJug("#enl-lista-jugadores").on("click", OcultarJugadores);
+            }
+        }
+
+        function OcultarJugadores(){
+            jLisJug("#lista-jugadores").slideUp(1000);
+            alert("hola");
         }
 
         function equalHeight(group) {
            tallest = 0;
            group.each(function() {
-              thisHeight = jLisJug("#lista-jugadores aside").height();
+              thisHeight = jLisJug(this).height();
               if(thisHeight > tallest) {
                  tallest = thisHeight;
               }
            });
            group.height(tallest);
         }
+
         </script>
 
         <!-- LISTA ENTREVISTA -->
@@ -142,14 +153,14 @@
                     
                     <div id="slider-oficina" style="display:none;">
                         <ul class="allinone_bannerRotator_list">
-                            <li><img src="/imagenes/oficina/img1.jpg" alt="" /></li>
-                            <li><img src="/imagenes/oficina/img2.jpg" alt="" /></li>
-                            <li><img src="/imagenes/oficina/img3.jpg" alt="" /></li>
-                            <li><img src="/imagenes/oficina/img4.jpg" alt="" /></li>
-                            <li><img src="/imagenes/oficina/img5.jpg" alt="" /></li>
-                            <li><img src="/imagenes/oficina/img6.jpg" alt="" /></li>
-                            <li><img src="/imagenes/oficina/img7.jpg" alt="" /></li>
-                            <li><img src="/imagenes/oficina/img8.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img1.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img2.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img3.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img4.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img5.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img6.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img7.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img8.jpg" alt="" /></li>
                         </ul>            
                     </div>
 
