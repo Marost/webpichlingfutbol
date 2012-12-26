@@ -251,6 +251,10 @@ nav{
 	}
 }
 
+.mci-interior{
+	padding-top: 34px !important;
+}
+
 #main-cont-icons{
 	float: left;
 	padding-top: 15px;
@@ -331,10 +335,24 @@ nav{
 
 	#icons-contenido{
 		float: left;
+		position: relative;
 		width: 100%;
+
+		#cerrar-contenido{
+			position: absolute;
+			top: -28px;
+
+			img{
+				border: none;
+			}
+		}
 
 		#lista-entrevista{
 			width: 80%;
+		}
+
+		#lista-jugadores{
+			width: 85%;
 		}
 
 		.ic-contenido{
@@ -342,6 +360,7 @@ nav{
 			text-align: justify;
 			margin: 0 auto;
 			width: 100%;
+			position: relative;
 
 			h2{
 				color: #900;
@@ -355,7 +374,11 @@ nav{
 
 			aside{
 				float: left;
-				width: 245px;
+				width: 210px;
+
+				h3{
+					font-size: 16px;
+				}
 
 				ul{
 					list-style: none;

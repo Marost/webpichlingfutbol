@@ -53,24 +53,23 @@
 
         function startJugadores(){
             jLisJug("#enl-lista-jugadores").on("click", MostrarJugadores);
+            jLisJug("#cerrar-contenido").on("click", OcultarJugadores);
         }
 
         function MostrarJugadores(){            
             jLisJug("#progressbar").removeClass("ocultar");
+            jLisJug("#cerrar-contenido").removeClass("ocultar");
             jLisJug("#lista-entrevista").slideUp(500);
             jLisJug("#lista-jugadores").slideDown(1000).show();
             equalHeight(jLisJug("#lista-jugadores aside"));
             jLisJug("#enl-lista-jugadores").addClass("active");
-            jLisJug("#progressbar").addClass("ocultar");
-
-            if(jLisJug("#lista-jugadores").is(":visible")){
-                jLisJug("#enl-lista-jugadores").on("click", OcultarJugadores);
-            }
+            jLisJug("#progressbar").addClass("ocultar");            
+            jLisJug("#cerrar-contenido").addClass("cerrar-jugadores");
         }
 
         function OcultarJugadores(){
+            jLisJug("#cerrar-contenido").addClass("ocultar");
             jLisJug("#lista-jugadores").slideUp(1000);
-            alert("hola");
         }
 
         function equalHeight(group) {
@@ -94,14 +93,22 @@
 
         function startEntrevista(){
             jLisEnt("#enl-lista-entrevista").on("click", clickEntrevista);
+            jLisJug("#cerrar-contenido").on("click", OcultarEntrevista);
         }
 
         function clickEntrevista(){
             jLisEnt("#progressbar").removeClass("ocultar");
+            jLisJug("#cerrar-contenido").removeClass("ocultar");
             jLisEnt("#lista-jugadores").slideUp(500);
             jLisEnt("#lista-entrevista").slideDown(1000).show();
             jLisEnt("#enl-lista-entrevista").addClass("active");
             jLisEnt("#progressbar").addClass("ocultar");
+            jLisJug("#cerrar-contenido").addClass("cerrar-entrevista");
+        }
+
+        function OcultarEntrevista(){
+            jLisJug("#cerrar-contenido").addClass("ocultar");
+            jLisJug("#lista-entrevista").slideUp(1000);
         }
         </script>
 
@@ -199,6 +206,10 @@
                         <div id="icons-contenido">
 
                             <img id="progressbar" src="imagenes/progressbar.gif" width="220" height="19" class="ocultar">
+
+                            <a href="javascript:;" id="cerrar-contenido" class="ocultar">
+                                <img src="imagenes/icon-cerrar.png" width="970" height="28">
+                            </a>
 
                             <div id="lista-jugadores" class="ic-contenido">
 
@@ -303,7 +314,7 @@
 
                             </div>
 
-                            <div id="lista-entrevista" class="ic-contenido">
+                            <div id="lista-entrevista" class="ic-contenido">                                
 
                                 <h2>Pedro Ascoy</h2>
 
