@@ -129,6 +129,7 @@
 
             function startJugador(){
                 jGalJug(".info-jugador-nwder .menu ul li a").on("click", clickOpcJugador);
+                jGalJug(document).on("ready", startGalJugador(jGalJug));
             }
 
             function clickOpcJugador(datos){
