@@ -484,6 +484,8 @@ nav{
 			list-style: none;
 			padding: 0;
 			margin: 0;
+			float: left;
+			width: 100%;
 
 			ul{
 				li{
@@ -499,11 +501,68 @@ nav{
 
 					a.active{
 						color: #000;
+						font-weight: bold;
 					}
 				}
 				li:first-child{
 					border-left: none;
 				}
+			}
+		}
+
+		.datos{
+			float: left;
+			width: 100%;
+			text-align: center;
+			padding: 10px 0 0 0;
+
+			.galeria{
+
+				.slider {
+					width: 190px;
+		       		height: 180px;
+		       		float: left;
+		       		margin: 0px 0px 10px 10px;
+		       		overflow: hidden;
+				}
+				
+				.clear {
+					clear: left;
+				}
+
+				.peKenBurns {
+					width: 190px;
+		       		height: 180px;
+				}
+
+				.noShadow .peKenBurns {
+					height:204px;
+				}
+				
+				.peKenBurns .peKb_slides {
+					padding: 8px;
+					-moz-border-radius: 5px; 
+					-webkit-border-radius: 5px; 
+					border-radius: 5px;
+				}
+				
+		    	.peKenBurns .peKb_slides .peKb_caption h1 {
+		    		font-family: Arial;
+		    		font-size: 11px;
+		    		color: #FEFEFE;
+		    	}
+				
+				.peKenBurns .peKb_slides .peKb_caption .peKb_real{
+					padding: 10px;
+		    	}
+		    	
+		    	.peKenBurns .peKb_slides .peKb_caption {
+					margin: 0px 5px 5px 5px;
+				}	
+				
+		    	.peKenBurns .peKb_slides .peKb_caption .peKb_background {
+		    		background-color: #202020;
+		    	}
 			}
 		}
 	}

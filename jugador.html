@@ -113,7 +113,45 @@
 
         <!-- ADDTHIS -->
         <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50dcdc400c54dc87"></script>
+        <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50dcdc400c54dc87"></script>
+
+        <!-- GALERIA DE JUGADOR -->
+        <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/default/skin.min.css" />
+        <link rel="stylesheet" href="libs/swipe-effect-slider/css/prettyPhoto.css" />
+        <script src="libs/swipe-effect-slider/js/jquery-1.8.3.min.js"></script>
+        <script src="libs/swipe-effect-slider/js/pe.kenburns/jquery.pixelentity.kenburnsSlider.min.js"></script>
+        <script src="libs/swipe-effect-slider/js/jquery.prettyPhoto.min.js"></script>
+
+        <script>
+            var jGalJug = jQuery.noConflict();
+
+            jGalJug(document).on("ready", startJugador);
+
+            function startJugador(){
+                jGalJug(".info-jugador-nwder .menu ul li a").on("click", clickOpcJugador);
+            }
+
+            function clickOpcJugador(datos){
+                jGalJug(".info-jugador-nwder .menu ul li a").removeClass("active");
+                var tipo = datos.currentTarget.id;
+                jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
+                /*jGalJug.ajax({
+                    url: "", 
+                    data: "tipo="+tipo,
+                    type: "POST",
+                    success: function(data){
+                        jGalJug("section.datos").html(data);
+                        jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
+                    }
+                });*/
+            }
+
+            function startGalJugador(datoJQ){
+                datoJQ("a[rel^='prettyPhoto']").prettyPhoto();
+                datoJQ(".peKbGallery").peKenburnsSlider();
+            }
+        
+        </script>
 
     </head>
     <body>
@@ -385,16 +423,39 @@
                             
                             <section class="menu">
                                 <ul>
-                                    <li><a href="#" class="active">Posición</a></li>
-                                    <li><a href="#">Galería</a></li>
-                                    <li><a href="#">Videos</a></li>
-                                    <li><a href="#">Clubes</a></li>
+                                    <li><a id="posicion" href="javascript:;" class="active">Posición</a></li>
+                                    <li><a id="galeria" href="javascript:;">Galería</a></li>
+                                    <li><a id="videos" href="javascript:;">Videos</a></li>
+                                    <li><a id="clubes" href="javascript:;">Clubes</a></li>
                                 </ul>
                             </section>
 
-                            <section>
+                            <section class="datos">
 
-                                <img src="imagenes/jugador-cancha.jpg">
+                                <div class="posicion">
+                                    <img src="imagenes/jugador-cancha.jpg" width="600" height="430">
+                                </div>                                
+
+                                <div class="galeria">
+
+                                    <div class="slider noShadow">
+                                        <a rel="prettyPhoto" href="imagenes/upload/galeria1.jpg">
+                                            <img class="peKbGallery" data-delay="5" src="imagenes/upload/galeria1.jpg" /></a>
+                                    </div>
+                                            
+                                            
+                                    <div class="slider noShadow">
+                                        <a rel="prettyPhoto" href="imagenes/upload/galeria2.jpg">
+                                            <img class="peKbGallery" data-delay="5" src="imagenes/upload/galeria2.jpg" /></a>
+                                    </div>
+                                            
+                                            
+                                    <div class="slider noShadow">
+                                        <a rel="prettyPhoto" href="imagenes/upload/galeria3.jpg">
+                                            <img class="peKbGallery" data-delay="5" src="imagenes/upload/galeria3.jpg" /></a>
+                                    </div>
+
+                                </div>
 
                             </section>
 
