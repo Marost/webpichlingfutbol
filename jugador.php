@@ -162,8 +162,9 @@
             }
 
             function clickJugadorVideo(datos){
-                var dato = datos.currentTarget.id;
-                jGalJug(".videos .select iframe").attr("src", "http://www.youtube-nocookie.com/embed/"+dato+"?rel=0");
+                console.log(datos);
+                //var dato = datos.currentTarget.id;
+                //jGalJug(".videos .select iframe").attr("src", "http://www.youtube-nocookie.com/embed/"+dato+"?rel=0");
             }
 
             function startJugadorGal(datoJQ){

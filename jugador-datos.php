@@ -40,7 +40,7 @@ $tipo=$_POST["tipo"];
 <div class="videos">
 
     <div class="select">
-        <iframe width="600" height="350" src="http://www.youtube-nocookie.com/embed/7EHAEX0EpYU?rel=0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="600" height="350" src="http://www.youtube.com/embed/7EHAEX0EpYU?rel=0" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <div class="items">
