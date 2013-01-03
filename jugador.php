@@ -111,10 +111,6 @@
         }
         </script>
 
-        <!-- ADDTHIS -->
-        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-        <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50dcdc400c54dc87"></script>
-
         <!-- GALERIA DE JUGADOR -->
         <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/default/skin.min.css" />
         <link rel="stylesheet" href="libs/swipe-effect-slider/css/prettyPhoto.css" />
@@ -162,9 +158,8 @@
             }
 
             function clickJugadorVideo(datos){
-                console.log(datos);
-                //var dato = datos.currentTarget.id;
-                //jGalJug(".videos .select iframe").attr("src", "http://www.youtube-nocookie.com/embed/"+dato+"?rel=0");
+                var vid = datos.currentTarget.id;
+                jGalJug(".videos .select iframe").attr("src", "http://www.youtube-nocookie.com/embed/"+vid+"?rel=0");
             }
 
             function startJugadorGal(datoJQ){
