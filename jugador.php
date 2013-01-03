@@ -163,7 +163,7 @@
 
             function clickJugadorVideo(datos){
                 var dato = datos.currentTarget.id;
-                jGalJug(".video .select iframe").attr("src", "http://www.youtube-nocookie.com/embed/"+dato+"?rel=0");
+                jGalJug(".videos .select iframe").attr("src", "http://www.youtube-nocookie.com/embed/"+dato+"?rel=0");
             }
 
             function startJugadorGal(datoJQ){
