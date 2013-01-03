@@ -135,7 +135,7 @@
             function startJugadorPos(){
                 jGalJug.ajax({
                     url: "jugador-datos.php", 
-                    data: "tipo=posicion",
+                    data: {tipo:"posicion"},
                     type: "POST",
                     success: function(data){
                         jGalJug("section.datos").html(data);
@@ -150,7 +150,7 @@
                 jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
                 jGalJug.ajax({
                     url: "jugador-datos.php", 
-                    data: "tipo="+tipo,
+                    data: {tipo: tipo},
                     type: "POST",
                     success: function(data){
                         jGalJug("section.datos").html(data);
