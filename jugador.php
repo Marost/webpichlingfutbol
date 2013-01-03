@@ -126,7 +126,6 @@
 
             function startJugador(){
                 jGalJug(".info-jugador-nwder .menu ul li a").on("click", clickJugadorOpc);
-                jGalJug(".videos .items article a").on("click", clickJugadorVideo);
             }
 
             function startJugadorPos(){
@@ -153,13 +152,14 @@
                         jGalJug("section.datos").html(data);
                         jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
                         jGalJug(document).on("ready", startJugadorGal(jGalJug));
+                        jGalJug(".videos .items article a").on("click", clickJugadorVideo);
                     }
                 });
             }
 
             function clickJugadorVideo(datos){
                 var vid = datos.currentTarget.id;
-                jGalJug(".videos .select iframe").attr("src", "http://www.youtube-nocookie.com/embed/"+vid+"?rel=0");
+                jGalJug(".videos .select iframe").attr("src", "http://www.youtube.com/embed/"+vid+"?rel=0");
             }
 
             function startJugadorGal(datoJQ){
