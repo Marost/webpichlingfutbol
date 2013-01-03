@@ -128,23 +128,36 @@
             jGalJug(document).on("ready", startJugador);
 
             function startJugador(){
+                jGalJug(document).on("ready", startJugadorPos);
                 jGalJug(".info-jugador-nwder .menu ul li a").on("click", clickOpcJugador);
-                jGalJug(document).on("ready", startGalJugador(jGalJug));
+            }
+
+            function startJugadorPos(){
+                jGalJug.ajax({
+                    url: "jugador-datos.php", 
+                    data: "tipo=posicion",
+                    type: "POST",
+                    success: function(data){
+                        jGalJug("section.datos").html(data);
+                        jGalJug(".info-jugador-nwder .menu ul li a#posicion").addClass("active");
+                    }
+                });
             }
 
             function clickOpcJugador(datos){
                 jGalJug(".info-jugador-nwder .menu ul li a").removeClass("active");
                 var tipo = datos.currentTarget.id;
                 jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
-                /*jGalJug.ajax({
-                    url: "", 
+                jGalJug.ajax({
+                    url: "jugador-datos.php", 
                     data: "tipo="+tipo,
                     type: "POST",
                     success: function(data){
                         jGalJug("section.datos").html(data);
                         jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
+                        jGalJug(document).on("ready", startGalJugador(jGalJug));
                     }
-                });*/
+                });
             }
 
             function startGalJugador(datoJQ){
@@ -431,34 +444,7 @@
                                 </ul>
                             </section>
 
-                            <section class="datos">
-
-                                <div class="posicion">
-                                    <img src="imagenes/jugador-cancha.jpg" width="600" height="430">
-                                </div>                                
-
-                                <div class="galeria">
-
-                                    <div class="slider noShadow">
-                                        <a rel="prettyPhoto" href="imagenes/upload/galeria1.jpg">
-                                            <img class="peKbGallery" data-delay="5" src="imagenes/upload/galeria1.jpg" /></a>
-                                    </div>
-                                            
-                                            
-                                    <div class="slider noShadow">
-                                        <a rel="prettyPhoto" href="imagenes/upload/galeria2.jpg">
-                                            <img class="peKbGallery" data-delay="5" src="imagenes/upload/galeria2.jpg" /></a>
-                                    </div>
-                                            
-                                            
-                                    <div class="slider noShadow">
-                                        <a rel="prettyPhoto" href="imagenes/upload/galeria3.jpg">
-                                            <img class="peKbGallery" data-delay="5" src="imagenes/upload/galeria3.jpg" /></a>
-                                    </div>
-
-                                </div>
-
-                            </section>
+                            <section class="datos"></section>
 
                         </section>
 

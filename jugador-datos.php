@@ -1,7 +1,12 @@
+<?php $tipo=$_POST["tipo"]; ?>
+
+<?php if($tipo=="posicion"){ ?>
 <div class="posicion">
     <img src="imagenes/jugador-cancha.jpg" width="600" height="430">
 </div>                                
+<?php } ?>
 
+<?php if($tipo=="galeria"){ ?>
 <div class="galeria">
 
     <div class="slider noShadow">
@@ -22,3 +27,4 @@
     </div>
     
 </div>
+<?php } ?>
