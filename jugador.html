@@ -126,9 +126,9 @@
             var jGalJug = jQuery.noConflict();
 
             jGalJug(document).on("ready", startJugador);
+            jGalJug(document).on("ready", startJugadorPos);
 
             function startJugador(){
-                jGalJug(document).on("ready", startJugadorPos);
                 jGalJug(".info-jugador-nwder .menu ul li a").on("click", clickOpcJugador);
             }
 
