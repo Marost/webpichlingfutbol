@@ -129,7 +129,8 @@
             jGalJug(document).on("ready", startJugadorPos);
 
             function startJugador(){
-                jGalJug(".info-jugador-nwder .menu ul li a").on("click", clickOpcJugador);
+                jGalJug(".info-jugador-nwder .menu ul li a").on("click", clickJugadorOpc);
+                jGalJug(".videos .items article a").on("click", clickJugadorVideo);
             }
 
             function startJugadorPos(){
@@ -144,7 +145,7 @@
                 });
             }
 
-            function clickOpcJugador(datos){
+            function clickJugadorOpc(datos){
                 jGalJug(".info-jugador-nwder .menu ul li a").removeClass("active");
                 var tipo = datos.currentTarget.id;
                 jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
@@ -155,12 +156,17 @@
                     success: function(data){
                         jGalJug("section.datos").html(data);
                         jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
-                        jGalJug(document).on("ready", startGalJugador(jGalJug));
+                        jGalJug(document).on("ready", startJugadorGal(jGalJug));
                     }
                 });
             }
 
-            function startGalJugador(datoJQ){
+            function clickJugadorVideo(datos){
+                var dato = datos.currentTarget.id;
+                jGalJug(".video .select iframe").attr("src", "http://www.youtube-nocookie.com/embed/"+dato+"?rel=0");
+            }
+
+            function startJugadorGal(datoJQ){
                 datoJQ("a[rel^='prettyPhoto']").prettyPhoto();
                 datoJQ(".peKbGallery").peKenburnsSlider();
             }

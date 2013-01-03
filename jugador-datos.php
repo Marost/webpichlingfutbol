@@ -1,4 +1,11 @@
-<?php $tipo=$_POST["tipo"]; ?>
+<?php
+/* LIBRERIA DE CONEXION A YOUTUBE */
+include("libs/ssdtube/SSDTube.php");
+
+/* VARIABLES DE POST */
+$tipo=$_POST["tipo"];
+
+?>
 
 <?php if($tipo=="posicion"){ ?>
 <div class="posicion">
@@ -32,7 +39,25 @@
 <?php if($tipo=="videos"){ ?>
 <div class="videos">
 
-    <iframe width="600" height="450" src="http://www.youtube-nocookie.com/embed/7EHAEX0EpYU?rel=0" frameborder="0" allowfullscreen></iframe>
+    <div class="select">
+        <iframe width="600" height="350" src="http://www.youtube-nocookie.com/embed/7EHAEX0EpYU?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="items">
+
+        <article>
+            <a id="NTp-bcpBsDs" href="http://www.youtube.com/watch?v=NTp-bcpBsDs">
+                <?php $youtube_ramonrodriguez1 = new SSDTube(); $youtube_ramonrodriguez1->identify("http://www.youtube.com/watch?v=NTp-bcpBsDs", true); ?>
+                <img src="<?php echo $youtube_ramonrodriguez1->thumbnail_1_url; ?>" width="120" height="90" alt="Edson Uribe" /></a>
+        </article>
+
+        <article>
+            <a id="7EHAEX0EpYU" href="http://www.youtube.com/watch?v=7EHAEX0EpYU">
+                <?php $youtube_ramonrodriguez2 = new SSDTube(); $youtube_ramonrodriguez2->identify("http://www.youtube.com/watch?v=7EHAEX0EpYU", true); ?>
+                <img src="<?php echo $youtube_ramonrodriguez2->thumbnail_1_url; ?>" width="120" height="90" alt="Edson Uribe" /></a>
+        </article>
+
+    </div>
 
 </div>
 <?php  }?>
