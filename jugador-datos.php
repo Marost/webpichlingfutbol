@@ -28,3 +28,11 @@
     
 </div>
 <?php } ?>
+
+<?php if($tipo=="videos"){ ?>
+<div class="videos">
+
+    <iframe width="600" height="450" src="http://www.youtube-nocookie.com/embed/7EHAEX0EpYU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<?php  ?>
