@@ -160,6 +160,7 @@
             function clickJugadorVideo(datos){
                 var vid = datos.currentTarget.id;
                 jGalJug(".videos .select iframe").attr("src", "http://www.youtube.com/embed/"+vid+"?rel=0");
+                jGalJug(".videos .items article a#"+vid).addClass("active");
             }
 
             function startJugadorGal(datoJQ){
