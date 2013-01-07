@@ -238,7 +238,7 @@ $rst_posicion=mysql_query("SELECT * FROM pf_posicion_fija ORDER BY id ASC;", $co
                                     <h3><?php echo $posicion_titulo; ?></h3>
                                     <ul>
                                         <li><a href="jugador/<?php echo $jugadores_id."-".$jugadores_url; ?>">
-                                            <?php echo $jugadores_apellidos", ".$jugadores_nombre; ?></a></li>
+                                            <?php echo $jugadores_apellidos.", ".$jugadores_nombre; ?></a></li>
                                     </ul>
                                 </aside>
 
