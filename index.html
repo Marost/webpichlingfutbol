@@ -1,3 +1,12 @@
+<?php
+require_once("panel@pichling/conexion/conexion.php");
+require_once("panel@pichling/conexion/funciones.php");
+
+//LISTA DE JUGADORES
+$rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY posicion_fija ASC;", $conexion);
+
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -123,14 +132,14 @@
                 
                 <section id="header-izq">
                     <h1>
-                        <a class="title" href="#">
+                        <a class="title" href="/">
                         Pichling Representaciones</a></h1>
                 </section>
 
                 <section id="header-der">
                     <nav>
                         <ul>
-                            <li><a href="#">Inicio</a></li>
+                            <li><a href="/">Inicio</a></li>
                             <li><a href="#">Nosotros</a></li>
                             <li><a href="#">Galería</a></li>
                             <li><a href="#">Entrevistas</a></li>
@@ -213,104 +222,23 @@
 
                             <div id="lista-jugadores" class="ic-contenido">
 
+                                <?php while($fila_jugadores=mysql_fetch_array($rst_jugadores)){
+                                    $jugadores_id=$fila_jugadores["id"];
+                                    $jugadores_url=$fila_jugadores["url"];
+                                    $jugadores_nombre=$fila_jugadores["nombre"];
+                                    $jugadores_apellidos=$fila_jugadores["apellidos"];
+                                    $jugadores_posicion=seleccionTabla($fila_jugadores["posicion_fija"],"id","pf_posicion_fija", $conexion);
+                                ?>
+
                                 <aside>
-                                    <h3>Arqueros</h3>
+                                    <h3><?php echo $jugadores_posicion["posicion"]; ?></h3>
                                     <ul>
-                                        <li><a href="">Cisneros, Jesús</a></li>
-                                        <li><a href="">Goyoneche, Juan</a></li>
-                                        <li><a href="">Guevara, Fisher</a></li>
-                                        <li><a href="">Pinto, Joel</a></li>
-                                        <li><a href="">Rodriguez, Leonardo</a></li>
-                                        <li><a href="">Romucho, Jefferson</a></li>
-                                        <li><a href="">Rosales, Exar</a></li>
+                                        <li><a href="jugador/<?php echo $jugadores_id."-".$jugadores_url; ?>">
+                                            <?php echo $jugadores_apellidos", ".$jugadores_nombre; ?></a></li>
                                     </ul>
                                 </aside>
 
-                                <aside>
-                                    <h3>Defensas Centrales</h3>
-                                    <ul>
-                                        <li><a href="">Canova, Jose</a></li>
-                                        <li><a href="">Lojas, Juan Diego</a></li>
-                                        <li><a href="">Romero, Luis</a></li>
-                                        <li><a href="">Solis, Carlos</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Marcadores Izquierdos</h3>
-                                    <ul>
-                                        <li><a href="">Chumpitaz, Javier</a></li>
-                                        <li><a href="">Garcia, Cristian</a></li>
-                                        <li><a href="">Moisela, Jose</a></li>
-                                        <li><a href="">Ojeda, Luis Roman</a></li>
-                                        <li><a href="">Reyes, Jeickson</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Marcadores Derechos</h3>
-                                    <ul>
-                                        <li><a href="">Arce, Juan</a></li>
-                                        <li><a href="">Cancar, Jean Pierre</a></li>
-                                        <li><a href="">Llanos, Miguel Angel</a></li>
-                                        <li><a href="">Lopez, Andres</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Volantes Contencion</h3>
-                                    <ul>
-                                        <li><a href="">Anicama, Saul</a></li>
-                                        <li><a href="">Casas, Yancarlo</a></li>
-                                        <li><a href="">Corcuera, Jose</a></li>
-                                        <li><a href="">Fuentes, Jean Pierre</a></li>
-                                        <li><a href="">Linares, Jaime</a></li>
-                                        <li><a href="">Lizarbe, Antonio</a></li>
-                                        <li><a href="">Quintanilla, Hector</a></li>
-                                        <li><a href="">Santamaria, Anderson</a></li>
-                                        <li><a href="">Seminario, Crifford</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Volantes Mixtos</h3>
-                                    <ul>
-                                        <li><a href="">Morales, Juan</a></li>
-                                        <li><a href="">Rivas, Jose</a></li>
-                                        <li><a href="">Salazar, Ryan</a></li>
-                                        <li><a href="">Vilchez, Oscar</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Volantes Creación</h3>
-                                    <ul>
-                                        <li><a href="">Aliaga, Romario</a></li>
-                                        <li><a href="">Chavez, Jesus</a></li>
-                                        <li><a href="">Elias, Carlos</a></li>
-                                        <li><a href="">Gomez, Rai</a></li>
-                                        <li><a href="">Landauri, Julio</a></li>
-                                        <li><a href="">Mariño, Juan Carlos</a></li>
-                                        <li><a href="">Sheput, Renzo</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Delanteros</h3>
-                                    <ul>
-                                        <li><a href="">Ascoy, Pedro</a></li>
-                                        <li><a href="">Carranza, Christian</a></li>
-                                        <li><a href="">Ibarra, Sergio</a></li>
-                                        <li><a href="">Leiva, Jorge</a></li>
-                                        <li><a href="">Lozada, Jorge</a></li>
-                                        <li><a href="">Perez, Ricky</a></li>
-                                        <li><a href="">Recalde, Francesco</a></li>
-                                    </ul>
-                                </aside>
-
-                                <div>
-                                    
-                                </div>
+                                <?php } ?>
 
                             </div>
 
@@ -401,12 +329,7 @@
 
         </div> <!-- #main-container -->
 
-        <div class="footer-container">
-            <footer class="wrapper">
-                <p>Cristobal de Peralta N° 110 - Oficina 1002 - Santiago de Surco</p>
-                <p>Telefono: 4370297 / 4376855</p>
-            </footer>
-        </div>
+        <?php require_once("w-footer.php"); ?>
 
     </body>
 </html>
