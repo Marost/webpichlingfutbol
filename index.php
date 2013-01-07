@@ -2,9 +2,8 @@
 require_once("panel@pichling/conexion/conexion.php");
 require_once("panel@pichling/conexion/funciones.php");
 
-//LISTA DE JUGADORES
-$rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY posicion_fija ASC;", $conexion);
-
+//POSICION DE JUGADORES
+$rst_posicion=mysql_query("SELECT * FROM pf_posicion_fija ORDER BY id ASC;", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -222,16 +221,21 @@ $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY posicion_fija AS
 
                             <div id="lista-jugadores" class="ic-contenido">
 
-                                <?php while($fila_jugadores=mysql_fetch_array($rst_jugadores)){
-                                    $jugadores_id=$fila_jugadores["id"];
+                                <?php while($fila_posicion=mysql_fetch_array($rst_posicion)){
+                                    $posicion_id=$fila_posicion["id"];
+                                    $posicion_titulo=$fila_posicion["posicion"];
+                                    
+                                    //LISTA DE JUGADORES
+                                    $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores WHERE posicion_fija=$posicion_id ORDER BY apellidos ASC;", $conexion);
+                                    $fila_jugadores=mysql_fetch_array($rst_jugadores);
                                     $jugadores_url=$fila_jugadores["url"];
+                                    $jugadores_id=$fila_jugadores["id"];
                                     $jugadores_nombre=$fila_jugadores["nombre"];
                                     $jugadores_apellidos=$fila_jugadores["apellidos"];
-                                    $jugadores_posicion=seleccionTabla($fila_jugadores["posicion_fija"],"id","pf_posicion_fija", $conexion);
                                 ?>
 
                                 <aside>
-                                    <h3><?php echo $jugadores_posicion["posicion"]; ?></h3>
+                                    <h3><?php echo $posicion_titulo; ?></h3>
                                     <ul>
                                         <li><a href="jugador/<?php echo $jugadores_id."-".$jugadores_url; ?>">
                                             <?php echo $jugadores_apellidos", ".$jugadores_nombre; ?></a></li>
