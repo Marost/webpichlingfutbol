@@ -25,9 +25,9 @@ global $web;
 global $fechaActual;
 
 //VARIABLES
-$carpeta_admin="panel@impacto";
-$tabla_suf="iev";
-$sesion_pre="ievs";
+$carpeta_admin="panel@pichling";
+$tabla_suf="pf";
+$sesion_pre="pfs";
 $fechaActual=date("Y-m-d H:i:s");
 
 //EMPRESA
