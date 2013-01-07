@@ -226,7 +226,7 @@ $rst_posicion=mysql_query("SELECT * FROM pf_posicion_fija ORDER BY id ASC;", $co
                                     $posicion_titulo=$fila_posicion["posicion"];
                                     
                                     //LISTA DE JUGADORES
-                                    $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores WHERE posicion_fija=$posicion_id ORDER BY apellidos ASC;", $conexion);
+                                    $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores WHERE posicion_fija=$posicion_id AND publicar=1 ORDER BY apellidos ASC;", $conexion);
                                 ?>
 
                                 <aside>
