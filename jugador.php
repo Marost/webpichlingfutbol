@@ -207,7 +207,7 @@ $jugador_imagen=$fila_jugador["imagen"];
                 
                 <section id="header-izq">
                     <h1>
-                        <a class="title" href="#">
+                        <a class="title" href="/">
                         Pichling Representaciones</a></h1>
                 </section>
 
