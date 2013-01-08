@@ -32,6 +32,7 @@ $jugador_imagen=$fila_jugador["imagen"];
         <title>Pichling Representaciones</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <base href="<?php echo $web; ?>">
 
         <!-- ESTILOS -->
         <link rel="stylesheet" href="css/normalize.min.css">
