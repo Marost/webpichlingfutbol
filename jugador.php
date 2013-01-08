@@ -1,3 +1,27 @@
+<?php
+require_once("panel@pichling/conexion/conexion.php");
+require_once("panel@pichling/conexion/funciones.php");
+
+//VARIABLES DE URL
+$id_jugador=$_REQUEST["id"];
+
+//JUGADOR SELECCIONADO
+$rst_jugador=mysql_query("SELECT * FROM pf_jugadores WHERE id=$id_jugador", $conexion);
+$fila_jugador=mysql_fetch_array($rst_jugador);
+
+$jugador_nombre=$fila_jugador["nombre"];
+$jugador_apellidos=$fila_jugador["apellidos"];
+$jugador_fecha_nac=$fila_jugador["fecha_nac"];
+$jugador_nacionalidad=$fila_jugador["nacionalidad"];
+$jugador_posicion=$fila_jugador["posicion"];
+$jugador_perfil=$fila_jugador["perfil"];
+$jugador_peso=$fila_jugador["peso"];
+$jugador_estatura=$fila_jugador["estatura"];
+$jugador_posicion_fija=$fila_jugador["posicion_fija"];
+$jugador_club_actual=$fila_jugador["club_actual"];
+$jugador_imagen=$fila_jugador["imagen"];
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -212,226 +236,52 @@
 
                 <section id="main-contenido">
 
-                    <section id="main-cont-icons" class="mci-interior">
-
-                        <div id="icons-lista">
-
-                            <ul>
-                                <li>
-                                    <a id="enl-lista-jugadores" href="javascript:;">Jugadores</a>
-                                </li>
-                                <li>
-                                    <a id="enl-lista-entrevista" href="javascript:;">Entrevista</a>
-                                </li>
-                                <li class="last">
-                                    <a id="enl-lista-galeria" href="javascript:;">Galería</a>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                        <div id="icons-contenido">
-
-                            <img id="progressbar" src="imagenes/progressbar.gif" width="220" height="19" class="ocultar">
-
-                            <a href="javascript:;" id="cerrar-contenido" class="ocultar">
-                                <img src="imagenes/icon-cerrar.png" width="970" height="28">
-                            </a>
-
-                            <div id="lista-jugadores" class="ic-contenido">
-
-                                <aside>
-                                    <h3>Arqueros</h3>
-                                    <ul>
-                                        <li><a href="">Cisneros, Jesús</a></li>
-                                        <li><a href="">Goyoneche, Juan</a></li>
-                                        <li><a href="">Guevara, Fisher</a></li>
-                                        <li><a href="">Pinto, Joel</a></li>
-                                        <li><a href="">Rodriguez, Leonardo</a></li>
-                                        <li><a href="">Romucho, Jefferson</a></li>
-                                        <li><a href="">Rosales, Exar</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Defensas Centrales</h3>
-                                    <ul>
-                                        <li><a href="">Canova, Jose</a></li>
-                                        <li><a href="">Lojas, Juan Diego</a></li>
-                                        <li><a href="">Romero, Luis</a></li>
-                                        <li><a href="">Solis, Carlos</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Marcadores Izquierdos</h3>
-                                    <ul>
-                                        <li><a href="">Chumpitaz, Javier</a></li>
-                                        <li><a href="">Garcia, Cristian</a></li>
-                                        <li><a href="">Moisela, Jose</a></li>
-                                        <li><a href="">Ojeda, Luis Roman</a></li>
-                                        <li><a href="">Reyes, Jeickson</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Marcadores Derechos</h3>
-                                    <ul>
-                                        <li><a href="">Arce, Juan</a></li>
-                                        <li><a href="">Cancar, Jean Pierre</a></li>
-                                        <li><a href="">Llanos, Miguel Angel</a></li>
-                                        <li><a href="">Lopez, Andres</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Volantes Contencion</h3>
-                                    <ul>
-                                        <li><a href="">Anicama, Saul</a></li>
-                                        <li><a href="">Casas, Yancarlo</a></li>
-                                        <li><a href="">Corcuera, Jose</a></li>
-                                        <li><a href="">Fuentes, Jean Pierre</a></li>
-                                        <li><a href="">Linares, Jaime</a></li>
-                                        <li><a href="">Lizarbe, Antonio</a></li>
-                                        <li><a href="">Quintanilla, Hector</a></li>
-                                        <li><a href="">Santamaria, Anderson</a></li>
-                                        <li><a href="">Seminario, Crifford</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Volantes Mixtos</h3>
-                                    <ul>
-                                        <li><a href="">Morales, Juan</a></li>
-                                        <li><a href="">Rivas, Jose</a></li>
-                                        <li><a href="">Salazar, Ryan</a></li>
-                                        <li><a href="">Vilchez, Oscar</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Volantes Creación</h3>
-                                    <ul>
-                                        <li><a href="">Aliaga, Romario</a></li>
-                                        <li><a href="">Chavez, Jesus</a></li>
-                                        <li><a href="">Elias, Carlos</a></li>
-                                        <li><a href="">Gomez, Rai</a></li>
-                                        <li><a href="">Landauri, Julio</a></li>
-                                        <li><a href="">Mariño, Juan Carlos</a></li>
-                                        <li><a href="">Sheput, Renzo</a></li>
-                                    </ul>
-                                </aside>
-
-                                <aside>
-                                    <h3>Delanteros</h3>
-                                    <ul>
-                                        <li><a href="">Ascoy, Pedro</a></li>
-                                        <li><a href="">Carranza, Christian</a></li>
-                                        <li><a href="">Ibarra, Sergio</a></li>
-                                        <li><a href="">Leiva, Jorge</a></li>
-                                        <li><a href="">Lozada, Jorge</a></li>
-                                        <li><a href="">Perez, Ricky</a></li>
-                                        <li><a href="">Recalde, Francesco</a></li>
-                                    </ul>
-                                </aside>
-
-                                <div>
-                                    
-                                </div>
-
-                            </div>
-
-                            <div id="lista-entrevista" class="ic-contenido">
-
-                                <h2>Pedro Ascoy</h2>
-
-                                <p style="text-align:center;">
-                                <img src="imagenes/upload/pedro-ascoy.jpg" width="450" height="300"></p>
-
-                                <p>En diálogo con Ovación Digital, Pedro Ascoy se mostró muy satisfecho con el presente que viene teniendo con Manta de Ecuador, en donde el fin de semana anotó su primer gol. En esta entrevista, el Burrito no ocultó su tristeza porque le hubiera gustado vivir esta experiencia un poco más joven y dijo sin pelos en la lengua que no entiende por qué Sergio Markarián nunca lo tomó en cuenta para la Selección.</p>
-
-                                <p><strong>- Hasta que por fin se te abrió el arco...</strong></p>
-                                <p>- Sí, demoró un poco, pero tengo la tranquilidad que vengo haciendo bien las cosas en Manta. Ahora tengo que seguir trabajando fuerte para seguir gozando de la confianza del técnico.</p>
-                                 
-                                <p><strong>- En Manta comenzaste como titular, pero luego el técnico te utilizaba como pieza de recambio, ¿por algo en especial?</strong></p>
-                                <p>- No, simplemente fueron por disposiciones tácticas. Sucede que el 'profe' elige a los jugadores dependiendo de rival, pero lo importante que cuando me toma en cuenta trato de no desperdiciar mi oportunidad. Por ejemplo, ante Independiente de Terán ingresé y aseguré el triunfo.</p>
-                                 
-                                <p><strong>- En el gol que anotaste, el narrador se lo asignó a otro jugador...</strong></p>
-                                <p>- (Risas) Sí, me confundió con otro jugador con quien me parezco mucho, incluso este compañero se abrazó con el asistente técnico y eso terminó por confundirlo.</p>
-                                 
-                                <p><strong>- ¿En qué posición vienes jugando?</strong></p>
-                                <p>- Como volante por izquierda, como delantero por los costados..., yo realmente me ajusto a lo que me diga el entrenador.</p>
-                                 
-                                <p><strong>- ¿Qué torneo es más competitivo: el peruano o ecuatoriano?</strong></p>
-                                <p>- Sinceramente me quedo con el ecuatoriano, porque casi todos los equipos tienen saneadas sus economías, los sueldos son buenos y, sobre todo, pagan puntual.</p>
-                                 
-                                <p><strong>- Y en la parte futbolística...</strong></p>
-                                <p>- También. Acá se juega con mayor fuerza y dinámica, no es fácil acoplarte al fútbol ecuatoriano porque se juega mucho en ciudades de altura.</p>
-
-                                <p><strong>- Pero, tú ya estás acoplado...</strong></p>
-                                <p>- Sí, yo me siento muy feliz porque acá sigo creciendo como profesoional, aunque triste a la vez porque me hubiera gustado vivir esta experiencia más joven. Por lo demás, esta ciudad es muy parecida a Chiclayo, hay playa, sol y su gente es muy buena.</p>
-                                 
-                                <p><strong>- ¿A qué apunta Manta?</strong></p>
-                                <p>- A seguir siendo protagonista en el campeonato, estamos sólo a cuatro puntos del puntero que es Emelec. La consigna es terminar entre los seis primeros para pelear también un cupo a un torneo internacional y creo que equipo tenemos para lograrlo. Ahora tenemos que ir a Ambato y esperamos sacar un buen resultado.</p>
-                                 
-                                <p><strong>- El tema de llegar a la Selección peruana sigue presente...</strong></p>
-                                <p>- Eso lo veo cada vez más lejano.</p>
-                                 
-                                <p><strong>- ¿Por qué lo dices?</strong></p>
-                                <p>- Porque cuando pude ser convocado, no me dieron la oportunidad. Recuerdo que hice una buena Copa Libertadores, jugué bien con Juan Aurich, pero el profesor Markarián nunca me tomó en cuenta. No me explico por qué, incluso mi amigo Chiroque y los diferentes entrenadores que pasaron por Aurich, como Juan Reynoso, me decían que Markarián me iba a llamar, pero eso jamás ocurrió. No sé qué pasaba por la cabeza de Markarián. Por ello, le deseo lo mejor a todos los que llegan a ser convocados, porque todos no gozan de ese privilegio. Yo simplemente trabajaré fuerte en mi equipo para seguir creciendo como profesional y a la distancia le daré las vibras positivas para que le vaya bien a la Selección peruana.</p>
-                                 
-                                <p>Fuente: OVACION</p>
-
-                            </div>
-
-                        </div>
-
-                    </section>
+                    <?php require_once("w-icons.php"); ?>
 
                     <section id="news">
                         
                         <section id="nwizq" class="info-jugador-nwizq">
                             
-                            <h2>Jesús Cisneros</h2>
+                            <h2><?php echo $jugador_nombre." ".$jugador_apellidos; ?></h2>
 
-                            <img src="" width="300" height="280" alt="Jesús Cisneros" title="Jesús Cisneros">
+                            <img src="" width="300" height="280" alt="<?php echo $jugador_nombre." ".$jugador_apellidos; ?>" title="<?php echo $jugador_nombre." ".$jugador_apellidos; ?>">
 
                             <table class="jugador-datos">
                                 <tr>
                                     <td class="titulo">Nombre:</td>
-                                    <td>Jesús</td>
+                                    <td><?php echo $jugador_nombre; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="titulo">Apellidos:</td>
-                                    <td>Cisneros</td>
+                                    <td><?php echo $jugador_apellidos; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="titulo">Fecha de Nac.:</td>
-                                    <td>18 de Marzo de 1978</td>
+                                    <td><?php echo $jugador_fecha_nac; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="titulo">Nacionalidad:</td>
-                                    <td>Peruano</td>
+                                    <td><?php echo $jugador_nacionalidad; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="titulo">Posición:</td>
-                                    <td>Arquero</td>
+                                    <td><?php echo $jugador_posicion; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="titulo">Perfil:</td>
-                                    <td>Derecha</td>
+                                    <td><?php echo $jugador_perfil; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="titulo">Peso:</td>
-                                    <td>80 Kg.</td>
+                                    <td><?php echo $jugador_peso; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="titulo">Estatura:</td>
-                                    <td>1.83 mt</td>
+                                    <td><?php echo $jugador_estatura; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="titulo">Club Actual:</td>
-                                    <td>CNI</td>
+                                    <td><?php echo $jugador_club_actual; ?></td>
                                 </tr>
                             </table>
 
