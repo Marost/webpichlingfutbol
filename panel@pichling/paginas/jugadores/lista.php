@@ -83,38 +83,35 @@ $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $c
 <!-- Main Content Area | Side Nav | Content -->    
 <div class="container-fluid">
   <div class="row-fluid">
+
     <!-- Side Navigation -->
     <div class="span2">
       <div class="member-box round-all"> 
         <a><img src="images/member_ph.png" class="member-box-avatar" /></a>
         <span>
-            <strong>Administrator</strong><br/>
-            <a>John Doe</a><br/>
-            <span class="member-box-links"><a>Settings</a> | <a>Logout</a></span>
+            <strong>Administrador</strong><br/>
+            <a>John Doe</a>
         </span>
       </div>          
       <div class="sidebar-nav">
       	<div class="well" style="padding: 8px 0;">
         <ul class="nav nav-list"> 
-          <li class="nav-header">Main</li>        
-          <li><a href="index.html"><i class="icon-home"></i> Dashboard</a></li>
+          <li class="nav-header">Opciones</li>
+          <li><a href="tables.html"><i class="icon-align-justify"></i> Entrevistas</a></li>
+          <li><a href="tables.html"><i class="icon-align-justify"></i> Jugadores</a></li>
+          <li><a href="tables.html"><i class="icon-align-justify"></i> Noticias</a></li>
+          <li><a href="tables.html"><i class="icon-align-justify"></i> Videos</a></li>
+          <li><a href="gallery.html"><i class="icon-picture"></i> Galería</a></li>
           <li><a href="blogpost.html"><i class="icon-edit"></i> Add Blog Post</a></li>
           <li><a href="members.html"><i class="icon-user"></i> Members</a></li>
           <li><a href="comments.html"><i class="icon-comment"></i> Comments</a></li>
-          <li><a href="gallery.html"><i class="icon-picture"></i> Gallery</a></li>
+          
           <li><a href="calendar.html"><i class="icon-calendar"></i> Calendar</a></li>
           <li class="nav-header">Typography</li>
-          <li><a href="typography.html"><i class="icon-font"></i> Typography</a></li>
-          <li><a href="grid.html"><i class="icon-th-large"></i> Grid</a></li>
-          <li><a href="portlets.html"><i class="icon-th"></i> Portlets</a></li>
-          <li><a href="forms.html"><i class="icon-th"></i> Forms</a></li>
-          <li class="active"><a href="tables.html"><i class="icon-align-justify"></i> Tables</a></li>
+          
           <li><a href="other.html"><i class="icon-gift"></i> Other</a></li>
-          <li class="nav-header">Settings</li>
-          <li><a class="cookie-delete" href="#"><i class="icon-wrench"></i> Delete Cookies</a></li>
-          <li><a class="sidenav-style-1" href="#"><i class="icon-align-left"></i> Side Menu Style 1</a></li>
-          <li><a class="sidenav-style-2" href="#"><i class="icon-align-right"></i> Side Menu Style 2</a></li>
-          <li><a href="login.html"><i class="icon-off"></i> Logout</a></li>
+          <li class="nav-header">salir</li>
+          <li><a href="login.html"><i class="icon-off"></i> Salir</a></li>
         </ul>
         </div>
       </div><!--/.well -->
@@ -346,7 +343,7 @@ $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $c
     <script src="http://blueimp.github.com/JavaScript-Canvas-to-Blob/canvas-to-blob.min.js"></script>
     <script src="http://blueimp.github.com/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js"></script>
     <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-    <script src="scripts/blueimp-jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script scripts="src/blueimp-jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
     <!-- The basic File Upload plugin -->
 	<script src="scripts/blueimp-jQuery-File-Upload/js/jquery.fileupload.js"></script>
     <!-- The File Upload image processing plugin -->
