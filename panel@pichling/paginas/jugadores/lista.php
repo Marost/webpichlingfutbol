@@ -1,8 +1,8 @@
 <?php 
-session_start();
+//session_start();
 require_once("../../conexion/conexion.php");
 require_once("../../conexion/funciones.php");
-require_once("../../conexion/verificar_sesion.php");
+//require_once("../../conexion/verificar_sesion.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,7 +127,32 @@ require_once("../../conexion/verificar_sesion.php");
         </ul>
       </div>
 
-    
+    <div class="row-fluid">
+        <div class="span2 action-btn round-all">
+          <a href="#">
+                <div><i class="icon-pencil"></i></div>
+                <div><strong>Add</strong></div>         
+            </a>
+        </div>
+        <div class="span2 action-btn round-all">
+          <a href="#">
+                <div><i class="icon-edit"></i></div>
+                <div><strong>Edit</strong></div>       
+            </a>  
+        </div>
+        <div class="span2 action-btn round-all">
+          <a href="#">
+            <div><i class="icon-trash"></i></div>
+              <div><strong>Delete</strong></div>          
+            </a>
+        </div>
+        <div class="span2 action-btn round-all">
+          <a href="#">
+            <div><i class="icon-align-justify"></i></div>
+              <div><strong>List</strong></div>          
+            </a>
+        </div>
+      </div>
       
 
  	    <div class="row-fluid">
