@@ -19,30 +19,27 @@ $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $c
   <base href="<?php echo $web."".$carpeta_admin."/"; ?>">
 
   <!-- Bootstrap -->
-  <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" id="main-theme-script">
-  <link href="/css/themes/default.css" rel="stylesheet" id="theme-specific-script">
-  <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-
-  <!-- Full Calender -->
-  <link rel="stylesheet" type="text/css" href="/scripts/fullcalendar/fullcalendar/fullcalendar.css" />
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet" id="main-theme-script">
+  <link href="css/themes/default.css" rel="stylesheet" id="theme-specific-script">
+  <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
   <!-- Bootstrap Date Picker --> 
-  <link href="/scripts/datepicker/css/datepicker.css" rel="stylesheet">
+  <link href="scripts/datepicker/css/datepicker.css" rel="stylesheet">
   
   <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
-  <link rel="stylesheet" href="/scripts/blueimp-jQuery-File-Upload/css/jquery.fileupload-ui.css">
+  <link rel="stylesheet" href="scripts/blueimp-jQuery-File-Upload/css/jquery.fileupload-ui.css">
   
   <!-- Bootstrap Image Gallery styles -->
   <link rel="stylesheet" href="http://blueimp.github.com/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css">
   
   <!-- Uniform -->
-  <link rel="stylesheet" type="text/css" media="screen,projection" href="/scripts/uniform/css/uniform.default.css" />
+  <link rel="stylesheet" type="text/css" media="screen,projection" href="scripts/uniform/css/uniform.default.css" />
   
   <!-- Chosen multiselect -->
-  <link type="text/css" href="/scripts/chosen/chosen/chosen.intenso.css" rel="stylesheet" />   
+  <link type="text/css" href="scripts/chosen/chosen/chosen.intenso.css" rel="stylesheet" />   
 
   <!-- Simplenso -->
-  <link href="/css/simplenso.css" rel="stylesheet">
+  <link href="css/simplenso.css" rel="stylesheet">
   
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -50,11 +47,11 @@ $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $c
   <![endif]-->
 
   <!-- Le fav and touch icons -->
-  <link rel="shortcut icon" href="/images/ico/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="images/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head>
 <body id="tables">
 <!-- Top navigation bar -->
@@ -235,42 +232,42 @@ $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $c
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     
     <!-- Data Tables -->
-    <script src="/scripts/DataTables/media/js/jquery.dataTables.js"></script>
+    <script src="scripts/DataTables/media/js/jquery.dataTables.js"></script>
     
     <!-- jQuery UI Sortable -->
-    <script src="/scripts/jquery-ui/ui/minified/jquery.ui.core.min.js"></script>
-	<script src="/scripts/jquery-ui/ui/minified/jquery.ui.widget.min.js"></script>
-	<script src="/scripts/jquery-ui/ui/minified//jquery.ui.mouse.min.js"></script>
-	<script src="/scripts/jquery-ui/ui/minified/jquery.ui.sortable.min.js"></script>
-    <script src="/scripts/jquery-ui/ui/minified/jquery.ui.widget.min.js"></script>
+    <script src="scripts/jquery-ui/ui/minified/jquery.ui.core.min.js"></script>
+	<script src="scripts/jquery-ui/ui/minified/jquery.ui.widget.min.js"></script>
+	<script src="scripts/jquery-ui/ui/minified//jquery.ui.mouse.min.js"></script>
+	<script src="scripts/jquery-ui/ui/minified/jquery.ui.sortable.min.js"></script>
+    <script src="scripts/jquery-ui/ui/minified/jquery.ui.widget.min.js"></script>
     
     <!-- jQuery UI Draggable & droppable -->
-    <script src="/scripts/jquery-ui/ui/minified/jquery.ui.draggable.min.js"></script>
-    <script src="/scripts/jquery-ui/ui/minified/jquery.ui.droppable.min.js"></script>
+    <script src="scripts/jquery-ui/ui/minified/jquery.ui.draggable.min.js"></script>
+    <script src="scripts/jquery-ui/ui/minified/jquery.ui.droppable.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/scripts/bootbox/bootbox.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="scripts/bootbox/bootbox.min.js"></script>
 
 	<!-- Bootstrap Date Picker -->
-    <script src="/scripts/datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="scripts/datepicker/js/bootstrap-datepicker.js"></script>
 
 		
     <!-- jQuery Cookie -->    
-    <script src="/scripts/jquery.cookie/jquery.cookie.js"></script>
+    <script src="scripts/jquery.cookie/jquery.cookie.js"></script>
     
     <!-- Full Calender -->
-    <script type='text/javascript' src="/scripts/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+    <script type='text/javascript' src="scripts/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
     
     <!-- CK Editor -->
-	<script type="text/javascript" src="/scripts/ckeditor/ckeditor.js"></script>
-	<script type="text/javascript" src="/scripts/ckeditor/adapters/jquery.js"></script>
+	<script type="text/javascript" src="scripts/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="scripts/ckeditor/adapters/jquery.js"></script>
     
     <!-- Chosen multiselect -->
-    <script type="text/javascript" language="javascript" src="/scripts/chosen/chosen/chosen.jquery.min.js"></script>  
+    <script type="text/javascript" language="javascript" src="scripts/chosen/chosen/chosen.jquery.min.js"></script>  
     
     <!-- Uniform -->
-    <script type="text/javascript" language="javascript" src="/scripts/uniform/jquery.uniform.min.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/uniform/jquery.uniform.min.js"></script>
     
     <!-- MultiFile Upload -->
     <!-- Error messages for the upload/download templates -->
@@ -349,19 +346,19 @@ $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $c
     <script src="http://blueimp.github.com/JavaScript-Canvas-to-Blob/canvas-to-blob.min.js"></script>
     <script src="http://blueimp.github.com/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js"></script>
     <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-    <script src="/scripts/blueimp-jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="scripts/blueimp-jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
     <!-- The basic File Upload plugin -->
-	<script src="/scripts/blueimp-jQuery-File-Upload/js/jquery.fileupload.js"></script>
+	<script src="scripts/blueimp-jQuery-File-Upload/js/jquery.fileupload.js"></script>
     <!-- The File Upload image processing plugin -->
-    <script src="/scripts/blueimp-jQuery-File-Upload/js/jquery.fileupload-ip.js"></script>
+    <script src="scripts/blueimp-jQuery-File-Upload/js/jquery.fileupload-ip.js"></script>
     <!-- The File Upload user interface plugin -->
-    <script src="/scripts/blueimp-jQuery-File-Upload/js/jquery.fileupload-ui.js"></script>
+    <script src="scripts/blueimp-jQuery-File-Upload/js/jquery.fileupload-ui.js"></script>
     <!-- The main application script -->
-    <script src="/scripts/blueimp-jQuery-File-Upload/js/main.js"></script>
+    <script src="scripts/blueimp-jQuery-File-Upload/js/main.js"></script>
     <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
-    <!--[if gte IE 8]><script src="/scripts/blueimp-jQuery-File-Upload/js/cors/jquery.xdr-transport.js"></script><![endif]-->
+    <!--[if gte IE 8]><script src="scripts/blueimp-jQuery-File-Upload/js/cors/jquery.xdr-transport.js"></script><![endif]-->
     
     <!-- Simplenso Scripts -->
-    <script src="/scripts/simplenso/simplenso.js"></script>
+    <script src="scripts/simplenso/simplenso.js"></script>
   </body>
 </html>
