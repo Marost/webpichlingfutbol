@@ -12,7 +12,7 @@ require_once("../../conexion/funciones.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="ahoekie">
   <meta name="robots" content="noindex, nofollow">
-  <base href="<?php echo $web."".$carpeta_admin; ?>">
+  <base href="<?php echo $web."".$carpeta_admin."/"; ?>">
 
   <!-- Bootstrap -->
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet" id="main-theme-script">
