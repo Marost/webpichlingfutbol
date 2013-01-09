@@ -3,6 +3,10 @@
 require_once("../../conexion/conexion.php");
 require_once("../../conexion/funciones.php");
 //require_once("../../conexion/verificar_sesion.php");
+
+//JUGADORES
+$rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $conexion);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,25 +135,7 @@ require_once("../../conexion/funciones.php");
         <div class="span2 action-btn round-all">
           <a href="#">
                 <div><i class="icon-pencil"></i></div>
-                <div><strong>Add</strong></div>         
-            </a>
-        </div>
-        <div class="span2 action-btn round-all">
-          <a href="#">
-                <div><i class="icon-edit"></i></div>
-                <div><strong>Edit</strong></div>       
-            </a>  
-        </div>
-        <div class="span2 action-btn round-all">
-          <a href="#">
-            <div><i class="icon-trash"></i></div>
-              <div><strong>Delete</strong></div>          
-            </a>
-        </div>
-        <div class="span2 action-btn round-all">
-          <a href="#">
-            <div><i class="icon-align-justify"></i></div>
-              <div><strong>List</strong></div>          
+                <div><strong>Agregar</strong></div>         
             </a>
         </div>
       </div>
@@ -160,372 +146,53 @@ require_once("../../conexion/funciones.php");
          <div class="span12">
          	 <!-- Portlet: Data Table -->
              <div class="box">
-              <h4 class="box-header round-top">Data Table</h4>         
+              <h4 class="box-header round-top">Jugadores</h4>         
               <div class="box-container-toggle">
                   <div class="box-content">
                     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered bootstrap-datatable" id="datatable">
                       <thead>
                           <tr>
-                              <th>Username</th>
-                              <th>Date registered</th>
-                              <th>Role</th>
-                              <th>Status</th>
-                              <th>Actions</th>
+                              <th>Nombre</th>
+                              <th>Apellidos</th>
+                              <th>Posición</th>
+                              <th>Estado</th>
+                              <th>Acciones</th>
                           </tr>
                       </thead>   
                       <tbody>
+
+                        <?php while($fila_jugadores=mysql_fetch_array($rst_jugadores)) {
+                              $jugadores_id=$fila_jugadores["id"];
+                              $jugadores_nombre=$fila_jugadores["nombre"];
+                              $jugadores_apellidos=$fila_jugadores["apellidos"];
+                              $jugadores_posicion=$fila_jugadores["posicion"];
+                              $jugadores_publicar=$fila_jugadores["publicar"];
+                        ?>
                         <tr>
-                            <td>Fred Flinstone</td>
-                            <td class="center">2011/01/01</td>
-                            <td class="center">Member</td>
+                            <td><?php echo $jugadores_nombre; ?></td>
+                            <td><?php echo $jugadores_apellidos; ?></td>
+                            <td><?php echo $jugadores_posicion ?></td>
                             <td class="center">
-                                <span class="label label-success">Active</span>
+                                <?php if ($jugadores_publicar==1){ ?>
+                                  <span class="label label-success">Active</span>
+                                <?php }else{ ?>
+                                  <span class="label">Inactive</span>
+                                <?php } ?>
                             </td>
                             <td class="center">
-                                <a class="btn btn-success" href="#" rel="tooltip" title="View">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                           
-                                </a>
-                                <a class="btn btn-info" href="#" rel="tooltip" title="Edit">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#" rel="tooltip" title="Delete">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Spiderman</td>
-                            <td class="center">2011/02/01</td>
-                            <td class="center">Staff</td>
-                            <td class="center">
-                                <span class="label label-important">Banned</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
                                 <a class="btn btn-info" href="#">
                                     <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
+                                    Modificar
                                 </a>
                                 <a class="btn btn-danger" href="#">
                                     <i class="icon-trash icon-white"></i> 
-                                    Delete
+                                    Eliminar
                                 </a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Batman</td>
-                            <td class="center">2011/02/01</td>
-                            <td class="center">Admin</td>
-                            <td class="center">
-                                <span class="label">Inactive</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Robin</td>
-                            <td class="center">2011/03/01</td>
-                            <td class="center">Member</td>
-                            <td class="center">
-                                <span class="label label-warning">Pending</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Catwomen</td>
-                            <td class="center">2010/01/21</td>
-                            <td class="center">Staff</td>
-                            <td class="center">
-                                <span class="label label-success">Active</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Garfield</td>
-                            <td class="center">2011/08/23</td>
-                            <td class="center">Staff</td>
-                            <td class="center">
-                                <span class="label label-important">Banned</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Bananaman</td>
-                            <td class="center">2011/06/01</td>
-                            <td class="center">Admin</td>
-                            <td class="center">
-                                <span class="label">Inactive</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Paul</td>
-                            <td class="center">2011/03/01</td>
-                            <td class="center">Member</td>
-                            <td class="center">
-                                <span class="label label-warning">Pending</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Wilma Flinstone</td>
-                            <td class="center">2011/01/01</td>
-                            <td class="center">Member</td>
-                            <td class="center">
-                                <span class="label label-success">Active</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Hulk</td>
-                            <td class="center">2011/02/01</td>
-                            <td class="center">Staff</td>
-                            <td class="center">
-                                <span class="label label-important">Banned</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Bob the Builder</td>
-                            <td class="center">2011/02/01</td>
-                            <td class="center">Admin</td>
-                            <td class="center">
-                                <span class="label">Inactive</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>MacAndCheese</td>
-                            <td class="center">2011/03/01</td>
-                            <td class="center">Member</td>
-                            <td class="center">
-                                <span class="label label-warning">Pending</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ratamatat</td>
-                            <td class="center">2010/01/21</td>
-                            <td class="center">Staff</td>
-                            <td class="center">
-                                <span class="label label-success">Active</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>ZoefZoef</td>
-                            <td class="center">2011/08/23</td>
-                            <td class="center">Staff</td>
-                            <td class="center">
-                                <span class="label label-important">Banned</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>SpeedyConzales</td>
-                            <td class="center">2011/06/01</td>
-                            <td class="center">Admin</td>
-                            <td class="center">
-                                <span class="label">Inactive</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>TazmanianDevil</td>
-                            <td class="center">2011/03/01</td>
-                            <td class="center">Member</td>
-                            <td class="center">
-                                <span class="label label-warning">Pending</span>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-success" href="#">
-                                    <i class="icon-zoom-in icon-white"></i>  
-                                    View                                            
-                                </a>
-                                <a class="btn btn-info" href="#">
-                                    <i class="icon-edit icon-white"></i>  
-                                    Edit                                            
-                                </a>
-                                <a class="btn btn-danger" href="#">
-                                    <i class="icon-trash icon-white"></i> 
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
+
+                        <?php } ?>
+                        
                       </tbody>
                   </table>            
                   </div>
