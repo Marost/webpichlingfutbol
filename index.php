@@ -54,6 +54,14 @@ require_once("panel@pichling/conexion/funciones.php");
         <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/neutral_light/skin.min.css" />
         <script src="libs/swipe-effect-slider/js/jquery-1.5.2.min.js"></script>
         <script src="libs/swipe-effect-slider/js/pe.kenburns/jquery.pixelentity.kenburnsSlider.min.js"></script>
+        <script>
+        var jBanJug=jQuery.noConflict();
+        jBanJug(document).on("ready", startBannerJugador);
+
+        function startBannerJugador(){
+            jBanJug(".peKenBurns").peKenburnsSlider()
+        }
+        </script>
 
         <!-- LISTA JUGADORES -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
