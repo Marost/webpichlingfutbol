@@ -109,7 +109,7 @@ $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $c
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
                                 <ul class="dropdown-menu pull-right">
                                     <li><a href="#"><span class="icos-trash"></span>Eliminar</a></li>
-                                    <li><a href="#" class=""><span class="icos-pencil"></span>Modificar</a></li>
+                                    <li><a href="f-editar.php?id=<?php echo $jugadores_id; ?>" class=""><span class="icos-pencil"></span>Modificar</a></li>
                                     <li><a href="#" class=""><span class="icos-photos"></span>Fotos</a></li>
                                     <li><a href="#" class=""><span class="icos-youtube"></span>Videos</a></li>
                                 </ul>
