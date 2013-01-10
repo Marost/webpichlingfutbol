@@ -142,6 +142,18 @@ require_once("panel@pichling/conexion/funciones.php");
             });
         </script>
 
+        <!-- ANIMACION DE LOGO -->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+        var jAnimLogo=jQuery.noConflict();
+        jAnimLogo(document).on("ready", startAnimLogo);
+
+        function startAnimLogo(){
+            jAnimLogo('#header-izq div').slideDown(1500);
+        }
+        
+        </script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -152,9 +164,11 @@ require_once("panel@pichling/conexion/funciones.php");
             <header class="wrapper clearfix">
                 
                 <section id="header-izq">
-                    <h1>
-                        <a class="title" href="/">
-                        Pichling Representaciones</a></h1>
+                    <div>
+                        <h1>
+                            <a class="title" href="/">
+                            Pichling Representaciones</a></h1>
+                    </div>
                 </section>
 
                 <section id="header-der">

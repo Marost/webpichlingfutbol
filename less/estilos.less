@@ -121,25 +121,38 @@ header{
 		float: left;
 		width: 290px;
 
-		h1{
-			background: url("../imagenes/logo-fondo.png") no-repeat;
+		div{
+			display: none;
+			width: 290px;
+			height: 205px;
 			float: left;
-			height: 187px;
-			padding: 18px 0 0 26px;
-			width: 261px;
 
-			a.title{
-				background: url("../imagenes/logo.png") no-repeat;
-				display: block;
-				height: 127px;
-				margin: 0 !important;
-				padding: 0 !important;
-				text-indent: -10000em;
-				width: 237px;
+			h1{
+				background: url("../imagenes/logo-fondo.png") no-repeat;
+				float: left;
+				height: 187px;
+				padding: 18px 0 0 26px;
+				width: 261px;
 
+				a.title{
+					background: url("../imagenes/logo.png") no-repeat;
+					display: block;
+					height: 127px;
+					margin: 0 !important;
+					padding: 0 !important;
+					text-indent: -10000em;
+					width: 237px;
+					-webkit-transform-style: preserve-3d;
+					-webkit-transition: all 1.0s linear;
+					-moz-transform-style: preserve-3d;
+					-moz-transition: all 1.0s linear;
+					-o-transform-style: preserve-3d;
+					-o-transition: all 1.0s linear;
+					transform-style: preserve-3d;
+					transition: all 1.0s linear;
+				}
 			}
 		}
-
 	}
 
 	#header-der{
