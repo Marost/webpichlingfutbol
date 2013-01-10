@@ -193,7 +193,7 @@ $rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $c
     <div class="wrapper">
 
         <ul class="middleNavR">
-            <li><a href="#" title="Add an article" class="tipN"><img src="images/icons/middlenav/create.png" alt="" /></a></li>
+            <li><a href="f-agregar.php" title="Agregar" class="tipN"><img src="images/icons/middlenav/create.png" alt="" /></a></li>
         </ul>
 
         <!-- Media table sample -->

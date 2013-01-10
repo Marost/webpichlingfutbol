@@ -285,7 +285,8 @@ require_once("../../conexion/funciones.php");
 
                     <div class="formRow">
                         <div class="body" align="center">
-                            <a href="#" class="buttonL bGreen">Guardar datos</a>
+                            <a href="lista.php" class="buttonL bBlack">Cancelar</a>
+                            <a href="javascript:;" class="buttonL bGreen">Guardar datos</a>
                         </div>
                     </div>
                     
