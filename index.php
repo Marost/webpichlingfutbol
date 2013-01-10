@@ -50,20 +50,6 @@ require_once("panel@pichling/conexion/funciones.php");
             });
         </script>
 
-        <!-- BANNER JUGADORES -->
-        <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/neutral_light/skin.min.css" />
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="libs/swipe-effect-slider/js/jquery-1.5.2.min.js"></script>
-        <script src="libs/swipe-effect-slider/js/pe.kenburns/jquery.pixelentity.kenburnsSlider.min.js"></script>
-        <script>
-        var jBanJug=jQuery.noConflict();
-        jBanJug(document).on("ready", startBannerJugador(jBanJug));
-
-        function startBannerJugador(datoJQ){
-            datoJQ(".peKenBurns").peKenburnsSlider();
-        }
-        </script>
-
         <!-- LISTA JUGADORES -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script>
@@ -128,6 +114,19 @@ require_once("panel@pichling/conexion/funciones.php");
         function OcultarEntrevista(){
             jLisJug("#cerrar-contenido").addClass("ocultar");
             jLisJug("#lista-entrevista").slideUp(1000);
+        }
+        </script>
+
+        <!-- BANNER JUGADORES -->
+        <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/neutral_light/skin.min.css" />
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="libs/swipe-effect-slider/js/pe.kenburns/jquery.pixelentity.kenburnsSlider.min.js"></script>
+        <script>
+        var jBanJug=jQuery.noConflict();
+        jBanJug(document).on("ready", startBannerJugador);
+
+        function startBannerJugador(datoJQ){
+            jBanJug(".peKenBurns").peKenburnsSlider();
         }
         </script>
 
