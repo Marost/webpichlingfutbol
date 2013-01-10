@@ -118,14 +118,14 @@ require_once("panel@pichling/conexion/funciones.php");
         </script>
 
         <!-- BANNER JUGADORES -->
-        <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/neutral_light/skin.min.css" />
+        <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/neutral/skin.min.css" />
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="libs/swipe-effect-slider/js/pe.kenburns/jquery.pixelentity.kenburnsSlider.min.js"></script>
         <script>
         var jBanJug=jQuery.noConflict();
         jBanJug(document).on("ready", startBannerJugador);
 
-        function startBannerJugador(datoJQ){
+        function startBannerJugador(){
             jBanJug(".peKenBurns").peKenburnsSlider();
         }
         </script>
@@ -173,7 +173,7 @@ require_once("panel@pichling/conexion/funciones.php");
 
                     <div id="slider">
 
-                        <div class="peKenBurns" data-controls="over" data-mode="kb" data-logo="disabled" data-shadow="disabled">
+                        <div class="peKenBurns" data-mode="swipe" data-logo="disabled" data-controls="inner" data-shadow="disabled">
                             <div data-thumb="imagenes/slider/img1.jpg">
                                 <img src="imagenes/slider/img1.jpg" alt="Banner Image 1" />
                             </div>
