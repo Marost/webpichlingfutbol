@@ -171,26 +171,28 @@ require_once("panel@pichling/conexion/funciones.php");
 
                 <section id="main-slider">
 
-                    <div id="slider" class="peKenBurns" data-controls="over" data-logo="disabled" data-shadow="disabled">
+                    <div id="slider">
 
-                        <div data-thumb="imagenes/slider/img1.jpg">
-                            <img src="imagenes/slider/img1.jpg" alt="Banner Image 1" />
-                        </div>
+                        <div class="peKenBurns" data-controls="over" data-mode="kb" data-logo="disabled" data-shadow="disabled">
+                            <div data-thumb="imagenes/slider/img1.jpg">
+                                <img src="imagenes/slider/img1.jpg" alt="Banner Image 1" />
+                            </div>
 
-                        <div data-thumb="imagenes/slider/img2.jpg">
-                            <img src="imagenes/slider/img2.jpg" alt="Banner Image 1" />
-                        </div>
+                            <div data-thumb="imagenes/slider/img2.jpg">
+                                <img src="imagenes/slider/img2.jpg" alt="Banner Image 1" />
+                            </div>
 
-                        <div data-thumb="imagenes/slider/img3.jpg">
-                            <img src="imagenes/slider/img3.jpg" alt="Banner Image 1" />
-                        </div>
+                            <div data-thumb="imagenes/slider/img3.jpg">
+                                <img src="imagenes/slider/img3.jpg" alt="Banner Image 1" />
+                            </div>
 
-                        <div data-thumb="imagenes/slider/img4.jpg">
-                            <img src="imagenes/slider/img4.jpg" alt="Banner Image 1" />
-                        </div>
+                            <div data-thumb="imagenes/slider/img4.jpg">
+                                <img src="imagenes/slider/img4.jpg" alt="Banner Image 1" />
+                            </div>
 
-                        <div data-thumb="imagenes/slider/img5.jpg">
-                            <img src="imagenes/slider/img5.jpg" alt="Banner Image 1" />
+                            <div data-thumb="imagenes/slider/img5.jpg">
+                                <img src="imagenes/slider/img5.jpg" alt="Banner Image 1" />
+                            </div>        
                         </div>
 
                     </div>
