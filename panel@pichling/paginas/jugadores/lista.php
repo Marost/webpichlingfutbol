@@ -5,7 +5,7 @@ require_once("../../conexion/funciones.php");
 //require_once("../../conexion/verificar_sesion.php");
 
 //JUGADORES
-$rst_jugadores=mysql_query("SELECT * FROM pf_jugadores ORDER BY nombre ASC;", $conexion);
+$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY nombre ASC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

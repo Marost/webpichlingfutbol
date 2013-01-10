@@ -35,8 +35,7 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
     <div class="secNav">
         <div class="secWrapper">
             <div class="secTop">
-                <div class="balance">
-                    
+                <div class="balance">                    
                 </div>
             </div>
             
@@ -134,7 +133,7 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
                         <div class="grid9">
                             <select data-placeholder="Selecciona una opción..." class="select" tabindex="2">
                                 <option value=""></option> 
-                                <?php while($fila_posicion_fija=mysql_query($rst_posicion_fija)){
+                                <?php while($fila_posicion_fija=mysql_fetch_array($rst_posicion_fija)){
                                         $posicion_id=$fila_posicion_fija["id"];
                                         $posicion_posicion=$fila_posicion_fija["posicion"];
                                 ?>

@@ -75,8 +75,7 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
     <div class="secNav">
         <div class="secWrapper">
             <div class="secTop">
-                <div class="balance">
-                    
+                <div class="balance">                    
                 </div>
             </div>
             
@@ -131,7 +130,7 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
 
                     <div class="formRow">
                         <div class="grid3"><label>Fecha de Nacimiento:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_fecha_nac; ?>" /><span class="note">99/99/9999</span></div>
+                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_fecha_nac; ?>" /></div>
                     </div>
 
                     <div class="formRow">
@@ -174,7 +173,7 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                         <div class="grid9">
                             <select data-placeholder="Selecciona una opción..." class="select" tabindex="2">
                                 <option value=""></option> 
-                                <?php while($fila_posicion_fija=mysql_query($rst_posicion_fija)){
+                                <?php while($fila_posicion_fija=mysql_fetch_array($rst_posicion_fija)){
                                         $posicion_id=$fila_posicion_fija["id"];
                                         $posicion_posicion=$fila_posicion_fija["posicion"];
 
