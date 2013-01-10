@@ -118,14 +118,28 @@ require_once("panel@pichling/conexion/funciones.php");
         </script>
 
         <!-- BANNER JUGADORES -->
-        <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/neutral/skin.min.css" />
-        <script src="libs/swipe-effect-slider/js/jquery-1.5.2.min.js"></script>
-        <script src="libs/swipe-effect-slider/js/pe.kenburns/jquery.pixelentity.kenburnsSlider.min.js"></script>
+        <link href="libs/allinone_banner/sidebar/allinone_bannerRotator.css" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+        <script src="libs/allinone_banner/sidebar/js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+        <script src="libs/allinone_banner/sidebar/js/allinone_bannerRotator.js" type="text/javascript" charset="utf-8"></script>
+        <!--[if IE]><script src="/libs/allinone_banner/sidebar/js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
         <script>
-        var jBanJug=jQuery.noConflict();
-        jQuery(function(jBanJug){
-            jBanJug(".peKenBurns").peKenburnsSlider()
-        })
+            var jFotOfic=jQuery.noConflict();
+
+            jFotOfic(document).ready(function() {
+                jFotOfic('#slider').allinone_bannerRotator({
+                    skin: 'universal',
+                    width: 580,
+                    height: 360,
+                    numberOfStripes:4,
+                    numberOfRows:5,
+                    numberOfColumns:5,              
+                    showAllControllers:true,
+                    showBottomNav:false,
+                    showCircleTimer:false
+                });
+            });
         </script>
 
     </head>
@@ -169,43 +183,16 @@ require_once("panel@pichling/conexion/funciones.php");
 
                 <section id="main-slider">
 
-                    <div id="slider">
+                    <div id="slider" style="display:none;">
 
-                        <div class="peKenBurns" data-mode="swipe" data-logo="disabled" data-controls="inner" data-shadow="disabled">
-                            <div data-thumb="imagenes/slider/img1.jpg">
-                                <img src="imagenes/slider/img1.jpg" alt="Banner Image 1" />
-                            </div>
-
-                            <div data-thumb="imagenes/slider/img2.jpg">
-                                <img src="imagenes/slider/img2.jpg" alt="Banner Image 1" />
-                            </div>
-
-                            <div data-thumb="imagenes/slider/img3.jpg">
-                                <img src="imagenes/slider/img3.jpg" alt="Banner Image 1" />
-                            </div>
-
-                            <div data-thumb="imagenes/slider/img4.jpg">
-                                <img src="imagenes/slider/img4.jpg" alt="Banner Image 1" />
-                            </div>
-
-                            <div data-thumb="imagenes/slider/img5.jpg">
-                                <img src="imagenes/slider/img5.jpg" alt="Banner Image 1" />
-                            </div>        
-                        </div>
-
-                    </div>
-                    
-                    <div id="slider-oficina" style="display:none;">
                         <ul class="allinone_bannerRotator_list">
-                            <li><img src="imagenes/oficina/img1.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img2.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img3.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img4.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img5.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img6.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img7.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img8.jpg" alt="" /></li>
-                        </ul>            
+                            <li><img src="imagenes/slider/img1.jpg" alt="Banner Image 1" /></li>
+                            <li><img src="imagenes/slider/img2.jpg" alt="Banner Image 1" /></li>
+                            <li><img src="imagenes/slider/img3.jpg" alt="Banner Image 1" /></li>
+                            <li><img src="imagenes/slider/img4.jpg" alt="Banner Image 1" /></li>
+                            <li><img src="imagenes/slider/img5.jpg" alt="Banner Image 1" /></li>
+                        </ul>
+
                     </div>
 
                 </section>
