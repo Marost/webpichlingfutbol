@@ -25,7 +25,7 @@ require_once("panel@pichling/conexion/funciones.php");
         <!-- MODERNIZR -->
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 
-        <!-- BANNER -->
+        <!-- BANNER OFICINA -->
         <link href="libs/allinone_banner/sidebar/allinone_bannerRotator.css" rel="stylesheet" type="text/css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
@@ -49,6 +49,11 @@ require_once("panel@pichling/conexion/funciones.php");
                 });
             });
         </script>
+
+        <!-- BANNER JUGADORES -->
+        <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/neutral_light/skin.min.css" />
+        <script src="libs/swipe-effect-slider/js/jquery-1.5.2.min.js"></script>
+        <script src="libs/swipe-effect-slider/js/pe.kenburns/jquery.pixelentity.kenburnsSlider.min.js"></script>
 
         <!-- LISTA JUGADORES -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -157,10 +162,29 @@ require_once("panel@pichling/conexion/funciones.php");
             <div class="main wrapper clearfix">
 
                 <section id="main-slider">
-                    <div id="slider">
-                        <ul>
-                            <li><img class="borde-redondo10" src="imagenes/slider/img1.jpg" width="580"></li>
-                        </ul>
+
+                    <div id="slider" class="peKenBurns" data-controls="over" data-logo="disabled" data-shadow="disabled">
+
+                        <div data-thumb="imagenes/slider/img1.jpg">
+                            <img src="imagenes/slider/img1.jpg" alt="Banner Image 1" />
+                        </div>
+
+                        <div data-thumb="imagenes/slider/img2.jpg">
+                            <img src="imagenes/slider/img2.jpg" alt="Banner Image 1" />
+                        </div>
+
+                        <div data-thumb="imagenes/slider/img3.jpg">
+                            <img src="imagenes/slider/img3.jpg" alt="Banner Image 1" />
+                        </div>
+
+                        <div data-thumb="imagenes/slider/img4.jpg">
+                            <img src="imagenes/slider/img4.jpg" alt="Banner Image 1" />
+                        </div>
+
+                        <div data-thumb="imagenes/slider/img5.jpg">
+                            <img src="imagenes/slider/img5.jpg" alt="Banner Image 1" />
+                        </div>
+
                     </div>
                     
                     <div id="slider-oficina" style="display:none;">
