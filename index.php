@@ -123,11 +123,9 @@ require_once("panel@pichling/conexion/funciones.php");
         <script src="libs/swipe-effect-slider/js/pe.kenburns/jquery.pixelentity.kenburnsSlider.min.js"></script>
         <script>
         var jBanJug=jQuery.noConflict();
-        jBanJug(document).on("ready", startBannerJugador);
-
-        function startBannerJugador(){
-            jBanJug(".peKenBurns").peKenburnsSlider();
-        }
+        jQuery(function(jBanJug){
+            jBanJug(".peKenBurns").peKenburnsSlider()
+        })
         </script>
 
     </head>
