@@ -35,6 +35,9 @@ $rst_empresa=mysql_query("SELECT * FROM ".$tabla_suf."_empresa WHERE id=1;", $co
 $fila_empresa=mysql_fetch_array($rst_empresa);
 $web=$fila_empresa["web"];
 
+//URL DE ARCHIVOS
+$url_admin=$web."".$carpeta_admin."/";
+
 if ($_SESSION["user-".$sesion_pre.""]<>""){
 	$usuario_user=$_SESSION["user-".$sesion_pre.""];
 	$usuario_nombre=$_SESSION["user_nombre-".$sesion_pre.""];
