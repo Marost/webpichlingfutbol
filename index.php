@@ -125,10 +125,10 @@ require_once("panel@pichling/conexion/funciones.php");
         <script src="libs/allinone_banner/sidebar/js/allinone_bannerRotator.js" type="text/javascript" charset="utf-8"></script>
         <!--[if IE]><script src="/libs/allinone_banner/sidebar/js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
         <script>
-            var jFotOfic=jQuery.noConflict();
+            var jBanJug=jQuery.noConflict();
 
-            jFotOfic(document).ready(function() {
-                jFotOfic('#slider').allinone_bannerRotator({
+            jBanJug(document).ready(function() {
+                jBanJug('#slider').allinone_bannerRotator({
                     skin: 'universal',
                     width: 580,
                     height: 360,
@@ -184,15 +184,26 @@ require_once("panel@pichling/conexion/funciones.php");
                 <section id="main-slider">
 
                     <div id="slider" style="display:none;">
-
                         <ul class="allinone_bannerRotator_list">
-                            <li><img src="imagenes/slider/img1.jpg" alt="Banner Image 1" /></li>
-                            <li><img src="imagenes/slider/img2.jpg" alt="Banner Image 1" /></li>
-                            <li><img src="imagenes/slider/img3.jpg" alt="Banner Image 1" /></li>
-                            <li><img src="imagenes/slider/img4.jpg" alt="Banner Image 1" /></li>
-                            <li><img src="imagenes/slider/img5.jpg" alt="Banner Image 1" /></li>
-                        </ul>
-
+                            <li><img src="imagenes/slider/img1.jpg" alt="" /></li>
+                            <li><img src="imagenes/slider/img2.jpg" alt="" /></li>
+                            <li><img src="imagenes/slider/img3.jpg" alt="" /></li>
+                            <li><img src="imagenes/slider/img4.jpg" alt="" /></li>
+                            <li><img src="imagenes/slider/img5.jpg" alt="" /></li>
+                        </ul>            
+                    </div>
+                    
+                    <div id="slider-oficina" style="display:none;">
+                        <ul class="allinone_bannerRotator_list">
+                            <li><img src="imagenes/oficina/img1.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img2.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img3.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img4.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img5.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img6.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img7.jpg" alt="" /></li>
+                            <li><img src="imagenes/oficina/img8.jpg" alt="" /></li>
+                        </ul>            
                     </div>
 
                 </section>
