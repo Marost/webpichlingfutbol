@@ -52,6 +52,7 @@ require_once("panel@pichling/conexion/funciones.php");
 
         <!-- BANNER JUGADORES -->
         <link rel="stylesheet" href="libs/swipe-effect-slider/js/pe.kenburns/themes/neutral_light/skin.min.css" />
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="libs/swipe-effect-slider/js/jquery-1.5.2.min.js"></script>
         <script src="libs/swipe-effect-slider/js/pe.kenburns/jquery.pixelentity.kenburnsSlider.min.js"></script>
         <script>
