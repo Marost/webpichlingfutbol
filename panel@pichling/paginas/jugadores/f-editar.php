@@ -180,10 +180,10 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
 
                                         if ($nota_posicion==$posicion_id){
                                 ?>
-                                <option selected="selected" value="<?php echo $posicion_id ?>"><?php echo $posicion_posicion; ?></option>
+                                <option selected="selected" value="<?php echo $posicion_id; ?>"><?php echo $posicion_posicion; ?></option>
                                 <?php }else{ ?>
-                                <option value="<?php echo $posicion_id ?>"><?php echo $posicion_posicion; ?></option>
-                                <?php } ?>
+                                <option value="<?php echo $posicion_id; ?>"><?php echo $posicion_posicion; ?></option>
+                                <?php }} ?>
                             </select>
                         </div>             
                     </div>
