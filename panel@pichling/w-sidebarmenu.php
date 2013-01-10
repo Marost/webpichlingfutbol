@@ -1,7 +1,7 @@
 <div class="mainNav">
     <div class="user">
         <a title="" class="leftUserDrop">
-            <img src="images/user.png" alt="" /><span><strong>3</strong></span></a><span>Eugene</span>
+            <img src="<?php echo $url_admin; ?>images/user.png" alt="" /></a><span>Eugene</span>
     </div>
     
     <!-- Main nav -->
