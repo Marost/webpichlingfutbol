@@ -17,6 +17,36 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
 
 <?php require_once("../../w-scripts.php"); ?>
 
+<!-- GUARDAR DATOS -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+var jGuardar=jQuery.noConflict();
+
+jGuardar(document).on("ready", startGuardar);
+
+function startGuardar(){
+    jGuardar("#btn-guardar").on("click", clickGuardar);
+}
+
+function clickGuardar(){
+    var datos = jGuardar('form').serialize();
+    jGuardar("#progressbar").removeClass("displayNone");
+    url = "lsita.php";
+    jGuardar.ajax({
+        type: "POST",
+        url: "s-guardar.php",
+        data: datos,
+        success: function() {
+            jGuardar(location).attr('href',url+"?msj=ok");
+        },
+        error: function(){
+            jGuardar(location).attr('href',url+"?msj=er");
+        }
+    });
+}
+
+</script>
+
 </head>
 
 <body>
@@ -71,7 +101,7 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
     <!-- Main content -->
     <div class="wrapper">
 
-        <form action="" class="main">
+        <form class="main" method="POST" enctype="multipart/form-data">
 
             <fieldset>
                 <div class="widget fluid">
@@ -80,58 +110,58 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
                     
                     <div class="formRow">
                         <div class="grid3"><label>Nombre:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="nombre" /></div>
                     </div>
                     
                     <div class="formRow">
                         <div class="grid3"><label>Apellidos:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="apellidos" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Fecha de Nacimiento:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="fecha_nac" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Nacionalidad:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="nacionalidad" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Posición:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="posicion" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Perfil:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="perfil" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Peso:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="peso" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Estatura:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="estatura" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Club actual:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="club_actual" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Selección:</label></div>
-                        <div class="grid9"><input type="text" name="regular" /></div>
+                        <div class="grid9"><input type="text" name="seleccion" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Posición fija:</label></div>
                         <div class="grid9">
-                            <select data-placeholder="Selecciona una opción..." class="select" tabindex="2">
+                            <select data-placeholder="Selecciona una opción..." name="posicion_fija" class="select" tabindex="2">
                                 <option value=""></option> 
                                 <?php while($fila_posicion_fija=mysql_fetch_array($rst_posicion_fija)){
                                         $posicion_id=$fila_posicion_fija["id"];
@@ -163,14 +193,17 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
-                            <input type="file" class="styled" id="fileInput" />
+                            <input type="file" name="imagen" class="styled" id="fileInput" />
                         </div>
                     </div>
 
                     <div class="formRow">
                         <div class="body" align="center">
                             <a href="lista.php" class="buttonL bBlack">Cancelar</a>
-                            <a href="javascript:;" class="buttonL bGreen">Guardar datos</a>
+                            <a href="javascript:;" id="btn-guardar" class="buttonL bGreen">Guardar datos</a>
+                            <div id="progressbar" class="mr20 floatL displayNone">
+                                <img src="images/elements/loaders/10.gif" style="float: left" alt="" />
+                            </div>
                         </div>
                     </div>
                     
