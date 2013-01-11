@@ -77,15 +77,15 @@ $rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY nomb
             <li><a href="f-agregar.php" title="Agregar" class="tipN"><img src="../../images/icons/middlenav/create.png" alt="" /></a></li>
         </ul>
 
-        <?php if ($mensaje=="ok"): ?>
+        <?php if($mensaje=="ok"){ ?>
         <div class="nNote nSuccess">
             <p>El registro se guardo correctamente</p>
         </div>
-        <?php }elseif ($mensaje=="er") { ?>
+        <?php }elseif($mensaje=="er"){ ?>
         <div class="nNote nFailure">
             <p>Se produjo un error al guardar el registro</p>
         </div>
-        <?php endif ?>
+        <?php } ?>
 
         <!-- Media table sample -->
         <div class="widget">
