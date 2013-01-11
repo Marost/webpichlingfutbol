@@ -30,8 +30,8 @@ function startGuardar(){
 
 function clickGuardar(){
     var datos = jGuardar('form').serialize();
-    jGuardar("#progressbar").removeClass("displayNone");
-    url = "lsita.php";
+    jGuardar(".progressbar").removeClass("displayNone");
+    url = "lista.php";
     jGuardar.ajax({
         type: "POST",
         url: "s-guardar.php",
@@ -45,6 +45,62 @@ function clickGuardar(){
     });
 }
 
+</script>
+
+<script type="text/javascript">
+var jUpload=jQuery.noConflict();
+
+jUpload(document).on("ready", startUpload);
+
+function startUpload(){
+    var uploader = new plupload.Uploader({
+        runtimes : 'html5,html4',
+        browse_button : 'pickfiles',
+        container : 'container',
+        max_file_size : '10mb',
+        url : '../../php/upload.php',
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"}
+        ]
+        //resize : {width : 320, height : 240, quality : 90}
+    });
+
+    $('#uploadfiles').click(function(e) {
+        uploader.start();
+        e.preventDefault();
+    });
+
+    uploader.init();
+
+    uploader.bind('FilesAdded', function(up, files) {
+        $.each(files, function(i, file) {
+            $('#filelist').append(
+                '<div id="' + file.id + '">' +
+                file.name + ' (' + plupload.formatSize(file.size) + ') <b></b>' +
+            '</div>');
+        });
+
+        up.refresh(); // Reposition Flash/Silverlight
+    });
+
+    uploader.bind('UploadProgress', function(up, file) {
+        $('#' + file.id + " b").html(file.percent + "%");
+    });
+
+    uploader.bind('Error', function(up, err) {
+        $('#filelist').append("<div>Error: " + err.code +
+            ", Message: " + err.message +
+            (err.file ? ", File: " + err.file.name : "") +
+            "</div>"
+        );
+
+        up.refresh(); // Reposition Flash/Silverlight
+    });
+
+    uploader.bind('FileUploaded', function(up, file) {
+        $('#' + file.id + " b").html("100%");
+    });
+}
 </script>
 
 </head>
@@ -193,17 +249,21 @@ function clickGuardar(){
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
-                            <input type="file" name="imagen" class="styled" id="fileInput" />
+                            <div id="container">
+                                <div id="filelist">No runtime found.</div>
+                                <br />
+                                <a id="pickfiles" href="#">[Seleccionar archivos]</a>
+                                <a id="uploadfiles" href="#">[Subir archivos]</a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="formRow">
                         <div class="body" align="center">
+                            <img src="../../images/elements/loaders/7s.gif" class="displayNone progressbar">
                             <a href="lista.php" class="buttonL bBlack">Cancelar</a>
                             <a href="javascript:;" id="btn-guardar" class="buttonL bGreen">Guardar datos</a>
-                            <div id="progressbar" class="mr20 floatL displayNone">
-                                <img src="images/elements/loaders/10.gif" style="float: left" alt="" />
-                            </div>
+                            <img src="../../images/elements/loaders/7s.gif" class="displayNone progressbar">
                         </div>
                     </div>
                     

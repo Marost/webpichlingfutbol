@@ -305,7 +305,7 @@ $(function() {
 	$("#uploader").pluploadQueue({
 		runtimes : 'html5,html4',
 		url : 'php/upload.php',
-		max_file_size : '100kb',
+		max_file_size : '10mb',
 		unique_names : true,
 		filters : [
 			{title : "Image files", extensions : "jpg,gif,png"}
