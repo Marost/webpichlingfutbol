@@ -41,7 +41,7 @@ if($_POST['uploader_0_tmpname']<>""){
 	$thumb->adaptiveResize(300,280);
 	$thumb->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 }else{
-	$imagen=="";
+	$imagen="";
 	$imagen_carpeta="";
 }
 

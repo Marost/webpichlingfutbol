@@ -18,7 +18,6 @@ $estatura=$_POST["estatura"];
 $club_actual=$_POST["club_actual"];
 $seleccion=$_POST["seleccion"];
 $posicion_fija=$_POST["posicion_fija"];
-$publicar=$_POST["publicar"];
 
 //POSICION EN LA CANCHA
 if ($_POST["arquero"]<>""){ $p_arquero=$_POST["arquero"]; }else{ $p_arquero=0; }
@@ -33,6 +32,9 @@ if ($_POST["extremo-derecho"]<>""){ $p_extremo_derecho=$_POST["extremo-derecho"]
 if ($_POST["delantero"]<>""){ $p_delantero=$_POST["delantero"]; }else{ $p_delantero=0; }
 if ($_POST["extremo-izquierdo"]<>""){ $p_extremo_izquierdo=$_POST["extremo-izquierdo"]; }else{ $p_extremo_izquierdo=0; }
 
+//PUBLICAR
+if ($_POST["publicar"]<>""){ $publicar=$_POST["publicar"]; }else{ $publicar=0; }
+
 //IMAGEN
 if($_POST['uploader_0_tmpname']<>""){
 	$imagen=$_POST["uploader_0_tmpname"];
@@ -41,7 +43,7 @@ if($_POST['uploader_0_tmpname']<>""){
 	$thumb->adaptiveResize(300,280);
 	$thumb->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 }else{
-	$imagen==$_POST["imagen"];
+	$imagen=$_POST["imagen"];
 	$imagen_carpeta=$_POST["imagen_carpeta"];
 }
 
