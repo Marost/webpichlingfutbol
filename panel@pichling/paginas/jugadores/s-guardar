@@ -59,4 +59,13 @@ if($rst_guardar){
 	$rst_posicion=mysql_query("INSERT INTO ".$tabla_suf."_posicion_cancha (jugador, arquero, lateral_derecho, back_central_derecho, back_central_izquierdo, defensa_central, lateral_izquierdo, volante_derecho, volante_central, volante_izquierdo, extremo_derecho, delantero, extremo_izquierdo) VALUES($jugador_id, $p_arquero, $p_lateral_derecho, $p_back_central_derecho, $p_back_central_izquierdo, $p_defensa_central, $p_lateral_izquierdo, $p_volante_derecho, $p_volante_central, $p_volante_izquierdo, $p_extremo_derecho, $p_delantero, $p_extremo_izquierdo)", $conexion);
 }
 
+if (mysql_errno()!=0){
+	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
+	mysql_close($conexion);
+	header("Location:lista.php?msj=er");
+} else {
+	mysql_close($conexion);
+	header("Location:lista.php?msj=ok");
+}
+
 ?>

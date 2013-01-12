@@ -17,36 +17,7 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
 
 <?php require_once("../../w-scripts.php"); ?>
 
-<!-- GUARDAR DATOS -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-var jGuardar=jQuery.noConflict();
-
-jGuardar(document).on("ready", startGuardar);
-
-function startGuardar(){
-    jGuardar("#btn-guardar").on("click", clickGuardar);
-}
-
-function clickGuardar(){
-    var datos = jGuardar('form').serialize();
-    jGuardar(".progressbar").removeClass("displayNone");
-    url = "lista.php";
-    jGuardar.ajax({
-        type: "POST",
-        url: "s-guardar.php",
-        data: datos,
-        success: function() {
-            jGuardar(location).attr('href',url+"?msj=ok");
-        },
-        error: function(){
-            jGuardar(location).attr('href',url+"?msj=er");
-        }
-    });
-}
-
-</script>
-
+<!-- UPLOAD DE IMAGEN -->
 <script type="text/javascript">
 var jUpload=jQuery.noConflict();
 
@@ -158,7 +129,7 @@ function startUpload(){
     <!-- Main content -->
     <div class="wrapper">
 
-        <form class="main" method="POST" enctype="multipart/form-data">
+        <form class="main" method="POST" action="s-guardar.php">
 
             <fieldset>
                 <div class="widget fluid">
@@ -260,10 +231,8 @@ function startUpload(){
 
                     <div class="formRow">
                         <div class="body" align="center">
-                            <img src="../../images/elements/loaders/7s.gif" class="displayNone progressbar">
                             <a href="lista.php" class="buttonL bBlack">Cancelar</a>
-                            <a href="javascript:;" id="btn-guardar" class="buttonL bGreen">Guardar datos</a>
-                            <img src="../../images/elements/loaders/7s.gif" class="displayNone progressbar">
+                            <input type="submit" class="buttonL bGreen" name="btn-guardar" value="Guardar datos">
                         </div>
                     </div>
                     
