@@ -3,6 +3,11 @@
 require_once("../../conexion/conexion.php");
 require_once("../../conexion/funciones.php");
 //require_once("../../conexion/verificar_sesion.php");
+
+//VARIABLES
+$pub_fecha=date("Y-m-d");
+$pub_hora=date("H:m:s");
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -39,10 +44,10 @@ require_once("../../conexion/funciones.php");
             
             <!-- Sidebar subnav -->
             <ul class="subNav">
-                <li><a href="lista.php" title=""><span class="icos-frames"></span>Entrevistas</a></li>
+                <li><a href="lista.php" class="this" title=""><span class="icos-frames"></span>Entrevistas</a></li>
                 <li><a href="../jugadores/lista.php" title=""><span class="icos-frames"></span>Jugadores</a></li>
                 <li><a href="../noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
-                <li><a href="../lista.php" title="" class="this"><span class="icos-frames"></span>Posiciones</a></li>
+                <li><a href="../lista.php" title="" ><span class="icos-frames"></span>Posiciones</a></li>
             </ul>
             
             <div class="divider"><span></span></div>
@@ -56,7 +61,7 @@ require_once("../../conexion/funciones.php");
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Posiciones</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Entrevistas</span>
 
     </div>
     
@@ -83,7 +88,7 @@ require_once("../../conexion/funciones.php");
 
                     <div class="widget">
                         <div class="whead"><h6>Contenido</h6></div>
-                        <textarea class="ckeditor" name="contenido" id="contenido"></textarea>
+                        <textarea class="ckeditor" name="contenido" /></textarea>
                     </div>
 
                     <div class="formRow">
@@ -97,12 +102,12 @@ require_once("../../conexion/funciones.php");
 
                     <div class="formRow">
                         <div class="grid3"><label>Fecha de publicación:</label></div>
-                        <div class="grid9"><input type="text" class="datepicker" name="pub_fecha" /></div>
+                        <div class="grid4"><input type="text" class="datepicker" name="pub_fecha" value="<?php echo $pub_fecha; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Hora de publicación:</label></div>
-                        <div class="grid9"><input type="text" class="timepicker" name="pub_hora" size="10" />
+                        <div class="grid4"><input type="text" class="timepicker" name="pub_hora" size="10" value="<?php echo $pub_hora; ?>" />
                             <span class="ui-datepicker-append">Utilice la rueda del ratón y el teclado</span></div>
                     </div>
                     
