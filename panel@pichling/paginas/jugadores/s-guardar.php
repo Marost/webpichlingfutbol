@@ -21,18 +21,17 @@ $posicion_fija=$_POST["posicion_fija"];
 $publicar=1;
 
 //POSICION EN LA CANCHA
-$p_arquero=$_POST["arquero"];
-$p_lateral_derecho=$_POST["lateral-derecho"];
-$p_back_derecho=$_POST["back-derecho"];
-$p_back_izquierdo=$_POST["back-izquierdo"];
-$p_lateral_izquierdo=$_POST["lateral-izquierdo"];
-$p_volante_derecho=$_POST["volante-derecho"];
-$p_volante_central=$_POST["volante-central"];
-$p_volante_izquierdo=$_POST["volante-izquierdo"];
-$p_extremo_derecho=$_POST["extremo-derecho"];
-$p_delantero=$_POST["delantero"];
-$p_extremo_izquierdo=$_POST["extremo-izquierdo"];
-
+if ($_POST["arquero"]<>""){ $p_arquero=$_POST["arquero"]; }else{ $p_arquero=0; }
+if ($_POST["lateral-derecho"]<>""){ $p_lateral_derecho=$_POST["lateral-derecho"]; }else{ $p_lateral_derecho=0; }
+if ($_POST["back-derecho"]<>""){ $p_back_derecho=$_POST["back-derecho"]; }else{ $p_back_derecho=0; }
+if ($_POST["back-izquierdo"]<>""){ $p_back_izquierdo=$_POST["back-izquierdo"]; }else{ $p_back_izquierdo=0; }
+if ($_POST["lateral-izquierdo"]<>""){ $p_lateral_izquierdo=$_POST["lateral-izquierdo"]; }else{ $p_lateral_izquierdo=0; }
+if ($_POST["volante-derecho"]<>""){ $p_volante_derecho=$_POST["volante-derecho"]; }else{ $p_volante_derecho=0; }
+if ($_POST["volante-central"]<>""){ $p_volante_central=$_POST["volante-central"]; }else{ $p_volante_central=0; }
+if ($_POST["volante-izquierdo"]<>""){ $p_volante_izquierdo=$_POST["volante-izquierdo"]; }else{ $p_volante_izquierdo=0; }
+if ($_POST["extremo-derecho"]<>""){ $p_extremo_derecho=$_POST["extremo-derecho"]; }else{ $p_arqup_extremo_derechoero=0; }
+if ($_POST["delantero"]<>""){ $p_delantero=$_POST["delantero"]; }else{ $p_delantero=0; }
+if ($_POST["extremo-izquierdo"]<>""){ $p_extremo_izquierdo=$_POST["extremo-izquierdo"]; }else{ $p_extremo_izquierdo=0; }
 
 //IMAGEN O VIDEO
 if($_POST['filelist_0_tmpname']<>""){
