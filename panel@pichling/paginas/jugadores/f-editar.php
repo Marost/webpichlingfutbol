@@ -211,7 +211,9 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
                             <div class="without floatL">
-                                <img src="../../../upload/<?php echo $nota_imagen_carpeta."thumb/".$nota_imagen; ?>" width="100" >
+                                <a href="../../../upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" class="lightbox">
+                                    <img src="../../../upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" width="100" >
+                                </a>
                             </div>
                             <div class="widget floarL width60 margin1020">    
                                 <div id="uploader">Tu navegador no soporta HTML5.</div>
