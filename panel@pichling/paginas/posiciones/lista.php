@@ -55,7 +55,9 @@ function eliminarRegistro(registro) {
             
             <!-- Sidebar subnav -->
             <ul class="subNav">
+                <li><a href="../entrevistas/lista.php" title=""><span class="icos-frames"></span>Entrevistas</a></li>
                 <li><a href="../jugadores/lista.php" title=""><span class="icos-frames"></span>Jugadores</a></li>
+                <li><a href="../noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
                 <li><a href="lista.php" title="" class="this"><span class="icos-frames"></span>Posiciones</a></li>
             </ul>
             
@@ -102,7 +104,7 @@ function eliminarRegistro(registro) {
 
         <!-- Media table sample -->
         <div class="widget">
-            <div class="whead"><h6>Jugadores</h6></div>
+            <div class="whead"><h6>Posiciones</h6></div>
             <table cellpadding="0" cellspacing="0" width="100%" border="0" class="dTable">
                 <thead>
                     <tr>

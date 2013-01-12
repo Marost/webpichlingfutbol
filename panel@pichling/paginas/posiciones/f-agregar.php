@@ -39,7 +39,9 @@ require_once("../../conexion/funciones.php");
             
             <!-- Sidebar subnav -->
             <ul class="subNav">
+                <li><a href="../entrevistas/lista.php" title=""><span class="icos-frames"></span>Entrevistas</a></li>
                 <li><a href="../jugadores/lista.php" title=""><span class="icos-frames"></span>Jugadores</a></li>
+                <li><a href="../noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
                 <li><a href="lista.php" title="" class="this"><span class="icos-frames"></span>Posiciones</a></li>
             </ul>
             
@@ -75,7 +77,7 @@ require_once("../../conexion/funciones.php");
                     <div class="whead"><h6>Agregar</h6></div>
                     
                     <div class="formRow">
-                        <div class="grid3"><label>Posición:</label></div>
+                        <div class="grid3"><label>Nombre:</label></div>
                         <div class="grid9"><input type="text" name="nombre" /></div>
                     </div>
                     

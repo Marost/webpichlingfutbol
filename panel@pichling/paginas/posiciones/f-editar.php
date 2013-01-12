@@ -50,7 +50,9 @@ $nota_nombre=$fila_nota["posicion"];
             
             <!-- Sidebar subnav -->
             <ul class="subNav">
+                <li><a href="../entrevistas/lista.php" title=""><span class="icos-frames"></span>Entrevistas</a></li>
                 <li><a href="../jugadores/lista.php" title=""><span class="icos-frames"></span>Jugadores</a></li>
+                <li><a href="../noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
                 <li><a href="lista.php" title="" class="this"><span class="icos-frames"></span>Posiciones</a></li>
             </ul>
             
@@ -83,7 +85,7 @@ $nota_nombre=$fila_nota["posicion"];
             <fieldset>
                 <div class="widget fluid">
                     
-                    <div class="whead"><h6>Posición</h6></div>
+                    <div class="whead"><h6>Agregar</h6></div>
                     
                     <div class="formRow">
                         <div class="grid3"><label>Nombre:</label></div>

@@ -43,7 +43,9 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
             
             <!-- Sidebar subnav -->
             <ul class="subNav">
+                <li><a href="../entrevistas/lista.php" title=""><span class="icos-frames"></span>Entrevistas</a></li>
                 <li><a href="lista.php" title="" class="this"><span class="icos-frames"></span>Jugadores</a></li>
+                <li><a href="../noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
                 <li><a href="../posiciones/lista.php" title=""><span class="icos-frames"></span>Posiciones</a></li>
             </ul>
             
