@@ -135,7 +135,7 @@ function eliminarRegistro(registro) {
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
                                 <ul class="dropdown-menu pull-right">
                                     <li>
-                                        <a onclick="eliminarRegistro(<?php echo $jugadores_id: ?>);" href="javascript:;">
+                                        <a onclick="eliminarRegistro(<?php echo $jugadores_id; ?>);" href="javascript:;">
                                         <span class="icos-trash"></span>Eliminar</a></li>
                                     <li><a href="f-editar.php?id=<?php echo $jugadores_id; ?>" class="">
                                         <span class="icos-pencil"></span>Modificar</a></li>
