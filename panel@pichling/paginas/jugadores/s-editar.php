@@ -18,7 +18,7 @@ $estatura=$_POST["estatura"];
 $club_actual=$_POST["club_actual"];
 $seleccion=$_POST["seleccion"];
 $posicion_fija=$_POST["posicion_fija"];
-$publicar=1;
+$publicar=$_POST["publicar"];
 
 //POSICION EN LA CANCHA
 if ($_POST["arquero"]<>""){ $p_arquero=$_POST["arquero"]; }else{ $p_arquero=0; }
@@ -41,43 +41,41 @@ if($_POST['uploader_0_tmpname']<>""){
 	$thumb->adaptiveResize(300,280);
 	$thumb->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 }else{
-	$imagen=="";
-	$imagen_carpeta="";
+	$imagen==$_POST["imagen"];
+	$imagen_carpeta=$_POST["imagen_carpeta"];
 }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_jugadores (url, nombre, apellidos, fecha_nac, nacionalidad, posicion, perfil, peso, estatura, club_actual, posicion_fija, publicar, seleccion, imagen, imagen_carpeta) VALUES('$url', '$nombre', '$apellidos', '$fecha_nac', '$nacionalidad', '$posicion', '$perfil', '$peso', '$estatura', '$club_actual', '$posicion_fija', $publicar, '$seleccion', '$imagen', '$imagen_carpeta');",$conexion);
+$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_jugadores SET url='$url', 
+	nombre='$nombre', 
+	apellidos='$apellidos', 
+	fecha_nac='$fecha_nac', 
+	nacionalidad='$nacionalidad', 
+	posicion='$posicion', 
+	perfil='$perfil', 
+	peso='$peso', 
+	estatura='$estatura', 
+	club_actual='$club_actual', 
+	posicion_fija='$posicion_fija', 
+	publicar=$publicar, 
+	seleccion='$seleccion', 
+	imagen='$imagen', 
+	imagen_carpeta='$imagen_carpeta' WHERE id=$jugador_id;",$conexion);
 
 if($rst_guardar){
 
-	//EXTRAER ID DE JUGADOR
-	$rst_id=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY id DESC LIMIT 1;", $conexion);
-	$fila_id=mysql_fetch_array($rst_id);
-	$jugador_id=$fila_id["id"];
-
-	$rst_posicion=mysql_query("INSERT INTO ".$tabla_suf."_posicion_cancha (jugador, 
-		arquero, 
-		lateral_derecho, 
-		back_central_derecho, 
-		back_central_izquierdo, 
-		lateral_izquierdo, 
-		volante_derecho, 
-		volante_central, 
-		volante_izquierdo, 
-		extremo_derecho, 
-		delantero, 
-		extremo_izquierdo) VALUES ($jugador_id, 
-		$p_arquero, 
-		$p_lateral_derecho, 
-		$p_back_derecho, 
-		$p_back_izquierdo,
-		$p_lateral_izquierdo, 
-		$p_volante_derecho, 
-		$p_volante_central, 
-		$p_volante_izquierdo, 
-		$p_extremo_derecho, 
-		$p_delantero, 
-		$p_extremo_izquierdo)", $conexion);
+	$rst_posicion=mysql_query("UPDATE ".$tabla_suf."_posicion_cancha SET (, 
+		arquero=$p_arquero,, 
+		lateral_derecho=$p_lateral_derecho, 
+		back_central_derecho=$p_back_derecho, 
+		back_central_izquierdo=$p_back_izquierdo, 
+		lateral_izquierdo=$p_lateral_izquierdo, 
+		volante_derecho=$p_volante_derecho, 
+		volante_central=$p_volante_central, 
+		volante_izquierdo=$p_volante_izquierdo, 
+		extremo_derecho=$p_extremo_derecho, 
+		delantero=$p_delantero, 
+		extremo_izquierdo=$p_extremo_izquierdo WHERE jugador=$jugador_id;", $conexion);
 }
 
 if (mysql_errno()!=0){

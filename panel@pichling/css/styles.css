@@ -66,6 +66,8 @@ img { border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; }
 .displayNone { display: none; }
 .display { display: block!important; }
 .fullwidth { width: 100%; }
+.width60 { width: 60%; float: left; }
+.margin1020 { margin: 10px 20px; }
 
 .thisRow { background: #f3f3e8!important; }
 .hand { cursor: pointer; }
@@ -937,7 +939,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', end
 
 /* === Widget and widget head elements === */
 
-.widget { background: #f7f7f7; border: 1px solid #cdcdcd; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; box-shadow: 0 2px 2px -2px #ccc; position: relative; }
+.widget { background: #f7f7f7; border: 1px solid #cdcdcd; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; box-shadow: 0 2px 2px -2px #ccc; position: relative; margin-top: 35px; }
 .widget > [class*="whead"] { border-bottom: 1px solid #cdcdcd; box-shadow: 0 1px 0 #fff; -webkit-box-shadow: 0 1px 0 #fff; -moz-box-shadow: 0 1px 0 #fff; text-shadow: 0 1px #fff; -webkit-border-top-right-radius: 3px; -webkit-border-top-left-radius: 3px; -moz-border-radius-topright: 3px; -moz-border-radius-topleft: 3px;  position: relative; }
 .whead a { color: #636363; }
 .widget > [class*="whead"] h6 { float: left; display: block; padding: 8px 14px 7px 14px; font-size: 12px; font-weight: bold;  }

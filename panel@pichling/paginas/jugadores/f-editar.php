@@ -112,7 +112,7 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
     <!-- Main content -->
     <div class="wrapper">
 
-        <form action="" class="main">
+        <form id="submit-form" class="main" method="POST" action="s-editar.php">
 
             <fieldset>
                 <div class="widget fluid">
@@ -208,11 +208,23 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
-                            <div class="widget">    
-                                <div id="uploader">Tu navegador no soporta HTML5.</div>                    
+                            <div class="without floatL">
+                                <img src="../../../upload/<?php echo $nota_imagen_carpeta."thumb/".$nota_imagen; ?>" width="100" >
+                            </div>
+                            <div class="widget floarL width60">    
+                                <div id="uploader">Tu navegador no soporta HTML5.</div>
+                                <input type="hidden" name="imagen" value="<?php echo $nota_imagen; ?>">
+                                <input type="hidden" name="imagen_carpeta" value="<?php echo $nota_imagen_carpeta; ?>">
                             </div>
                         </div>
                     </div>
+
+                    <div class="formRow">
+                            <div class="grid3"><label>Publicar: </label></div>
+                            <div class="grid9 enabled_disabled">
+                                <div class="floatL mr10"><input type="checkbox" id="check4" <?php if($publicar==1){ ?>checked<?php  ?> name="publicar" /></div>
+                            </div>
+                        </div>
 
                     <div class="formRow">
                         <div class="body" align="center">

@@ -20,6 +20,25 @@ $rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY nomb
 
 <?php require_once("../../w-scripts.php"); ?>
 
+<!-- ELIMINAR  -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+var jEliminar=jQuery.noConflict();
+jEliminar(document).on("ready", startEliminar);
+
+function startEliminar(){
+    jEliminar(".eliminar").on("click", clickEliminar);
+}
+
+function clickEliminar(datos){
+    var idEliminar=datos.currentTarget.id;
+    if(confirm("¿Está seguro de borrar este registro?")) {
+        document.location.href="s-eliminar.php?id="+idEliminar;
+        }
+    }
+}
+</script>
+
 </head>
 
 <body>
@@ -83,7 +102,11 @@ $rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY nomb
         </div>
         <?php }elseif($mensaje=="er"){ ?>
         <div class="nNote nFailure">
-            <p>Se produjo un error al guardar el registro</p>
+            <p>Se produjo un error</p>
+        </div>
+        <?php }elseif($mensaje=="el"){ ?>
+        <div class="nNote nSuccess">
+            <p>El registro se elimino correctamente</p>
         </div>
         <?php } ?>
 
@@ -121,8 +144,10 @@ $rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY nomb
                             <div class="btn-group" style="display: inline-block; margin-bottom: -4px;">
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
                                 <ul class="dropdown-menu pull-right">
-                                    <li><a href="#"><span class="icos-trash"></span>Eliminar</a></li>
-                                    <li><a href="f-editar.php?id=<?php echo $jugadores_id; ?>" class=""><span class="icos-pencil"></span>Modificar</a></li>
+                                    <li><a id="<?php echo $jugadores_id; ?>" href="javascript:;" class="eliminar">
+                                        <span class="icos-trash"></span>Eliminar</a></li>
+                                    <li><a href="f-editar.php?id=<?php echo $jugadores_id; ?>" class="">
+                                        <span class="icos-pencil"></span>Modificar</a></li>
                                     <li><a href="#" class=""><span class="icos-photos"></span>Fotos</a></li>
                                     <li><a href="#" class=""><span class="icos-youtube"></span>Videos</a></li>
                                 </ul>
