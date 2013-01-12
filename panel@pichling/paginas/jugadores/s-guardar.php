@@ -1,8 +1,8 @@
 <?php
 //session_start();
 include("../../conexion/conexion.php");
-include("../../../conexion/funciones.php");
-require_once('../../plugins/thumbs/ThumbLib.inc.php');
+include("../../conexion/funciones.php");
+require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 
 //DECLARACION DE VARIABLES
 $nombre=$_POST["nombre"];
