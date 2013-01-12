@@ -66,8 +66,7 @@ $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_jugadores SET url='$url',
 
 if($rst_guardar){
 
-	$rst_posicion=mysql_query("UPDATE ".$tabla_suf."_posicion_cancha SET (, 
-		arquero=$p_arquero,, 
+	$rst_posicion=mysql_query("UPDATE ".$tabla_suf."_posicion_cancha SET arquero=$p_arquero,
 		lateral_derecho=$p_lateral_derecho, 
 		back_central_derecho=$p_back_derecho, 
 		back_central_izquierdo=$p_back_izquierdo, 
