@@ -220,11 +220,11 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                     </div>
 
                     <div class="formRow">
-                            <div class="grid3"><label>Publicar: </label></div>
-                            <div class="grid9 enabled_disabled">
-                                <div class="floatL mr10"><input type="checkbox" id="check4" <?php if($nota_publicar==1){ ?>checked<?php } ?> value="1" name="publicar" /></div>
-                            </div>
+                        <div class="grid3"><label>Publicar: </label></div>
+                        <div class="grid9 enabled_disabled">
+                            <div class="floatL mr10"><input type="checkbox" id="check4" <?php if($nota_publicar==1){ ?>checked<?php } ?> value="1" name="publicar" /></div>
                         </div>
+                    </div>
 
                     <div class="formRow">
                         <div class="body" align="center">
