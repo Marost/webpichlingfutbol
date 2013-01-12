@@ -58,65 +58,6 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
 
 <?php require_once("../../w-scripts.php"); ?>
 
-<!-- UPLOAD DE IMAGEN -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-var jUpload=jQuery.noConflict();
-
-jUpload(document).on("ready", startUpload);
-
-function startUpload(){
-    var uploader = new plupload.Uploader({
-        runtimes : 'html5,html4',
-        browse_button : 'pickfiles',
-        container : 'container',
-        max_file_size : '10mb',
-        url : '../../php/upload.php',
-        unique_names : true,
-        filters : [
-            {title : "Image files", extensions : "jpg,gif,png"}
-        ]
-        //resize : {width : 320, height : 240, quality : 90}
-    });
-
-    jUpload('#uploadfiles').click(function(e) {
-        uploader.start();
-        e.preventDefault();
-    });
-
-    uploader.init();
-
-    uploader.bind('FilesAdded', function(up, files) {
-        jUpload.each(files, function(i, file) {
-            jUpload('#filelist').append(
-                '<div id="' + file.id + '">' +
-                file.name + ' (' + plupload.formatSize(file.size) + ') <b></b>' +
-            '</div>');
-        });
-
-        up.refresh(); // Reposition Flash/Silverlight
-    });
-
-    uploader.bind('UploadProgress', function(up, file) {
-        jUpload('#' + file.id + " b").html(file.percent + "%");
-    });
-
-    uploader.bind('Error', function(up, err) {
-        jUpload('#filelist').append("<div>Error: " + err.code +
-            ", Message: " + err.message +
-            (err.file ? ", File: " + err.file.name : "") +
-            "</div>"
-        );
-
-        up.refresh(); // Reposition Flash/Silverlight
-    });
-
-    uploader.bind('FileUploaded', function(up, file) {
-        jUpload('#' + file.id + " b").html("100%");
-    });
-}
-</script>
-
 </head>
 
 <body>
@@ -267,12 +208,8 @@ function startUpload(){
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
-                            <div id="container">
-                                <div id="filelist"></div>
-                                <a id="pickfiles" href="#">[Seleccionar archivos]</a>
-                                <a id="uploadfiles" href="#">[Subir archivos]</a>
-                                <input type="hidden" name="imagen" value="<?php echo $nota_imagen; ?>">
-                                <input type="hidden" name="imagen_carpeta" value="<?php echo $nota_imagen_carpeta; ?>">
+                            <div class="widget">    
+                                <div id="uploader">Tu navegador no soporta HTML5.</div>                    
                             </div>
                         </div>
                     </div>
@@ -280,7 +217,7 @@ function startUpload(){
                     <div class="formRow">
                         <div class="body" align="center">
                             <a href="lista.php" class="buttonL bBlack">Cancelar</a>
-                            <a href="javascript:;" class="buttonL bGreen">Guardar datos</a>
+                            <input type="submit" class="buttonL bGreen" name="btn-guardar" value="Guardar datos">
                         </div>
                     </div>
                     

@@ -17,54 +17,6 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
 
 <?php require_once("../../w-scripts.php"); ?>
 
-<!-- UPLOAD DE IMAGEN -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-var jUpload=jQuery.noConflict();
-
-jUpload(document).on("ready", startUpload);
-
-function startUpload(){
-    var uploader = new plupload.Uploader({
-        runtimes : 'html5,html4',
-        browse_button : 'pickfiles',
-        container : 'container',
-        max_file_size : '10mb',
-        url : '../../php/upload.php',
-        unique_names : true,
-        filters : [
-            {title : "Image files", extensions : "jpg,gif,png"}
-        ]
-        //resize : {width : 320, height : 240, quality : 90}
-    });
-
-    uploader.bind('FilesAdded', function(up, files) {
-        $.each(files, function(i, file) {
-            $('#filelist').append(
-                '<div id="' + file.id + '">' +
-                file.name + ' (' + plupload.formatSize(file.size) + ') <b></b>' +
-            '</div>');
-        });
-    });
-    
-    uploader.bind('UploadFile', function(up, file) {
-        $('<input type="hidden" name="file-' + file.id + '" value="' + file.name + '" />')
-            .appendTo('#submit-form');
-    });
-
-    uploader.bind('UploadProgress', function(up, file) {
-        $('#' + file.id + " b").html(file.percent + "%");
-    });
-
-    $('#uploadfiles').click(function(e) {
-        uploader.start();
-        e.preventDefault();
-    });
-
-    uploader.init();
-}
-</script>
-
 </head>
 
 <body>
@@ -211,10 +163,8 @@ function startUpload(){
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
-                            <div id="container">
-                                <div id="filelist"></div>
-                                <a id="pickfiles" href="#">[Seleccionar archivos]</a>
-                                <a id="uploadfiles" href="#">[Subir archivos]</a>
+                            <div class="widget">    
+                                <div id="uploader">Tu navegador no soporta HTML5.</div>                    
                             </div>
                         </div>
                     </div>

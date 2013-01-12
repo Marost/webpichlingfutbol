@@ -185,7 +185,7 @@ div.jGrowl div.jGrowl-closer { padding-top: 4px; padding-bottom: 4px; cursor: po
 .plupload_wrapper { font-size: 11px;; width: 100%; }
 .plupload_container input { border: 1px solid #DDD; font-size: 11px; width: 98%; }
 .plupload_filelist { margin: 0; padding: 0; list-style: none; }
-.plupload_scroll .plupload_filelist { height: 185px; overflow-y: scroll; }
+.plupload_scroll .plupload_filelist {  }
 .plupload_filelist li { padding: 10px 12px; background: whiteSmoke; border-bottom: 1px solid #E7E7E7; }
 .plupload_filelist li:hover { background-color: #f8f8f8; }
 .plupload_filelist_header, .plupload_filelist_footer { background: #EFEFEF; padding: 3px 0 3px 12px; color: #878787; }
