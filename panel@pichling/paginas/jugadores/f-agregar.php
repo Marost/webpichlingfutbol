@@ -130,7 +130,7 @@ function startUpload(){
     <!-- Main content -->
     <div class="wrapper">
 
-        <form class="main" method="POST" action="s-guardar.php">
+        <form class="main" method="POST" action="upload-imagen.php">
 
             <fieldset>
                 <div class="widget fluid">
