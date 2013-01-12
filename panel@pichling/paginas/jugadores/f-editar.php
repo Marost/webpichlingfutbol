@@ -112,7 +112,7 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
     <!-- Main content -->
     <div class="wrapper">
 
-        <form id="submit-form" class="main" method="POST" action="s-editar.php?id=$id_url">
+        <form id="submit-form" class="main" method="POST" action="s-editar.php?id=<?php echo $id_url; ?>">
 
             <fieldset>
                 <div class="widget fluid">
