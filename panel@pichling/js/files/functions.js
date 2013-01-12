@@ -309,8 +309,9 @@ $(function() {
 		chunk_size : '1mb',
 		unique_names : true,
 		dragdrop: false,
+		resize: {width: 600, height: 380, quality: 80},
 		filters : [
-			{title : "Image files", extensions : "jpg,gif,png"}
+			{title : "Image files", extensions : "jpg,gif,png,jpeg"}
 		]
 	});
 	
