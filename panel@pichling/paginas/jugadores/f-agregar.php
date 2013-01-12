@@ -18,6 +18,7 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
 <?php require_once("../../w-scripts.php"); ?>
 
 <!-- UPLOAD DE IMAGEN -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 var jUpload=jQuery.noConflict();
 
@@ -37,7 +38,7 @@ function startUpload(){
         //resize : {width : 320, height : 240, quality : 90}
     });
 
-    $('#uploadfiles').click(function(e) {
+    jUpload('#uploadfiles').click(function(e) {
         uploader.start();
         e.preventDefault();
     });
@@ -45,8 +46,8 @@ function startUpload(){
     uploader.init();
 
     uploader.bind('FilesAdded', function(up, files) {
-        $.each(files, function(i, file) {
-            $('#filelist').append(
+        jUpload.each(files, function(i, file) {
+            jUpload('#filelist').append(
                 '<div id="' + file.id + '">' +
                 file.name + ' (' + plupload.formatSize(file.size) + ') <b></b>' +
             '</div>');
@@ -56,11 +57,11 @@ function startUpload(){
     });
 
     uploader.bind('UploadProgress', function(up, file) {
-        $('#' + file.id + " b").html(file.percent + "%");
+        jUpload('#' + file.id + " b").html(file.percent + "%");
     });
 
     uploader.bind('Error', function(up, err) {
-        $('#filelist').append("<div>Error: " + err.code +
+        jUpload('#filelist').append("<div>Error: " + err.code +
             ", Message: " + err.message +
             (err.file ? ", File: " + err.file.name : "") +
             "</div>"
@@ -70,7 +71,7 @@ function startUpload(){
     });
 
     uploader.bind('FileUploaded', function(up, file) {
-        $('#' + file.id + " b").html("100%");
+        jUpload('#' + file.id + " b").html("100%");
     });
 }
 </script>
