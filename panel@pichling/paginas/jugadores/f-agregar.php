@@ -38,10 +38,6 @@ function startUpload(){
         //resize : {width : 320, height : 240, quality : 90}
     });
 
-    uploader.bind('Init', function(up, params) {
-        $('#filelist').html("<div>Current runtime: " + params.runtime + "</div>");
-    });
-
     uploader.bind('FilesAdded', function(up, files) {
         $.each(files, function(i, file) {
             $('#filelist').append(
@@ -123,7 +119,7 @@ function startUpload(){
     <!-- Main content -->
     <div class="wrapper">
 
-        <form class="main" method="POST" action="upload-imagen.php">
+        <form id="submit-form" class="main" method="POST" action="upload-imagen.php">
 
             <fieldset>
                 <div class="widget fluid">

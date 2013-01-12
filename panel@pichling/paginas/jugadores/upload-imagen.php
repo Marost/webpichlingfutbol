@@ -10,4 +10,6 @@ echo "uploadfiles: ".$_POST["uploadfiles"]." - ".$_POST["uploadfiles_0_tmpname"]
 
 echo "container: ".$_POST["container"]." - ".$_POST["container_0_tmpname"]."<br>";
 
+echo "UploadFile: ".$_POST["UploadFile"]." - ".$_POST["UploadFile_0_tmpname"]."<br>";
+
 ?>
