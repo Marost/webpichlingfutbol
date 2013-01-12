@@ -51,6 +51,8 @@
 <script type="text/javascript" src="<?php echo $url_admin; ?>js/plugins/others/jquery.fullcalendar.js"></script>
 <script type="text/javascript" src="<?php echo $url_admin; ?>js/plugins/others/jquery.elfinder.js"></script>
 
+<script type="text/javascript" src="<?php echo $url_admin; ?>js/plugins/ckeditor/ckeditor.js"></script>
+
 <script type="text/javascript" src="<?php echo $url_admin; ?>js/plugins/forms/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="<?php echo $url_admin; ?>js/plugins/ui/jquery.easytabs.min.js"></script>
 <script type="text/javascript" src="<?php echo $url_admin; ?>js/files/bootstrap.js"></script>
