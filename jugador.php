@@ -20,6 +20,7 @@ $jugador_estatura=$fila_jugador["estatura"];
 $jugador_posicion_fija=$fila_jugador["posicion_fija"];
 $jugador_club_actual=$fila_jugador["club_actual"];
 $jugador_imagen=$fila_jugador["imagen"];
+$jugador_imagen_carpeta=$fila_jugador["imagen_carpeta"];
 
 ?>
 <!DOCTYPE html>
@@ -245,7 +246,7 @@ $jugador_imagen=$fila_jugador["imagen"];
                             
                             <h2><?php echo $jugador_nombre." ".$jugador_apellidos; ?></h2>
 
-                            <img src="" width="300" height="280" alt="<?php echo $jugador_nombre." ".$jugador_apellidos; ?>" title="<?php echo $jugador_nombre." ".$jugador_apellidos; ?>">
+                            <img src="upload/<?php echo $jugador_imagen_carpeta."thumb/".$jugador_imagen; ?>" width="300" height="280" alt="<?php echo $jugador_nombre." ".$jugador_apellidos; ?>" title="<?php echo $jugador_nombre." ".$jugador_apellidos; ?>">
 
                             <table class="jugador-datos">
                                 <tr>
