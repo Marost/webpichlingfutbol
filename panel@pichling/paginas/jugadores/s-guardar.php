@@ -29,13 +29,13 @@ if ($_POST["lateral-izquierdo"]<>""){ $p_lateral_izquierdo=$_POST["lateral-izqui
 if ($_POST["volante-derecho"]<>""){ $p_volante_derecho=$_POST["volante-derecho"]; }else{ $p_volante_derecho=0; }
 if ($_POST["volante-central"]<>""){ $p_volante_central=$_POST["volante-central"]; }else{ $p_volante_central=0; }
 if ($_POST["volante-izquierdo"]<>""){ $p_volante_izquierdo=$_POST["volante-izquierdo"]; }else{ $p_volante_izquierdo=0; }
-if ($_POST["extremo-derecho"]<>""){ $p_extremo_derecho=$_POST["extremo-derecho"]; }else{ $p_arqup_extremo_derechoero=0; }
+if ($_POST["extremo-derecho"]<>""){ $p_extremo_derecho=$_POST["extremo-derecho"]; }else{ $p_extremo_derecho=0; }
 if ($_POST["delantero"]<>""){ $p_delantero=$_POST["delantero"]; }else{ $p_delantero=0; }
 if ($_POST["extremo-izquierdo"]<>""){ $p_extremo_izquierdo=$_POST["extremo-izquierdo"]; }else{ $p_extremo_izquierdo=0; }
 
 //IMAGEN O VIDEO
-if($_POST['filelist_0_tmpname']<>""){
-	$imagen=$_POST["filelist_0_tmpname"];
+if($_POST['uploader_0_tmpname']<>""){
+	$imagen=$_POST["uploader_0_tmpname"];
 	$imagen_carpeta=fechaCarpeta()."/";	
 	$thumb=PhpThumbFactory::create("../../../upload/".$imagen_carpeta."".$imagen."");
 	$thumb->adaptiveResize(300,280);
@@ -55,7 +55,29 @@ if($rst_guardar){
 	$fila_id=mysql_fetch_array($rst_id);
 	$jugador_id=$fila_id["id"];
 
-	$rst_posicion=mysql_query("INSERT INTO ".$tabla_suf."_posicion_cancha (jugador, arquero, lateral_derecho, back_central_derecho, back_central_izquierdo, defensa_central, lateral_izquierdo, volante_derecho, volante_central, volante_izquierdo, extremo_derecho, delantero, extremo_izquierdo) VALUES($jugador_id, $p_arquero, $p_lateral_derecho, $p_back_central_derecho, $p_back_central_izquierdo, $p_defensa_central, $p_lateral_izquierdo, $p_volante_derecho, $p_volante_central, $p_volante_izquierdo, $p_extremo_derecho, $p_delantero, $p_extremo_izquierdo)", $conexion);
+	$rst_posicion=mysql_query("INSERT INTO ".$tabla_suf."_posicion_cancha (jugador, 
+		arquero, 
+		lateral_derecho, 
+		back_central_derecho, 
+		back_central_izquierdo, 
+		lateral_izquierdo, 
+		volante_derecho, 
+		volante_central, 
+		volante_izquierdo, 
+		extremo_derecho, 
+		delantero, 
+		extremo_izquierdo) VALUES ($jugador_id, 
+		$p_arquero, 
+		$p_lateral_derecho, 
+		$p_back_derecho, 
+		$p_back_izquierdo,
+		$p_lateral_izquierdo, 
+		$p_volante_derecho, 
+		$p_volante_central, 
+		$p_volante_izquierdo, 
+		$p_extremo_derecho, 
+		$p_delantero, 
+		$p_extremo_izquierdo)", $conexion);
 }
 
 if (mysql_errno()!=0){
