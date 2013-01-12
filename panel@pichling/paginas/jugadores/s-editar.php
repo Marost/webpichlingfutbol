@@ -48,7 +48,7 @@ if($_POST['uploader_0_tmpname']<>""){
 }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_jugadores SET url='$url', 
+/*$rst_guardar=mysql_query("UPDATE ".$tabla_suf."*/ echo "_jugadores SET url='$url', 
 	nombre='$nombre', 
 	apellidos='$apellidos', 
 	fecha_nac='$fecha_nac', 
@@ -62,11 +62,11 @@ $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_jugadores SET url='$url',
 	publicar=$publicar, 
 	seleccion='$seleccion', 
 	imagen='$imagen', 
-	imagen_carpeta='$imagen_carpeta' WHERE id=$jugador_id;",$conexion);
+	imagen_carpeta='$imagen_carpeta' WHERE id=$jugador_id;";//, $conexion);
 
-if($rst_guardar){
+/*if($rst_guardar){
 
-	$rst_posicion=mysql_query("UPDATE ".$tabla_suf."_posicion_cancha SET arquero=$p_arquero,
+	$rst_posicion=mysql_query("UPDATE ".$tabla_suf."*/ echo "_posicion_cancha SET arquero=$p_arquero,
 		lateral_derecho=$p_lateral_derecho, 
 		back_central_derecho=$p_back_derecho, 
 		back_central_izquierdo=$p_back_izquierdo, 
@@ -76,7 +76,7 @@ if($rst_guardar){
 		volante_izquierdo=$p_volante_izquierdo, 
 		extremo_derecho=$p_extremo_derecho, 
 		delantero=$p_delantero, 
-		extremo_izquierdo=$p_extremo_izquierdo WHERE jugador=$jugador_id;", $conexion);
+		extremo_izquierdo=$p_extremo_izquierdo WHERE jugador=$jugador_id;"; /*, $conexion);
 }
 
 if (mysql_errno()!=0){
@@ -87,5 +87,5 @@ if (mysql_errno()!=0){
 	mysql_close($conexion);
 	header("Location:lista.php?msj=ok");
 }
-
+*/
 ?>
