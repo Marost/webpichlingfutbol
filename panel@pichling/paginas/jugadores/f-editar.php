@@ -191,17 +191,17 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                     <div class="formRow">
                         <div class="grid3"><label>Posicíón en la cancha: </label></div>
                         <div class="grid9 on_off">
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_arquero==1){ ?>checked<?php } ?> id="check21" name="arquero" />Arquero</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_lateral_derecho==1){ ?>checked<?php } ?> id="check21" name="lateral-derecho" />Lateral derecho</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_back_derecho==1){ ?>checked<?php } ?> id="check21" name="back-derecho" />Back central derecho</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_back_izquierdo==1){ ?>checked<?php } ?> id="check21" name="back-izquierdo" />Back central izquierdo</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_lateral_izquierdo==1){ ?>checked<?php } ?> id="check21" name="lateral-izquierdo" />Lateral izquierdo</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_volante_derecho==1){ ?>checked<?php } ?> id="check21" name="volante-derecho" />Volante derecho</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_volante_central==1){ ?>checked<?php } ?> id="check21" name="volante-central" />Volante central</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_volante_izquierdo==1){ ?>checked<?php } ?> id="check21" name="volante-izquierdo" />Volante izquierdo</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_extremo_derecho==1){ ?>checked<?php } ?> id="check21" name="extremo-derecho" />Extremo derecho</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_delantero==1){ ?>checked<?php } ?> id="check21" name="delantero" />Delantero</div>
-                            <div class="floatL mr10"><input type="checkbox" <?php if($cancha_extremo_izquierdo==1){ ?>checked<?php } ?> id="check21" name="extremo-izquierdo" />Extremo izquierdo</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_arquero==1){ ?>checked<?php } ?> id="check21" name="arquero" />Arquero</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_lateral_derecho==1){ ?>checked<?php } ?> id="check21" name="lateral-derecho" />Lateral derecho</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_back_derecho==1){ ?>checked<?php } ?> id="check21" name="back-derecho" />Back central derecho</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_back_izquierdo==1){ ?>checked<?php } ?> id="check21" name="back-izquierdo" />Back central izquierdo</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_lateral_izquierdo==1){ ?>checked<?php } ?> id="check21" name="lateral-izquierdo" />Lateral izquierdo</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_volante_derecho==1){ ?>checked<?php } ?> id="check21" name="volante-derecho" />Volante derecho</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_volante_central==1){ ?>checked<?php } ?> id="check21" name="volante-central" />Volante central</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_volante_izquierdo==1){ ?>checked<?php } ?> id="check21" name="volante-izquierdo" />Volante izquierdo</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_extremo_derecho==1){ ?>checked<?php } ?> id="check21" name="extremo-derecho" />Extremo derecho</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_delantero==1){ ?>checked<?php } ?> id="check21" name="delantero" />Delantero</div>
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_extremo_izquierdo==1){ ?>checked<?php } ?> id="check21" name="extremo-izquierdo" />Extremo izquierdo</div>
                         </div>
                     </div>
 
