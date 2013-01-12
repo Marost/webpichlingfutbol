@@ -66,8 +66,8 @@ img { border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; }
 .displayNone { display: none; }
 .display { display: block!important; }
 .fullwidth { width: 100%; }
-.width60 { width: 60%; float: left; }
-.margin1020 { margin: 10px 20px; }
+.width60 { width: 60% !important; float: left !important; }
+.margin1020 { margin: 10px 20px !important; }
 
 .thisRow { background: #f3f3e8!important; }
 .hand { cursor: pointer; }
