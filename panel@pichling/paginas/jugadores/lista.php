@@ -32,9 +32,8 @@ function startEliminar(){
 
 function clickEliminar(datos){
     var idEliminar=datos.currentTarget.id;
-    if(confirm("¿Está seguro de borrar este registro?")) {
+    if(confirm("¿Está seguro de borrar este registro?")){
         document.location.href="s-eliminar.php?id="+idEliminar;
-        }
     }
 }
 </script>
