@@ -425,7 +425,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', end
 
 /* ===== UI Datepicker ===== */
 
-.datepicker { }
+.datepicker { width: 110px !important; }
 .datesRange li { float:left; }
 .datesRange li.separator { margin: 0 10px; color: #ddd; }
 .datesRange li input[type=text] { width: 78px!important; }
