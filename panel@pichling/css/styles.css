@@ -1378,7 +1378,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 
 /* ===== Timepicker  ===== */
 
-.timepicker { width: 65px!important; float: left; }
+.timepicker { float: left; }
 .timeEntry_control { margin-left: -1px; margin-top: 0; cursor: pointer; float: left; }
 * html .timeEntry_control { margin-top: -4px; }
 .timeRange li { float: left; }
