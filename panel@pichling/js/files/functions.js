@@ -308,6 +308,7 @@ $(function() {
 		max_file_size : '10mb',
 		chunk_size : '1mb',
 		unique_names : true,
+		dragdrop: false,
 		filters : [
 			{title : "Image files", extensions : "jpg,gif,png"}
 		]
