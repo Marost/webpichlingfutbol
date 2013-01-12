@@ -71,7 +71,7 @@ $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER
     <!-- Main content -->
     <div class="wrapper">
 
-        <form id="submit-form" class="main" method="POST" action="upload-imagen.php">
+        <form id="submit-form" class="main" method="POST" action="s-guardar.php">
 
             <fieldset>
                 <div class="widget fluid">
