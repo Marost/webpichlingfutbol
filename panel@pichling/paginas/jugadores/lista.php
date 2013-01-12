@@ -21,19 +21,10 @@ $rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY nomb
 <?php require_once("../../w-scripts.php"); ?>
 
 <!-- ELIMINAR  -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-var jEliminar=jQuery.noConflict();
-jEliminar(document).on("ready", startEliminar);
-
-function startEliminar(){
-    jEliminar(".eliminar").on("click", clickEliminar);
-}
-
-function clickEliminar(datos){
-    var idEliminar=datos.currentTarget.id;
-    if(confirm("¿Está seguro de borrar este registro?")){
-        document.location.href="s-eliminar.php?id="+idEliminar;
+function eliminarRegistro(registro) {
+    if(confirm("¿Está seguro de borrar este registro?")) {
+        document.location.href="s-eliminar.php?id="+registro;
     }
 }
 </script>
@@ -143,7 +134,8 @@ function clickEliminar(datos){
                             <div class="btn-group" style="display: inline-block; margin-bottom: -4px;">
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
                                 <ul class="dropdown-menu pull-right">
-                                    <li><a id="<?php echo $jugadores_id; ?>" href="javascript:;" class="eliminar">
+                                    <li>
+                                        <a onclick="eliminarRegistro(<?php echo $jugadores_id: ?>);" href="javascript:;">
                                         <span class="icos-trash"></span>Eliminar</a></li>
                                     <li><a href="f-editar.php?id=<?php echo $jugadores_id; ?>" class="">
                                         <span class="icos-pencil"></span>Modificar</a></li>
