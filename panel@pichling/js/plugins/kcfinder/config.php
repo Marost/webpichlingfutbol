@@ -1,5 +1,5 @@
 <?php
-require_once("../../conexion/conexion.php");
+require_once("../../../conexion/conexion.php");
 
 /** This file is part of KCFinder project
   *
