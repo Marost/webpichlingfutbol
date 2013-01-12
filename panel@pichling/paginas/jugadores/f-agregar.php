@@ -38,41 +38,34 @@ function startUpload(){
         //resize : {width : 320, height : 240, quality : 90}
     });
 
-    jUpload('#uploadfiles').click(function(e) {
+    uploader.bind('Init', function(up, params) {
+        $('#filelist').html("<div>Current runtime: " + params.runtime + "</div>");
+    });
+
+    uploader.bind('FilesAdded', function(up, files) {
+        $.each(files, function(i, file) {
+            $('#filelist').append(
+                '<div id="' + file.id + '">' +
+                file.name + ' (' + plupload.formatSize(file.size) + ') <b></b>' +
+            '</div>');
+        });
+    });
+    
+    uploader.bind('UploadFile', function(up, file) {
+        $('<input type="hidden" name="file-' + file.id + '" value="' + file.name + '" />')
+            .appendTo('#submit-form');
+    });
+
+    uploader.bind('UploadProgress', function(up, file) {
+        $('#' + file.id + " b").html(file.percent + "%");
+    });
+
+    $('#uploadfiles').click(function(e) {
         uploader.start();
         e.preventDefault();
     });
 
     uploader.init();
-
-    uploader.bind('FilesAdded', function(up, files) {
-        jUpload.each(files, function(i, file) {
-            jUpload('#filelist').append(
-                '<div id="' + file.id + '">' +
-                file.name + ' (' + plupload.formatSize(file.size) + ') <b></b>' +
-            '</div>');
-        });
-
-        up.refresh(); // Reposition Flash/Silverlight
-    });
-
-    uploader.bind('UploadProgress', function(up, file) {
-        jUpload('#' + file.id + " b").html(file.percent + "%");
-    });
-
-    uploader.bind('Error', function(up, err) {
-        jUpload('#filelist').append("<div>Error: " + err.code +
-            ", Message: " + err.message +
-            (err.file ? ", File: " + err.file.name : "") +
-            "</div>"
-        );
-
-        up.refresh(); // Reposition Flash/Silverlight
-    });
-
-    uploader.bind('FileUploaded', function(up, file) {
-        jUpload('#' + file.id + " b").html("100%");
-    });
 }
 </script>
 
