@@ -20,17 +20,18 @@ $nota_posicion=$fila_nota["posicion"];
 $nota_perfil=$fila_nota["perfil"];
 $nota_peso=$fila_nota["peso"];
 $nota_estatura=$fila_nota["estatura"];
-$nota_club_actual=$fila_nota["cluc_actual"];
+$nota_club_actual=$fila_nota["club_actual"];
 $nota_posicion_fija=$fila_nota["posicion_fija"];
 $nota_publicar=$fila_nota["publicar"];
 $nota_seleccion=$fila_nota["seleccion"];
 $nota_imagen=$fila_nota["imagen"];
+$nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
 
 //POSICION FIJA
 $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER BY posicion ASC;", $conexion);
 
 //POSICION CANCHA
-$rst_posicion_cancha=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_cancha WHERE id=$id_url;", $conexion);
+$rst_posicion_cancha=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_cancha WHERE jugador=$id_url;", $conexion);
 $fila_posicion_cancha=mysql_fetch_array($rst_posicion_cancha);
 
 //VARIABLES
@@ -56,6 +57,65 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
 <title>Administrador</title>
 
 <?php require_once("../../w-scripts.php"); ?>
+
+<!-- UPLOAD DE IMAGEN -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+var jUpload=jQuery.noConflict();
+
+jUpload(document).on("ready", startUpload);
+
+function startUpload(){
+    var uploader = new plupload.Uploader({
+        runtimes : 'html5,html4',
+        browse_button : 'pickfiles',
+        container : 'container',
+        max_file_size : '10mb',
+        url : '../../php/upload.php',
+        unique_names : true,
+        filters : [
+            {title : "Image files", extensions : "jpg,gif,png"}
+        ]
+        //resize : {width : 320, height : 240, quality : 90}
+    });
+
+    jUpload('#uploadfiles').click(function(e) {
+        uploader.start();
+        e.preventDefault();
+    });
+
+    uploader.init();
+
+    uploader.bind('FilesAdded', function(up, files) {
+        jUpload.each(files, function(i, file) {
+            jUpload('#filelist').append(
+                '<div id="' + file.id + '">' +
+                file.name + ' (' + plupload.formatSize(file.size) + ') <b></b>' +
+            '</div>');
+        });
+
+        up.refresh(); // Reposition Flash/Silverlight
+    });
+
+    uploader.bind('UploadProgress', function(up, file) {
+        jUpload('#' + file.id + " b").html(file.percent + "%");
+    });
+
+    uploader.bind('Error', function(up, err) {
+        jUpload('#filelist').append("<div>Error: " + err.code +
+            ", Message: " + err.message +
+            (err.file ? ", File: " + err.file.name : "") +
+            "</div>"
+        );
+
+        up.refresh(); // Reposition Flash/Silverlight
+    });
+
+    uploader.bind('FileUploaded', function(up, file) {
+        jUpload('#' + file.id + " b").html("100%");
+    });
+}
+</script>
 
 </head>
 
@@ -120,64 +180,64 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                     
                     <div class="formRow">
                         <div class="grid3"><label>Nombre:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_nombre; ?>" /></div>
+                        <div class="grid9"><input type="text" name="nombre" value="<?php echo $nota_nombre; ?>" /></div>
                     </div>
                     
                     <div class="formRow">
                         <div class="grid3"><label>Apellidos:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_apellidos; ?>" /></div>
+                        <div class="grid9"><input type="text" name="apellidos" value="<?php echo $nota_apellidos; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Fecha de Nacimiento:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_fecha_nac; ?>" /></div>
+                        <div class="grid9"><input type="text" name="fecha_nac" value="<?php echo $nota_fecha_nac; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Nacionalidad:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_nacionalidad; ?>" /></div>
+                        <div class="grid9"><input type="text" name="nacionalidad" value="<?php echo $nota_nacionalidad; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Posición:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_posicion; ?>" /></div>
+                        <div class="grid9"><input type="text" name="posicion" value="<?php echo $nota_posicion; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Perfil:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_perfil; ?>" /></div>
+                        <div class="grid9"><input type="text" name="perfil" value="<?php echo $nota_perfil; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Peso:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_peso; ?>" /></div>
+                        <div class="grid9"><input type="text" name="peso" value="<?php echo $nota_peso; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Estatura:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_estatura; ?>" /></div>
+                        <div class="grid9"><input type="text" name="estatura" value="<?php echo $nota_estatura; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Club actual:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_club_actual; ?>" /></div>
+                        <div class="grid9"><input type="text" name="club_actual" value="<?php echo $nota_club_actual; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Selección:</label></div>
-                        <div class="grid9"><input type="text" name="regular" value="<?php echo $nota_seleccion; ?>" /></div>
+                        <div class="grid9"><input type="text" name="seleccion" value="<?php echo $nota_seleccion; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Posición fija:</label></div>
                         <div class="grid9">
-                            <select data-placeholder="Selecciona una opción..." class="select" tabindex="2">
+                            <select data-placeholder="Selecciona una opción..." class="select" name="posicion_fija" tabindex="2">
                                 <option value=""></option> 
                                 <?php while($fila_posicion_fija=mysql_fetch_array($rst_posicion_fija)){
                                         $posicion_id=$fila_posicion_fija["id"];
                                         $posicion_posicion=$fila_posicion_fija["posicion"];
 
-                                        if ($nota_posicion==$posicion_id){
+                                        if ($nota_posicion_fija==$posicion_id){
                                 ?>
                                 <option selected="selected" value="<?php echo $posicion_id; ?>"><?php echo $posicion_posicion; ?></option>
                                 <?php }else{ ?>
@@ -207,7 +267,13 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
-                            <input type="file" class="styled" id="fileInput" />
+                            <div id="container">
+                                <div id="filelist"></div>
+                                <a id="pickfiles" href="#">[Seleccionar archivos]</a>
+                                <a id="uploadfiles" href="#">[Subir archivos]</a>
+                                <input type="hidden" name="imagen" value="<?php echo $nota_imagen; ?>">
+                                <input type="hidden" name="imagen_carpeta" value="<?php echo $nota_imagen_carpeta; ?>">
+                            </div>
                         </div>
                     </div>
 
