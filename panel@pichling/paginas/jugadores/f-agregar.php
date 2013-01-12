@@ -59,6 +59,7 @@ function startUpload(){
         container : 'container',
         max_file_size : '10mb',
         url : '../../php/upload.php',
+        unique_names : true,
         filters : [
             {title : "Image files", extensions : "jpg,gif,png"}
         ]
@@ -250,8 +251,7 @@ function startUpload(){
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
                             <div id="container">
-                                <div id="filelist">No runtime found.</div>
-                                <br />
+                                <div id="filelist"></div>
                                 <a id="pickfiles" href="#">[Seleccionar archivos]</a>
                                 <a id="uploadfiles" href="#">[Subir archivos]</a>
                             </div>
