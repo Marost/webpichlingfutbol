@@ -359,19 +359,7 @@ $(function() {
 		validationEnabled: false,
 		focusFirstInput : false,
 		disableUIStyles : true
-	});
-	
-	
-	
-	//===== WYSIWYG editor =====//
-	
-	$("#editor").cleditor({
-		width:"100%", 
-		height:"250px",
-		bodyStyle: "margin: 10px; font: 12px Arial,Verdana; cursor:text",
-		useCSS:true
-	});
-	
+	});	
 	
 	//===== Dual select boxes =====//
 	
