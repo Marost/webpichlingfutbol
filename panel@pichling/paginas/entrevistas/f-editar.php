@@ -60,7 +60,7 @@ $nota_publicar=$fila_nota["publicar"];
                 <li><a href="lista.php" class="this" title=""><span class="icos-frames"></span>Entrevistas</a></li>
                 <li><a href="../jugadores/lista.php" title=""><span class="icos-frames"></span>Jugadores</a></li>
                 <li><a href="../noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
-                <li><a href="../lista.php" title="" ><span class="icos-frames"></span>Posiciones</a></li>
+                <li><a href="../posiciones/lista.php" title="" ><span class="icos-frames"></span>Posiciones</a></li>
             </ul>
             
             <div class="divider"><span></span></div>
