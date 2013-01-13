@@ -10,21 +10,21 @@
             <img src="<?php echo $url_admin; ?>images/icons/mainnav/dashboard.png" alt="" /><span>Dashboard</span></a></li>
         
         <li>
-            <a href="<?php echo $url_admin; ?>jugadores/lista.php" title="">
+            <a href="<?php echo $url_admin; ?>paginas/jugadores/lista.php" title="">
                 <img src="<?php echo $url_admin; ?>images/icons/mainnav/tables.png" alt="" />
                     <span>Opciones</span>
             </a>
             <ul>
-                <li><a href="<?php echo $url_admin; ?>entrevistas/lista.php" title="">
+                <li><a href="<?php echo $url_admin; ?>paginas/entrevistas/lista.php" title="">
                     <span class="icol-frames"></span>Entrevistas</a></li>
 
-                <li><a href="<?php echo $url_admin; ?>jugadores/lista.php" title="">
+                <li><a href="<?php echo $url_admin; ?>paginas/jugadores/lista.php" title="">
                     <span class="icol-frames"></span>Jugadores</a></li>
 
-                <li><a href="<?php echo $url_admin; ?>noticias/lista.php" title="">
+                <li><a href="<?php echo $url_admin; ?>paginas/noticias/lista.php" title="">
                     <span class="icol-frames"></span>Noticias</a></li>
                     
-                <li><a href="<?php echo $url_admin; ?>posiciones/lista.php" title="">
+                <li><a href="<?php echo $url_admin; ?>paginas/posiciones/lista.php" title="">
                     <span class="icol-frames"></span>Posiciones</a></li>
             </ul>
         </li>
