@@ -26,7 +26,7 @@ if($_POST['uploader_0_tmpname']<>""){
 }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_entrevista SET url='$url', titulo='".htmlspecialchars($nombre)."', contenido='$contenido', imagen='$imagen', imagen_carpeta='$imagen_carpeta', fecha_publicacion='$fecha_publicacion', publicar=$publicar WHERE id=$nota_id;", $conexion);
+$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_noticias SET url='$url', titulo='".htmlspecialchars($nombre)."', contenido='$contenido', imagen='$imagen', imagen_carpeta='$imagen_carpeta', fecha_publicacion='$fecha_publicacion', publicar=$publicar WHERE id=$nota_id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
