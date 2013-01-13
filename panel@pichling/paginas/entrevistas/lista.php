@@ -109,6 +109,8 @@ function eliminarRegistro(registro) {
                 <thead>
                     <tr>
                         <td class="sortCol"><div>Registro</div></td>
+                        <td width="200">Fecha publicación</td>
+                        <td width="100">Estado</td>
                         <td width="100">Acciones</td>
                     </tr>
                 </thead>
@@ -116,9 +118,19 @@ function eliminarRegistro(registro) {
                     <?php while($fila_nota=mysql_fetch_array($rst_nota)) {
                           $nota_id=$fila_nota["id"];
                           $nota_nombre=$fila_nota["titulo"];
+                          $nota_publicacion=$fila_nota["fecha_publicacion"];
+                          $nota_publicar=$fila_nota["publicar"];
                     ?>
                     <tr>
                         <td class="textL"><?php echo $nota_nombre; ?></td>
+                        <td><?php echo $nota_publicacion; ?></td>
+                        <td>
+                            <?php if($nota_publicar==1){ ?>
+                            <span class="label label-success">Activo</span>
+                            <?php }else{ ?>
+                            <span class="label">Inactivo</span>
+                            <?php } ?>
+                        </td>
                         <td class="tableActs">
                             <div class="btn-group" style="display: inline-block; margin-bottom: -4px;">
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
