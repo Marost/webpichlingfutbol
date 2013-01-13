@@ -212,7 +212,7 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                         <div class="grid9">
                             <div class="without floatL">
                                 <a href="../../../upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" class="lightbox">
-                                    <img src="../../../upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" width="100" >
+                                    <img src="../../../upload/<?php echo $nota_imagen_carpeta."thumb/".$nota_imagen; ?>" width="100" >
                                 </a>
                             </div>
                             <div class="widget floarL width60 margin1020">    
