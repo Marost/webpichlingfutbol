@@ -23,7 +23,7 @@
 <div class="loginWrapper">
 
 	<!-- New user form -->
-    <form action="conexion/verificar.php" id="recover">
+    <form action="conexion/verificar.php" id="recover" method="POST">
         <div class="loginPic">
             <a href="#" title=""><img src="images/userLogin.png" alt="" /></a>
         </div>
