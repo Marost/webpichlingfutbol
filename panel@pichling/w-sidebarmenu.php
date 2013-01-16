@@ -6,7 +6,7 @@
     
     <!-- Main nav -->
     <ul class="nav">
-        <li><a href="<?php echo $url_admin; ?>index.html" title="">
+        <li><a href="<?php echo $url_admin; ?>index.php" title="">
             <img src="<?php echo $url_admin; ?>images/icons/mainnav/dashboard.png" alt="" /><span>Dashboard</span></a></li>
         
         <li>

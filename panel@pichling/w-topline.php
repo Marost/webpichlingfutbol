@@ -9,7 +9,7 @@
         
         <!-- Responsive nav -->
         <ul class="altMenu">
-            <li><a href="<?php echo $url_admin; ?>index.html" title="">Dashboard</a></li>
+            <li><a href="<?php echo $url_admin; ?>index.php" title="">Dashboard</a></li>
             
             <li><a href="<?php echo $url_admin; ?>paginas/jugadores/lista.php" title="" class="exp" id="current">Opciones</a>
                 <ul>
