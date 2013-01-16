@@ -1,6 +1,9 @@
 <?php
 require_once("panel@pichling/conexion/conexion.php");
 require_once("panel@pichling/conexion/funciones.php");
+
+//NOTICIAS
+$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$fechaActual'", $conexion);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -250,21 +253,22 @@ require_once("panel@pichling/conexion/funciones.php");
                         <section id="mnew-noticias">
                             <h2>Noticias</h2>
 
+                            <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
+                                    $noticias_id=$fila_noticias["id"];
+                                    $noticias_url=$fila_noticias["url"];
+                                    $noticias_titulo=$fila_noticias["titulo"];
+                                    $noticias_contenido=soloDescripcion($fila_noticias["contenido"]);
+                                    $noticias_imagen=$fila_noticias["imagen"];
+                                    $noticias_imagen_carpeta=$fila_noticias["imagen_carpeta"];
+                            ?>
                             <article>
-                                <img width="125" height="125" src="" alt="">
+                                <img width="125" height="125" src="upload/<?php echo $noticias_imagen_carpeta."thumb/".$noticias_imagen; ?>" alt="<?php echo $noticias_titulo; ?>">
                                 <div>
-                                    <h3>Well, the way they make shows is, they make one show</h3>
-                                    <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>    
+                                    <h3><?php echo $noticias_titulo; ?></h3>
+                                    <?php echo $noticias_contenido; ?>
                                 </div>                                
                             </article>
-
-                            <article>
-                                <img width="125" height="125" src="" alt="">
-                                <div>
-                                    <h3>Well, the way they make shows is, they make one show</h3>
-                                    <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>    
-                                </div>                                
-                            </article>
+                            <?php } ?>
 
                         </section>
 
