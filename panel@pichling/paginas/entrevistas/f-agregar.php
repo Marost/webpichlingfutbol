@@ -1,8 +1,8 @@
 <?php 
-//session_start();
+session_start();
 require_once("../../conexion/conexion.php");
 require_once("../../conexion/funciones.php");
-//require_once("../../conexion/verificar_sesion.php");
+require_once("../../conexion/verificar_sesion.php");
 
 //VARIABLES
 $pub_fecha=date("Y-m-d");

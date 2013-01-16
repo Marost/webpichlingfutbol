@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 include("../../conexion/conexion.php");
 include("../../conexion/funciones.php");
 require_once('../../js/plugins/thumbs/ThumbLib.inc.php');

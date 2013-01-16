@@ -1,8 +1,8 @@
 <?php 
-//session_start();
+session_start();
 require_once("../../conexion/conexion.php");
 require_once("../../conexion/funciones.php");
-//require_once("../../conexion/verificar_sesion.php");
+require_once("../../conexion/verificar_sesion.php");
 
 //POSICION FIJA
 $rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER BY posicion ASC;", $conexion);
