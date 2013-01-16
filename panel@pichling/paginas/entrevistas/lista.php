@@ -37,7 +37,6 @@ function eliminarRegistro(registro) {
 <?php require_once("../../w-topline.php"); ?>
 <!-- Top line ends -->
 
-
 <!-- Sidebar begins -->
 <div id="sidebar">
     
