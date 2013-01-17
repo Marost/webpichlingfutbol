@@ -8,7 +8,7 @@ require_once("../../conexion/verificar_sesion.php");
 $id_url=$_REQUEST["id"];
 
 //EDITAR
-$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_usuario WHERE usuario=$id_url;", $conexion);
+$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_usuario WHERE usuario='$id_url';", $conexion);
 $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
