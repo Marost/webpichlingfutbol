@@ -99,6 +99,21 @@ header #header-izq div h1 {
   height: 187px;
   padding: 18px 0 0 26px;
   width: 261px;
+  /*a.title:hover{
+					-webkit-transform: rotateZ(360deg);
+					-moz-transform: rotateZ(360deg);
+					-o-transform: rotateZ(360deg);
+
+					-webkit-transform-style: preserve-3d;
+					-webkit-transition: all 2.0s linear;
+					-moz-transform-style: preserve-3d;
+					-moz-transition: all 2.0s linear;
+					-o-transform-style: preserve-3d;
+					-o-transition: all 2.0s linear;
+					transform-style: preserve-3d;
+					transition: all 2.0s linear;
+				}*/
+
 }
 header #header-izq div h1 a.title {
   background: url("../imagenes/logo.png") no-repeat;
@@ -108,19 +123,6 @@ header #header-izq div h1 a.title {
   padding: 0 !important;
   text-indent: -10000em;
   width: 237px;
-}
-header #header-izq div h1 a.title:hover {
-  -webkit-transform: rotatez(360deg);
-  -moz-transform: rotatez(360deg);
-  -o-transform: rotatez(360deg);
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: all 2.0s linear;
-  -moz-transform-style: preserve-3d;
-  -moz-transition: all 2.0s linear;
-  -o-transform-style: preserve-3d;
-  -o-transition: all 2.0s linear;
-  transform-style: preserve-3d;
-  transition: all 2.0s linear;
 }
 header #header-der {
   float: left;

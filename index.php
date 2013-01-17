@@ -145,7 +145,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
             });
         </script>
 
-        <!-- ANIMACION DE LOGO -->
+        <!-- ANIMACION DE LOGO 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script>
         var jAnimLogo=jQuery.noConflict();
@@ -155,7 +155,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
             jAnimLogo('#header-izq div').slideDown(1500);
         }
         
-        </script>
+        </script>-->
 
     </head>
     <body>
