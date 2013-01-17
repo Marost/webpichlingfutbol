@@ -166,31 +166,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
         <div class="header-container">
             <header class="wrapper clearfix">
                 
-                <section id="header-izq">
-                    <div>
-                        <h1>
-                            <a class="title" href="/">
-                            Pichling Representaciones</a></h1>
-                    </div>
-                </section>
-
-                <section id="header-der">
-                    <nav>
-                        <ul>
-                            <li><a href="/">Inicio</a></li>
-                            <li><a href="#">Nosotros</a></li>
-                            <li><a href="#">Galería</a></li>
-                            <li><a href="#">Entrevistas</a></li>
-                            <li><a href="#">Noticias</a></li>
-                            <li><a href="#">Contactenos</a></li>
-                        </ul>
-                    </nav>
-
-                    <aside>
-                        <img src="imagenes/header-representante.png" widht="432" height="61" >
-                    </aside>
-
-                </section>
+                <?php require_once("w-header.php"); ?>
 
             </header>
         </div>
