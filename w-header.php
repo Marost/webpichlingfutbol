@@ -1,7 +1,9 @@
 <section id="header-izq">
-    <h1>
-        <a class="title" href="#">
-        Pichling Representaciones</a></h1>
+    <div>
+        <h1>
+            <a class="title" href="#">
+            Pichling Representaciones</a></h1>
+    </div>
 </section>
 
 <section id="header-der">
