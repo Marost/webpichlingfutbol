@@ -117,7 +117,7 @@ $nota_clave=$fila_nota["clave"];
 
                     <div class="formRow">
                         <div class="grid3"><label>Contraseña:</label></div>
-                        <div class="grid9"><input type="text" name="clave" value="<?php echo $nota_clave; ?>" /></div>
+                        <div class="grid9"><input type="password" name="clave" value="<?php echo $nota_clave; ?>" /></div>
                     </div>
                     
                     <div class="formRow">

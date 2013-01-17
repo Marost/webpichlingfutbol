@@ -107,7 +107,7 @@ $pub_hora=date("H:m:s");
 
                     <div class="formRow">
                         <div class="grid3"><label>Contraseña:</label></div>
-                        <div class="grid9"><input type="text" name="clave" /></div>
+                        <div class="grid9"><input type="password" name="clave" /></div>
                     </div>
                     
                     <div class="formRow">
