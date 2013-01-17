@@ -32,6 +32,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id;", $conex
         <title><?php echo $nota_titulo; ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <base href="<?php echo $web; ?>">
 
         <!-- ESTILOS -->
         <link rel="stylesheet" href="css/normalize.min.css">
