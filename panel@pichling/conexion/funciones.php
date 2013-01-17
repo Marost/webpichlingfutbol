@@ -74,18 +74,18 @@ function codigoAleatorio($length=10,$uc=TRUE,$n=TRUE,$sc=FALSE)
 function nombreMes($numero_mes)
 {
 	switch($numero_mes){
-   		case 1: print "Enero"; break;
-		case 2: print "Febrero"; break;
-		case 3: print "Marzo"; break;
-		case 4: print "Abril"; break;
-		case 5: print "Mayo"; break;
-		case 6: print "Junio"; break;
-		case 7: print "Julio"; break;
-		case 8: print "Agosto"; break;
-		case 9: print "Septiembre"; break;
-		case 10: print "Octubre"; break;
-		case 11: print "Noviembre"; break;
-		case 12: print "Diciembre"; break;
+   		case 01: return "Enero"; break;
+		case 02: return "Febrero"; break;
+		case 03: return "Marzo"; break;
+		case 04: return "Abril"; break;
+		case 05: return "Mayo"; break;
+		case 06: return "Junio"; break;
+		case 07: return "Julio"; break;
+		case 08: return "Agosto"; break;
+		case 09: return "Septiembre"; break;
+		case 10: return "Octubre"; break;
+		case 11: return "Noviembre"; break;
+		case 12: return "Diciembre"; break;
 	}
 }
 
@@ -255,6 +255,13 @@ function tipoVideo($tipo, $carpeta_video, $video, $imagen, $carpeta_imagen, $ide
 	return $codigo;
 }
 
+function VideoYoutube($video, $ancho, $alto){
+	$codigo='<iframe width="'.$ancho.'" height="'.$alto.'" 
+					src="http://www.youtube.com/embed/'.$video.'?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0&theme=light" 
+					frameborder="0" allowfullscreen></iframe>';
+	return $codigo;
+}
+
 function extraerArray($string){ 
     $string = explode(",", $string); 
     $salida = array(); 
@@ -345,6 +352,24 @@ function crearCarpeta(){
 		$carpeta=$nombre_carpeta;
 	}
 	return $carpeta;
+}
+
+function primerParrafo($texto){
+	$b_superior="</p>";
+	if(ereg($b_superior, $texto)){
+		$total=explode($b_superior, $texto);
+		return $total[0];
+	}
+}
+
+function soloDescripcion($texto){
+	$b_superior="</p>";
+	$e_parrafo="<p>";
+	if(ereg($b_superior, $texto)){
+		$total=explode($b_superior, $texto);
+		$parrafo=explode($e_parrafo,$total[0]);
+		return $parrafo[1];
+	}
 }
 
 function getRealIP(){
