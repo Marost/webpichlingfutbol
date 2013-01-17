@@ -77,7 +77,7 @@ function eliminarRegistro(registro) {
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Noticias</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Nosotros</span>
     </div>
     
     <!-- Breadcrumbs line -->
@@ -109,7 +109,7 @@ function eliminarRegistro(registro) {
 
         <!-- Media table sample -->
         <div class="widget">
-            <div class="whead"><h6>Noticias</h6></div>
+            <div class="whead"><h6>Nosotros</h6></div>
             <table cellpadding="0" cellspacing="0" width="100%" border="0" class="dTable">
                 <thead>
                     <tr>

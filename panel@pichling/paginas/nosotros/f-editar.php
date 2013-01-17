@@ -79,7 +79,7 @@ $nota_publicar=$fila_nota["publicar"];
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Noticias</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Nosotros</span>
     </div>
     
     <!-- Breadcrumbs line -->
@@ -96,7 +96,7 @@ $nota_publicar=$fila_nota["publicar"];
             <fieldset>
                 <div class="widget fluid">
                     
-                    <div class="whead"><h6>Agregar</h6></div>
+                    <div class="whead"><h6>Editar</h6></div>
                     
                     <div class="formRow">
                         <div class="grid3"><label>Titulo:</label></div>

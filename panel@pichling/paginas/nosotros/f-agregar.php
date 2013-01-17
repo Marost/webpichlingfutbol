@@ -66,7 +66,7 @@ $pub_hora=date("H:m:s");
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Noticias</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Nosotros</span>
     </div>
     
     <!-- Breadcrumbs line -->

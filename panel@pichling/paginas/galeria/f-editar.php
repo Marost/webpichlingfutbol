@@ -85,7 +85,7 @@ $nota_nombre=$fila_nota["posicion"];
             <fieldset>
                 <div class="widget fluid">
                     
-                    <div class="whead"><h6>Agregar</h6></div>
+                    <div class="whead"><h6>Editar</h6></div>
                     
                     <div class="formRow">
                         <div class="grid3"><label>Nombre:</label></div>
