@@ -534,21 +534,24 @@ nav a:hover {
   border-bottom: 1px solid #666;
   margin-bottom: 15px;
 }
+#news #nwizq article h3 {
+  font-family: 'Open sans', sans-serif;
+  font-size: 28px;
+}
 #news #nwizq article .artsup {
   float: left;
   width: 100%;
-  margin-bottom: 10px;
 }
 #news #nwizq article .artsup .imagen {
   float: left;
   width: 240px;
   text-align: center;
+  margin-right: 10px;
+  border: 5px solid #999;
 }
 #news #nwizq article .artsup .datos {
   float: left;
-  width: 380px;
-  font-family: 'Open sans', sans-serif;
-  font-size: 28px;
+  width: 360px;
 }
 #news #nwizq article .artinf {
   float: left;
