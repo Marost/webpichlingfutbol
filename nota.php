@@ -210,7 +210,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id;", $conex
                             <aside>
                                 <h3>Más noticias</h3>
                                 <ul>
-                                    <?php while($fila_noticias=mysql_fetch_array($rst_noticias){
+                                    <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
                                             $noticias_id=$fila_noticias["id"];
                                             $noticias_url=$fila_noticias["url"];
                                             $noticias_titulo=$fila_noticias["titulo"];
