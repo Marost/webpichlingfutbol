@@ -375,6 +375,7 @@ nav a:hover {
 }
 #main-news #mnew-noticias article div p {
   font-size: 12px;
+  line-height: 150%;
 }
 #main-news #mnew-noticias article:first-of-type {
   border-bottom: 2px dotted #B1B1B1;

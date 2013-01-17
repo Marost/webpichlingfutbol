@@ -197,8 +197,8 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id;", $conex
                                 <a class="addthis_button_tweet" tw:count="horizontal"></a>
                                 <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
                                 <a class="addthis_button_pinterest_pinit" 
-                                pi:pinit:url="nota/<?php echo $nota_id."-".$nota_url; ?>" 
-                                pi:pinit:media="upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" 
+                                pi:pinit:url="<?php echo $web; ?>nota/<?php echo $nota_id."-".$nota_url; ?>" 
+                                pi:pinit:media="<?php echo $web; ?>upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" 
                                 pi:pinit:layout="horizontal"></a>
                                 <a class="addthis_counter addthis_pill_style"></a>
                             </div>
