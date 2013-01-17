@@ -44,10 +44,15 @@ $pub_hora=date("H:m:s");
             
             <!-- Sidebar subnav -->
             <ul class="subNav">
+                <li><a href="../empresa/lista.php" title=""><span class="icos-frames"></span>Empresa</a></li>
                 <li><a href="../entrevistas/lista.php" title=""><span class="icos-frames"></span>Entrevistas</a></li>
+                <li><a href="../galeria/lista.php" title=""><span class="icos-frames"></span>Galería de Fotos</a></li>
                 <li><a href="../jugadores/lista.php" title=""><span class="icos-frames"></span>Jugadores</a></li>
-                <li><a href="lista.php" class="this" title=""><span class="icos-frames"></span>Noticias</a></li>
+                <li><a href="../nosotros/lista.php" title=""><span class="icos-frames"></span>Nosotros</a></li>
+                <li><a href="../noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
                 <li><a href="../posiciones/lista.php" title="" ><span class="icos-frames"></span>Posiciones</a></li>
+                <li><a href="lista.php" class="this" title="" ><span class="icos-frames"></span>Usuarios</a></li>
+                <li><a href="../videos/lista.php" title="" ><span class="icos-frames"></span>Videos</a></li>
             </ul>
             
             <div class="divider"><span></span></div>
@@ -61,7 +66,7 @@ $pub_hora=date("H:m:s");
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Noticias</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Usuarios</span>
     </div>
     
     <!-- Breadcrumbs line -->
@@ -81,33 +86,28 @@ $pub_hora=date("H:m:s");
                     <div class="whead"><h6>Agregar</h6></div>
                     
                     <div class="formRow">
-                        <div class="grid3"><label>Titulo:</label></div>
+                        <div class="grid3"><label>Nombre:</label></div>
                         <div class="grid9"><input type="text" name="nombre" /></div>
                     </div>
 
-                    <div class="widget">
-                        <div class="whead"><h6>Contenido</h6></div>
-                        <textarea class="ckeditor" name="contenido" /></textarea>
+                    <div class="formRow">
+                        <div class="grid3"><label>Apellidos:</label></div>
+                        <div class="grid9"><input type="text" name="apellidos" /></div>
                     </div>
 
                     <div class="formRow">
-                        <div class="grid3"><label>Imagen:</label> </div>
-                        <div class="grid9">
-                            <div class="widget nomargin">    
-                                <div id="uploader">Tu navegador no soporta HTML5.</div>                    
-                            </div>
-                        </div>
+                        <div class="grid3"><label>Email:</label></div>
+                        <div class="grid9"><input type="email" name="email" /></div>
                     </div>
 
                     <div class="formRow">
-                        <div class="grid3"><label>Fecha de publicación:</label></div>
-                        <div class="grid4"><input type="text" class="datepicker" name="pub_fecha" value="<?php echo $pub_fecha; ?>" /></div>
+                        <div class="grid3"><label>Usuario:</label></div>
+                        <div class="grid9"><input type="text" name="usuario" /></div>
                     </div>
 
                     <div class="formRow">
-                        <div class="grid3"><label>Hora de publicación:</label></div>
-                        <div class="grid4"><input type="text" class="timepicker" name="pub_hora" size="10" value="<?php echo $pub_hora; ?>" />
-                            <span class="ui-datepicker-append">Utilice la rueda del ratón y el teclado</span></div>
+                        <div class="grid3"><label>Contraseña:</label></div>
+                        <div class="grid9"><input type="text" name="clave" /></div>
                     </div>
                     
                     <div class="formRow">

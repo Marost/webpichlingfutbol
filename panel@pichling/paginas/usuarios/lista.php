@@ -8,7 +8,7 @@ require_once("../../conexion/verificar_sesion.php");
 $mensaje=$_REQUEST["msj"];
 
 //JUGADORES
-$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_noticias ORDER BY fecha_publicacion DESC;", $conexion);
+$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_usuario ORDER BY usuario ASC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -55,10 +55,15 @@ function eliminarRegistro(registro) {
             
             <!-- Sidebar subnav -->
             <ul class="subNav">
+                <li><a href="../empresa/lista.php" title=""><span class="icos-frames"></span>Empresa</a></li>
                 <li><a href="../entrevistas/lista.php" title=""><span class="icos-frames"></span>Entrevistas</a></li>
+                <li><a href="../galeria/lista.php" title=""><span class="icos-frames"></span>Galería de Fotos</a></li>
                 <li><a href="../jugadores/lista.php" title=""><span class="icos-frames"></span>Jugadores</a></li>
-                <li><a href="lista.php" class="this" title=""><span class="icos-frames"></span>Noticias</a></li>
+                <li><a href="../nosotros/lista.php" title=""><span class="icos-frames"></span>Nosotros</a></li>
+                <li><a href="../noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
                 <li><a href="../posiciones/lista.php" title="" ><span class="icos-frames"></span>Posiciones</a></li>
+                <li><a href="lista.php" class="this" title="" ><span class="icos-frames"></span>Usuarios</a></li>
+                <li><a href="../videos/lista.php" title="" ><span class="icos-frames"></span>Videos</a></li>
             </ul>
             
             <div class="divider"><span></span></div>
@@ -72,7 +77,7 @@ function eliminarRegistro(registro) {
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Noticias</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Usuarios</span>
     </div>
     
     <!-- Breadcrumbs line -->
@@ -104,39 +109,27 @@ function eliminarRegistro(registro) {
 
         <!-- Media table sample -->
         <div class="widget">
-            <div class="whead"><h6>Noticias</h6></div>
+            <div class="whead"><h6>Usuarios</h6></div>
             <table cellpadding="0" cellspacing="0" width="100%" border="0" class="dTable">
                 <thead>
                     <tr>
                         <td class="sortCol"><div>Registro</div></td>
-                        <td width="200">Fecha publicación</td>
-                        <td width="100">Estado</td>
                         <td width="100">Acciones</td>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while($fila_nota=mysql_fetch_array($rst_nota)) {
-                          $nota_id=$fila_nota["id"];
-                          $nota_nombre=$fila_nota["titulo"];
-                          $nota_publicacion=$fila_nota["fecha_publicacion"];
-                          $nota_publicar=$fila_nota["publicar"];
+                          $nota_id=$fila_nota["usuario"];
+                          $nota_nombre=$fila_nota["nombre"]." ".$fila_nota["apellidos"];
                     ?>
                     <tr>
                         <td class="textL"><?php echo $nota_nombre; ?></td>
-                        <td><?php echo $nota_publicacion; ?></td>
-                        <td>
-                            <?php if($nota_publicar==1){ ?>
-                            <span class="label label-success">Activo</span>
-                            <?php }else{ ?>
-                            <span class="label">Inactivo</span>
-                            <?php } ?>
-                        </td>
                         <td class="tableActs">
                             <div class="btn-group" style="display: inline-block; margin-bottom: -4px;">
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
                                 <ul class="dropdown-menu pull-right">
                                     <li>
-                                        <a onclick="eliminarRegistro(<?php echo $nota_id; ?>);" href="javascript:;">
+                                        <a onclick="eliminarRegistro('<?php echo $nota_id; ?>');" href="javascript:;">
                                         <span class="icos-trash"></span>Eliminar</a></li>
                                     <li><a href="f-editar.php?id=<?php echo $nota_id; ?>" class="">
                                         <span class="icos-pencil"></span>Modificar</a></li>
