@@ -3,7 +3,7 @@ require_once("panel@pichling/conexion/conexion.php");
 require_once("panel@pichling/conexion/funciones.php");
 
 //NOTICIAS
-$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$fechaActual'", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$fechaActual' LIMIT 2;", $conexion);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -257,7 +257,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
                                     $noticias_id=$fila_noticias["id"];
                                     $noticias_url=$fila_noticias["url"];
                                     $noticias_titulo=$fila_noticias["titulo"];
-                                    $noticias_contenido=soloDescripcion($fila_noticias["contenido"]);
+                                    $noticias_contenido=primerParrafo($fila_noticias["contenido"]);
                                     $noticias_imagen=$fila_noticias["imagen"];
                                     $noticias_imagen_carpeta=$fila_noticias["imagen_carpeta"];
                             ?>
@@ -266,7 +266,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
                                 <div>
                                     <h3><a href="nota/<?php echo $noticias_id."-".$noticias_url; ?>" title="<?php echo $noticias_titulo; ?>">
                                         <?php echo $noticias_titulo; ?></a></h3>
-                                    <?php echo $noticias_contenido; ?>
+                                    <p><?php echo $noticias_contenido; ?>
                                 </div>                                
                             </article>
                             <?php } ?>
