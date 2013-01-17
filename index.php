@@ -264,7 +264,8 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
                             <article>
                                 <img width="125" height="125" src="upload/<?php echo $noticias_imagen_carpeta."thumb/".$noticias_imagen; ?>" alt="<?php echo $noticias_titulo; ?>">
                                 <div>
-                                    <h3><?php echo $noticias_titulo; ?></h3>
+                                    <h3><a href="nota/<?php echo $noticias_id."-".$noticias_url; ?>" title="<?php echo $noticias_titulo; ?>">
+                                        <?php echo $noticias_titulo; ?></a></h3>
                                     <?php echo $noticias_contenido; ?>
                                 </div>                                
                             </article>
