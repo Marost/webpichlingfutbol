@@ -146,7 +146,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias;", $conexion);
 
                     <section id="news">
                         
-                        <section id="nwizq">
+                        <section id="nwizq" class="an100">
 
                             <section id="nosotros">
 

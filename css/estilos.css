@@ -516,7 +516,7 @@ nav a:hover {
   width: 50%;
 }
 #news #nwizq section#nosotros blockquote {
-  background-image: url("http://iamdesigning.com/client_files/wp-themes/ultimate/html/images/quote.png");
+  background-image: url("../imagenes/quote.png");
   background-position: 0 42px;
   background-repeat: no-repeat;
   padding-left: 35px;
@@ -553,7 +553,7 @@ nav a:hover {
 }
 #news #nwizq article.team {
   float: left;
-  width: 310px;
+  width: 309px;
   padding: 0 10px;
   margin-top: 20px;
   text-align: justify;
@@ -578,12 +578,12 @@ nav a:hover {
   float: left;
   width: 100%;
 }
-#news #nwizq article.team .artsup .datos p {
-  font-size: 12px;
-}
 #news #nwizq article.team .artinf {
-  float: left;
-  width: 100%;
+  margin: 0 auto;
+  width: 90%;
+}
+#news #nwizq article.team .artinf p {
+  font-size: 12px;
 }
 #news #nwder {
   float: left;
@@ -690,4 +690,7 @@ nav a:hover {
 }
 .ocultar {
   display: none;
+}
+.an100 {
+  width: 100% !important;
 }
