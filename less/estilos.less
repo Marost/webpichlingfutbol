@@ -633,6 +633,29 @@ nav{
 		margin: 0 10px 0 0;
 		width: 620px;
 
+		section#nosotros{
+			float: left;
+			width: 100%;
+			border-bottom: 1px dashed;
+
+			article{
+				float: left;
+				width: 50%
+			}
+
+			blockquote{
+				background-image: url("http://iamdesigning.com/client_files/wp-themes/ultimate/html/images/quote.png");
+				background-position: 0 42px;
+				background-repeat: no-repeat;				
+				padding-left: 35px;
+				margin: 0;
+				width: 45%;				
+				float: left;
+				font-style: italic;
+			}
+
+		}
+
 		h2{
 			color: #095495;
 			font-size: 24px;
@@ -660,31 +683,42 @@ nav{
 			width: 100%;
 		}
 
-		article{
+		article.team:last-child{
+			border-right: none;
+		}
+
+		article.team{
 			float: left;
-			border-bottom: 1px solid #666;
-			margin-bottom: 15px;
+			width: 310px;
+			padding: 0 10px;
+			margin-top: 20px;
+			text-align: justify;
+			border-right: 1px solid white;
 
 			h3{
 				font-family: 'Open sans', sans-serif;
-				font-size: 28px;
+				font-size: 26px;
 			}
 
 			.artsup{
 				float: left;
 				width: 100%;
+				text-align: center;
 
 				.imagen{
 					float: left;
-					width: 240px;
+					width: 100%;
+					height: 170px;
 					text-align: center;
-					margin-right: 10px;
-					border: 5px solid #999;
 				}
 
 				.datos{
 					float: left;
-					width: 360px;
+					width: 100%;
+
+					p{
+						font-size: 12px;
+					}
 				}
 			}
 

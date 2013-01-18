@@ -148,16 +148,21 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias;", $conexion);
                         
                         <section id="nwizq">
 
-                            <h2>Nosotros</h2>
+                            <section id="nosotros">
 
-                            <article>
+                                <article>
+                                    <h3>Nosotros</h3>
+                                    <p>Bienvenidos a la Pagina Web de Pichling Representaciones. Somos una empresa de representación de Jugadores y Técnicos de futbol, que trabaja con Agentes asociados en Argentina, Colombia y España. Caracterizados, todos, por la seriedad, confiabilidad y transparencia en sus operaciones. Esperamos que la información que mostramos sea de su interés y les sirvan como base para iniciar conversaciones sobre futuros negocios con nuestros representados.</p>
+                                </article>
 
-                                <h3>Misión</h3>
-                                <p>Buscar permanentemente el desarrollo personal de nuestros representados, base fundamental para el éxito deportivo.</p>
-                                <p>Trabajar para cubrir las expectativas  de forma profesional, honesta, responsable y realista.</p>
-                                <p>Negociar con las instituciones deportivas nacionales e internacionales transparentemente para lograr relaciones a largo plazo, teniendo la confianza como base  clave de nuestro trabajo.</p>
+                                <blockquote>
+                                    <h3>Misión</h3>
+                                    <p>Buscar permanentemente el desarrollo personal de nuestros representados, base fundamental para el éxito deportivo.</p>
+                                    <p>Trabajar para cubrir las expectativas  de forma profesional, honesta, responsable y realista.</p>
+                                    <p>Negociar con las instituciones deportivas nacionales e internacionales transparentemente para lograr relaciones a largo plazo, teniendo la confianza como base  clave de nuestro trabajo.</p>
+                                </blockquote>
 
-                            </article>
+                            </section>
 
                             <?php while($fila_nota=mysql_fetch_array($rst_nota)){
                                     $nota_titulo=$fila_nota["titulo"];
@@ -166,7 +171,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias;", $conexion);
                                     $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
                             ?>
 
-                            <article>
+                            <article class="team">
 
                                 <div class="artsup">
 
@@ -187,28 +192,6 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias;", $conexion);
                             </article>
 
                             <?php } ?>
-
-                        </section>
-
-                        <section id="nwder">
-                            
-                            <aside>
-                                <h3>Más noticias</h3>
-                                <ul>
-                                    <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
-                                            $noticias_id=$fila_noticias["id"];
-                                            $noticias_url=$fila_noticias["url"];
-                                            $noticias_titulo=$fila_noticias["titulo"];
-                                    ?>
-                                    <li><a href="nota/<?php echo $noticias_id."-".$noticias_url; ?>" title="<?php echo $noticias_titulo; ?>">
-                                        <?php echo $noticias_titulo; ?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            </aside>
-
-                            <aside class="publicidad">
-                                <img src="https://www.google.com/help/hc/images/adsense/adsense_185665_adformat-text_336x280_en.png" alt="">
-                            </aside>
 
                         </section>
 
