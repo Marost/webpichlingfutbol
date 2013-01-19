@@ -476,6 +476,7 @@ nav a:hover {
 #news .info-jugador-nwder .datos .posicion {
   text-align: center;
   padding-top: 10px;
+  position: relative;
 }
 #news .info-jugador-nwder .datos .posicion div {
   position: absolute;
@@ -483,6 +484,50 @@ nav a:hover {
   width: 24px;
   height: 24px;
   display: block;
+}
+#news .info-jugador-nwder .datos .posicion #arquero {
+  left: 66px;
+  top: 210px;
+}
+#news .info-jugador-nwder .datos .posicion #lateral_derecho {
+  left: 160px;
+  top: 350px;
+}
+#news .info-jugador-nwder .datos .posicion #defensa_central_derecha {
+  left: 125px;
+  top: 243px;
+}
+#news .info-jugador-nwder .datos .posicion #defensa_central_izquierda {
+  left: 125px;
+  top: 180px;
+}
+#news .info-jugador-nwder .datos .posicion #lateral_izquierdo {
+  left: 160px;
+  top: 76px;
+}
+#news .info-jugador-nwder .datos .posicion #volante_derecho {
+  left: 318px;
+  top: 295px;
+}
+#news .info-jugador-nwder .datos .posicion #volante_central {
+  left: 318px;
+  top: 210px;
+}
+#news .info-jugador-nwder .datos .posicion #volante_izquierdo {
+  left: 318px;
+  top: 128px;
+}
+#news .info-jugador-nwder .datos .posicion #extremo_derecho {
+  left: 508px;
+  top: 295px;
+}
+#news .info-jugador-nwder .datos .posicion #delantero {
+  left: 532px;
+  top: 210px;
+}
+#news .info-jugador-nwder .datos .posicion #extremo_izquierdo {
+  left: 508px;
+  top: 130px;
 }
 #news .info-jugador-nwder .datos .videos {
   text-align: center;
