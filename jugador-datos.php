@@ -9,6 +9,17 @@ $tipo=$_POST["tipo"];
 
 <?php if($tipo=="posicion"){ ?>
 <div class="posicion">
+    <div id="arquero"></div>
+    <div id="lateral_derecho"></div>
+    <div id="defensa_central_derecha"></div>
+    <div id="defensa_central_izquierda"></div>
+    <div id="lateral_izquierdo"></div>
+    <div id="volante_derecho"></div>
+    <div id="volante_central"></div>
+    <div id="volante_izquierdo"></div>
+    <div id="extremo_derecho"></div>
+    <div id="delantero"></div>
+    <div id="extremo_izquierdo"></div>
     <img src="imagenes/jugador-cancha.jpg" width="600" height="430">
 </div>                                
 <?php } ?>

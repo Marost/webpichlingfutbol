@@ -1,7 +1,7 @@
 <section id="header-izq">
     <div>
         <h1>
-            <a class="title" href="#">
+            <a class="title" href="/" title="Pichling Representaciones">
             Pichling Representaciones</a></h1>
     </div>
 </section>

@@ -477,6 +477,13 @@ nav a:hover {
   text-align: center;
   padding-top: 10px;
 }
+#news .info-jugador-nwder .datos .posicion div {
+  position: absolute;
+  background-image: url("../imagenes/icon-ball.png");
+  width: 24px;
+  height: 24px;
+  display: block;
+}
 #news .info-jugador-nwder .datos .videos {
   text-align: center;
   padding-top: 10px;
