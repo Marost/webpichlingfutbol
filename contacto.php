@@ -9,7 +9,7 @@ require_once("panel@pichling/conexion/funciones.php");
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Nosotros</title>
+        <title>Contacto</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <base href="<?php echo $web; ?>">
@@ -138,6 +138,35 @@ require_once("panel@pichling/conexion/funciones.php");
 
         </script>
 
+        <!-- FORMULARIO -->
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="libs/form-css3/contact/light/contact-light.css" />
+        <!--[if lt IE 9]>
+                <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script src="libs/form-css3/contact/light/placeholder.js"></script>
+        <script>
+            var jForm = jQuery.noConflict();
+            jForm(function(){
+                if( jForm.browser.msie && jForm.browser.version <= 9 ) {
+                    jForm('html').addClass('ie');
+                    
+                    jForm('form.msgtop.nolabel').find('p').append('<span class="before"/>');
+                }
+                
+                // add 'invalid' class when HTML5 form valiation fails
+                if( !jForm.browser.firefox ) {
+                    jForm('form.contact-form').each(function(){
+                        jForm(this).find('input.form-input').bind('invalid', function(){
+                            jForm(this).addClass('invalid');
+                        });
+                    });
+                }
+            });
+        </script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -163,50 +192,31 @@ require_once("panel@pichling/conexion/funciones.php");
                         
                         <section id="nwizq" class="an100">
 
-                            <section id="nosotros">
+                            <h2>Contacto</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer velit enim, consequat pellentesque pellentesque ac, rutrum sed enim. Pellentesque interdum pharetra urna, vitae dapibus metus vulputate sed.</p>
 
-                                <article>
-                                    <h3>Nosotros</h3>
-                                    <p>Bienvenidos a la Pagina Web de Pichling Representaciones. Somos una empresa de representación de Jugadores y Técnicos de futbol, que trabaja con Agentes asociados en Argentina, Colombia y España. Caracterizados, todos, por la seriedad, confiabilidad y transparencia en sus operaciones. Esperamos que la información que mostramos sea de su interés y les sirvan como base para iniciar conversaciones sobre futuros negocios con nuestros representados.</p>
-                                </article>
+                            <section class="contacto-mapa">
 
-                                <blockquote>
-                                    <h3>Misión</h3>
-                                    <p>Buscar permanentemente el desarrollo personal de nuestros representados, base fundamental para el éxito deportivo.</p>
-                                    <p>Trabajar para cubrir las expectativas  de forma profesional, honesta, responsable y realista.</p>
-                                    <p>Negociar con las instituciones deportivas nacionales e internacionales transparentemente para lograr relaciones a largo plazo, teniendo la confianza como base  clave de nuestro trabajo.</p>
-                                </blockquote>
+                                <form action="" class="contact-form">
 
+                                    <label for="name">Nombre <span>(required)</span></label>
+                                    <input type="text" name="name" class="form-input" required />
+                                    
+                                    <label for="email">Email <span>(required)</span></label>
+                                    <input type="email" name="email" class="form-input" required />
+                                    
+                                    <label for="message">Mensaje <span>(required)</span></label>
+                                    <textarea name="message" class="form-input" required></textarea>
+                                    
+                                    <input class="form-btn" type="submit" value="Send Message" />   
+
+                                </form>
+                                
                             </section>
 
-                            <?php while($fila_nota=mysql_fetch_array($rst_nota)){
-                                    $nota_titulo=$fila_nota["titulo"];
-                                    $nota_contenido=$fila_nota["contenido"];
-                                    $nota_imagen=$fila_nota["imagen"];
-                                    $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
-                            ?>
-
-                            <article class="team">
-
-                                <div class="artsup">
-
-                                    <div class="imagen">
-                                        <img src="upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" alt="<?php echo $nota_titulo; ?>">
-                                    </div>
-
-                                    <div class="datos">
-                                        <h3><?php echo $nota_titulo; ?></h3>
-                                    </div>
-
-                                </div>
-
-                                <div class="artinf">
-                                    <?php echo $nota_contenido; ?>
-                                </div>
-
-                            </article>
-
-                            <?php } ?>
+                            <section class="contacto-mapa">
+                                
+                            </section>
 
                         </section>
 

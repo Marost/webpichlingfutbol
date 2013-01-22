@@ -57,13 +57,6 @@ $tipo=$_POST["tipo"];
     <div class="items">
 
         <article>
-            <a id="NTp-bcpBsDs" href="javascript:;">
-                <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
-                <?php $youtube_ramonrodriguez1 = new SSDTube(); $youtube_ramonrodriguez1->identify("http://www.youtube.com/watch?v=NTp-bcpBsDs", true); ?>
-                <img src="<?php echo $youtube_ramonrodriguez1->thumbnail_1_url; ?>" width="120" height="90" alt="Edson Uribe" /></a>
-        </article>
-
-        <article>
             <a id="7EHAEX0EpYU" href="javascript:;">
                 <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
                 <?php $youtube_ramonrodriguez2 = new SSDTube(); $youtube_ramonrodriguez2->identify("http://www.youtube.com/watch?v=7EHAEX0EpYU", true); ?>
