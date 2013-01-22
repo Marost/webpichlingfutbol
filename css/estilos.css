@@ -562,6 +562,9 @@ nav a:hover {
   width: 50%;
   float: left;
 }
+#news #nwizq section.contacto-mapa h2 {
+  margin-bottom: 8px;
+}
 #news #nwizq section#nosotros {
   float: left;
   width: 100%;

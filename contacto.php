@@ -139,7 +139,6 @@ require_once("panel@pichling/conexion/funciones.php");
         </script>
 
         <!-- FORMULARIO -->
-        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="libs/form-css3/contact/light/contact-light.css" />
         <!--[if lt IE 9]>
                 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
@@ -197,25 +196,30 @@ require_once("panel@pichling/conexion/funciones.php");
 
                             <section class="contacto-mapa">
 
-                                <form action="" class="contact-form">
+                                <h2>Envianos un mensaje</h2>
 
-                                    <label for="name">Nombre <span>(required)</span></label>
+                                <form action="" class="contact-form" method="POST">
+
+                                    <label for="name">Nombre <span>(requerido)</span></label>
                                     <input type="text" name="name" class="form-input" required />
                                     
-                                    <label for="email">Email <span>(required)</span></label>
+                                    <label for="email">Email <span>(requerido)</span></label>
                                     <input type="email" name="email" class="form-input" required />
                                     
-                                    <label for="message">Mensaje <span>(required)</span></label>
+                                    <label for="message">Mensaje <span>(requerido)</span></label>
                                     <textarea name="message" class="form-input" required></textarea>
                                     
-                                    <input class="form-btn" type="submit" value="Send Message" />   
+                                    <input class="form-btn" type="submit" value="Enviar mensaje" />   
 
                                 </form>
                                 
                             </section>
 
                             <section class="contacto-mapa">
-                                
+
+                                <h2>Encuentranos en:</h2>
+
+                                <iframe width="495" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.pe/maps/ms?msa=0&amp;msid=217338416310728973847.0004c1d8fdb4ead94c443&amp;ie=UTF8&amp;t=m&amp;ll=-12.107925,-76.969496&amp;spn=0.003147,0.0053&amp;z=17&amp;output=embed"></iframe>
                             </section>
 
                         </section>
