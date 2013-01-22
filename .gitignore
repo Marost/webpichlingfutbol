@@ -166,6 +166,5 @@ pip-log.txt
 recursos/
 less/
 _notes/
-*.less
 *.fla
 *.DS_Store

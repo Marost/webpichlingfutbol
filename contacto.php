@@ -17,6 +17,7 @@ require_once("panel@pichling/conexion/funciones.php");
         <!-- ESTILOS -->
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/icons.css">
 
         <!-- FUENTE -->
         <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
@@ -220,6 +221,26 @@ require_once("panel@pichling/conexion/funciones.php");
                                 <h2>Encuentranos en:</h2>
 
                                 <iframe width="495" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.pe/maps/ms?msa=0&amp;msid=217338416310728973847.0004c1d8fdb4ead94c443&amp;ie=UTF8&amp;t=m&amp;ll=-12.107925,-76.969496&amp;spn=0.003147,0.0053&amp;z=17&amp;output=embed"></iframe>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <span class="icon icon-home"></span>
+                                            <p>Cristobal de Peralta N° 110 Oficina 1002 - Santiago de Surco</p>
+                                        </li>
+
+                                        <li>
+                                            <span class="icon icon-phone"></span>
+                                            <p>455-1549</p>
+                                        </li>
+
+                                        <li>
+                                            <span class="icon icon-email"></span>
+                                            <p>contacto@pichlingfutbol.com</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </section>
 
                         </section>
