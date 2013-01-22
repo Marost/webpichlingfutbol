@@ -1,6 +1,9 @@
 <?php
 require_once("panel@pichling/conexion/conexion.php");
 require_once("panel@pichling/conexion/funciones.php");
+
+//NOSOTROS
+$rst_nota=mysql_query("SELECT * FROM pf_nosotros ORDER BY fecha_publicacion DESC;", $conexion);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
