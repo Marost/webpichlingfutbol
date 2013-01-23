@@ -4,22 +4,40 @@ include("libs/ssdtube/SSDTube.php");
 
 /* VARIABLES DE POST */
 $tipo=$_POST["tipo"];
+$jugador=$_POST["jugador"];
+
+//POSICION FIJA EN LA CANCHA
+$rst_poscancha=mysql_query("SELECT * FROM pf_posicion_fija WHERE jugador=$jugador", $conexion);
+$fila_poscancha=mysql_fetch_array($rst_poscancha);
+
+//VARIABLES
+$poscancha_arquero=$fila_poscancha["arquero"];
+$poscancha_lateral_derecho=$fila_poscancha["lateral_derecho"];
+$poscancha_back_central_derecho=$fila_poscancha["back_central_derecho"];
+$poscancha_back_central_izquierdo=$fila_poscancha["back_central_izquierdo"];
+$poscancha_lateral_izquierdo=$fila_poscancha["lateral_izquierdo"];
+$poscancha_volante_derecho=$fila_poscancha["volante_derecho"];
+$poscancha_volante_central=$fila_poscancha["volante_central"];
+$poscancha_volante_izquierdo=$fila_poscancha["volante_izquierdo"];
+$poscancha_extremo_derecho=$fila_poscancha["extremo_derecho"];
+$poscancha_delantero=$fila_poscancha["delantero"];
+$poscancha_extremo_izquierdo=$fila_poscancha["extremo_izquierdo"];
 
 ?>
 
 <?php if($tipo=="posicion"){ ?>
 <div class="posicion">
-    <div id="arquero"></div>
-    <div id="lateral_derecho"></div>
-    <div id="defensa_central_derecha"></div>
-    <div id="defensa_central_izquierda"></div>
-    <div id="lateral_izquierdo"></div>
-    <div id="volante_derecho"></div>
-    <div id="volante_central"></div>
-    <div id="volante_izquierdo"></div>
-    <div id="extremo_derecho"></div>
-    <div id="delantero"></div>
-    <div id="extremo_izquierdo"></div>
+    <?php if ($poscancha_arquero==1){ ?>                <div id="arquero"></div>                    <?php } ?>
+    <?php if ($poscancha_lateral_derecho==1){ ?>        <div id="lateral_derecho"></div>            <?php } ?>
+    <?php if ($poscancha_back_central_derecho==1){ ?>   <div id="defensa_central_derecha"></div>    <?php } ?>
+    <?php if ($poscancha_back_central_izquierdo==1){ ?> <div id="defensa_central_izquierda"></div>  <?php } ?>
+    <?php if ($poscancha_lateral_izquierdo==1){ ?>      <div id="lateral_izquierdo"></div>          <?php } ?>
+    <?php if ($poscancha_volante_derecho==1){ ?>        <div id="volante_derecho"></div>            <?php } ?>
+    <?php if ($poscancha_volante_central==1){ ?>        <div id="volante_central"></div>            <?php } ?>
+    <?php if ($poscancha_volante_izquierdo==1){ ?>      <div id="volante_izquierdo"></div>          <?php } ?>
+    <?php if ($poscancha_extremo_derecho==1){ ?>        <div id="extremo_derecho"></div>            <?php } ?>
+    <?php if ($poscancha_delantero==1){ ?>              <div id="delantero"></div>                  <?php } ?>
+    <?php if ($poscancha_extremo_izquierdo==1){ ?>      <div id="extremo_izquierdo"></div>          <?php } ?>
     <img src="imagenes/jugador-cancha.jpg" width="600" height="430">
 </div>                                
 <?php } ?>
