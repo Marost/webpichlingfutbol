@@ -1,4 +1,7 @@
 <?php
+require_once("panel@pichling/conexion/conexion.php");
+require_once("panel@pichling/conexion/funciones.php");
+
 /* LIBRERIA DE CONEXION A YOUTUBE */
 include("libs/ssdtube/SSDTube.php");
 
