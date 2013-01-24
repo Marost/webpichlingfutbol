@@ -146,6 +146,7 @@ $jugador_imagen_carpeta=$fila_jugador["imagen_carpeta"];
 
         <script>
             var jGalJug = jQuery.noConflict();
+            var jugador = <?php echo $id_jugador; ?>;
 
             jGalJug(document).on("ready", startJugador);
             jGalJug(document).on("ready", startJugadorPos);
@@ -157,7 +158,7 @@ $jugador_imagen_carpeta=$fila_jugador["imagen_carpeta"];
             function startJugadorPos(){
                 jGalJug.ajax({
                     url: "jugador-datos.php", 
-                    data: {tipo:"posicion"},
+                    data: {tipo: "posicion", jugador: jugador},
                     type: "POST",
                     success: function(data){
                         jGalJug("section.datos").html(data);
@@ -169,7 +170,6 @@ $jugador_imagen_carpeta=$fila_jugador["imagen_carpeta"];
             function clickJugadorOpc(datos){
                 jGalJug(".info-jugador-nwder .menu ul li a").removeClass("active");
                 var tipo = datos.currentTarget.id;
-                var jugador = <?php echo $id_jugador; ?>;
                 jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
                 jGalJug.ajax({
                     url: "jugador-datos.php", 
