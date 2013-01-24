@@ -7,7 +7,7 @@ $tipo=$_POST["tipo"];
 $jugador=$_POST["jugador"];
 
 //POSICION FIJA EN LA CANCHA
-$rst_poscancha=mysql_query("SELECT * FROM pf_posicion_fija WHERE jugador=$jugador", $conexion);
+$rst_poscancha=mysql_query("SELECT * FROM pf_posicion_cancha WHERE jugador=$jugador", $conexion);
 $fila_poscancha=mysql_fetch_array($rst_poscancha);
 
 //VARIABLES
