@@ -169,7 +169,7 @@ $jugador_imagen_carpeta=$fila_jugador["imagen_carpeta"];
             function clickJugadorOpc(datos){
                 jGalJug(".info-jugador-nwder .menu ul li a").removeClass("active");
                 var tipo = datos.currentTarget.id;
-                var jugador = <?php echo $id_jugador; ?>
+                var jugador = <?php echo $id_jugador; ?>;
                 jGalJug(".info-jugador-nwder .menu ul li a#"+tipo).addClass("active");
                 jGalJug.ajax({
                     url: "jugador-datos.php", 
