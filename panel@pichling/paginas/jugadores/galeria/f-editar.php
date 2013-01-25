@@ -8,45 +8,12 @@ require_once("../../conexion/verificar_sesion.php");
 $id_url=$_REQUEST["id"];
 
 //EDITAR
-$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores WHERE id=$id_url;", $conexion);
+$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_galeria WHERE id=$id_url;", $conexion);
 $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
-$nota_nombre=$fila_nota["nombre"];
-$nota_apellidos=$fila_nota["apellidos"];
-$nota_fecha_nac=$fila_nota["fecha_nac"];
-$nota_nacionalidad=$fila_nota["nacionalidad"];
-$nota_posicion=$fila_nota["posicion"];
-$nota_perfil=$fila_nota["perfil"];
-$nota_peso=$fila_nota["peso"];
-$nota_estatura=$fila_nota["estatura"];
-$nota_club_actual=$fila_nota["club_actual"];
-$nota_posicion_fija=$fila_nota["posicion_fija"];
-$nota_publicar=$fila_nota["publicar"];
-$nota_seleccion=$fila_nota["seleccion"];
 $nota_imagen=$fila_nota["imagen"];
 $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
-
-//POSICION FIJA
-$rst_posicion_fija=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_fija ORDER BY posicion ASC;", $conexion);
-
-//POSICION CANCHA
-$rst_posicion_cancha=mysql_query("SELECT * FROM ".$tabla_suf."_posicion_cancha WHERE jugador=$id_url;", $conexion);
-$fila_posicion_cancha=mysql_fetch_array($rst_posicion_cancha);
-
-//VARIABLES
-$cancha_arquero=$fila_posicion_cancha["arquero"];
-$cancha_lateral_derecho=$fila_posicion_cancha["lateral_derecho"];
-$cancha_back_derecho=$fila_posicion_cancha["back_central_derecho"];
-$cancha_back_izquierdo=$fila_posicion_cancha["back_central_izquierdo"];
-$cancha_defensa_central=$fila_posicion_cancha["defensa_central"];
-$cancha_lateral_izquierdo=$fila_posicion_cancha["lateral_izquierdo"];
-$cancha_volante_derecho=$fila_posicion_cancha["volante_derecho"];
-$cancha_volante_central=$fila_posicion_cancha["volante_central"];
-$cancha_volante_izquierdo=$fila_posicion_cancha["volante_izquierdo"];
-$cancha_extremo_derecho=$fila_posicion_cancha["extremo_derecho"];
-$cancha_delantero=$fila_posicion_cancha["delantero"];
-$cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -122,92 +89,6 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                     <div class="whead"><h6>Editar</h6></div>
                     
                     <div class="formRow">
-                        <div class="grid3"><label>Nombre:</label></div>
-                        <div class="grid9"><input type="text" name="nombre" value="<?php echo $nota_nombre; ?>" /></div>
-                    </div>
-                    
-                    <div class="formRow">
-                        <div class="grid3"><label>Apellidos:</label></div>
-                        <div class="grid9"><input type="text" name="apellidos" value="<?php echo $nota_apellidos; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Fecha de Nacimiento:</label></div>
-                        <div class="grid9"><input type="text" name="fecha_nac" value="<?php echo $nota_fecha_nac; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Nacionalidad:</label></div>
-                        <div class="grid9"><input type="text" name="nacionalidad" value="<?php echo $nota_nacionalidad; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Posición:</label></div>
-                        <div class="grid9"><input type="text" name="posicion" value="<?php echo $nota_posicion; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Perfil:</label></div>
-                        <div class="grid9"><input type="text" name="perfil" value="<?php echo $nota_perfil; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Peso:</label></div>
-                        <div class="grid9"><input type="text" name="peso" value="<?php echo $nota_peso; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Estatura:</label></div>
-                        <div class="grid9"><input type="text" name="estatura" value="<?php echo $nota_estatura; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Club actual:</label></div>
-                        <div class="grid9"><input type="text" name="club_actual" value="<?php echo $nota_club_actual; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Selección:</label></div>
-                        <div class="grid9"><input type="text" name="seleccion" value="<?php echo $nota_seleccion; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Posición fija:</label></div>
-                        <div class="grid9">
-                            <select data-placeholder="Selecciona una opción..." class="select" name="posicion_fija" tabindex="2">
-                                <option value=""></option> 
-                                <?php while($fila_posicion_fija=mysql_fetch_array($rst_posicion_fija)){
-                                        $posicion_id=$fila_posicion_fija["id"];
-                                        $posicion_posicion=$fila_posicion_fija["posicion"];
-
-                                        if ($nota_posicion_fija==$posicion_id){
-                                ?>
-                                <option selected="selected" value="<?php echo $posicion_id; ?>"><?php echo $posicion_posicion; ?></option>
-                                <?php }else{ ?>
-                                <option value="<?php echo $posicion_id; ?>"><?php echo $posicion_posicion; ?></option>
-                                <?php }} ?>
-                            </select>
-                        </div>             
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Posicíón en la cancha: </label></div>
-                        <div class="grid9 on_off">
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_arquero==1){ ?>checked<?php } ?> id="check21" name="arquero" />Arquero</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_lateral_derecho==1){ ?>checked<?php } ?> id="check21" name="lateral-derecho" />Lateral derecho</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_back_derecho==1){ ?>checked<?php } ?> id="check21" name="back-derecho" />Back central derecho</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_back_izquierdo==1){ ?>checked<?php } ?> id="check21" name="back-izquierdo" />Back central izquierdo</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_lateral_izquierdo==1){ ?>checked<?php } ?> id="check21" name="lateral-izquierdo" />Lateral izquierdo</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_volante_derecho==1){ ?>checked<?php } ?> id="check21" name="volante-derecho" />Volante derecho</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_volante_central==1){ ?>checked<?php } ?> id="check21" name="volante-central" />Volante central</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_volante_izquierdo==1){ ?>checked<?php } ?> id="check21" name="volante-izquierdo" />Volante izquierdo</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_extremo_derecho==1){ ?>checked<?php } ?> id="check21" name="extremo-derecho" />Extremo derecho</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_delantero==1){ ?>checked<?php } ?> id="check21" name="delantero" />Delantero</div>
-                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($cancha_extremo_izquierdo==1){ ?>checked<?php } ?> id="check21" name="extremo-izquierdo" />Extremo izquierdo</div>
-                        </div>
-                    </div>
-
-                    <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
                             <div class="without floatL">
@@ -220,13 +101,6 @@ $cancha_extremo_izquierdo=$fila_posicion_cancha["extremo_izquierdo"];
                                 <input type="hidden" name="imagen" value="<?php echo $nota_imagen; ?>">
                                 <input type="hidden" name="imagen_carpeta" value="<?php echo $nota_imagen_carpeta; ?>">
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Publicar: </label></div>
-                        <div class="grid9 enabled_disabled">
-                            <div class="floatL mr10"><input type="checkbox" id="check4" <?php if($nota_publicar==1){ ?>checked<?php } ?> value="1" name="publicar" /></div>
                         </div>
                     </div>
 

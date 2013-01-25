@@ -139,9 +139,9 @@ function eliminarRegistro(registro) {
                                     <li>
                                         <a onclick="eliminarRegistro(<?php echo $jugadores_id; ?>);" href="javascript:;">
                                         <span class="icos-trash"></span>Eliminar</a></li>
-                                    <li><a href="f-editar.php?id=<?php echo $jugadores_id; ?>" class="">
+                                    <li><a href="f-editar.php?jugador=<?php echo $jugadores_id; ?>" class="">
                                         <span class="icos-pencil"></span>Modificar</a></li>
-                                    <li><a href="#" class=""><span class="icos-photos"></span>Fotos</a></li>
+                                    <li><a href="galeria/lista.php?id=<?php echo $jugadores_id; ?>" class=""><span class="icos-photos"></span>Fotos</a></li>
                                     <li><a href="#" class=""><span class="icos-youtube"></span>Videos</a></li>
                                 </ul>
                             </div>

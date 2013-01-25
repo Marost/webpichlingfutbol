@@ -6,9 +6,10 @@ require_once("../../conexion/verificar_sesion.php");
 
 //VARIABLES DE URL
 $mensaje=$_REQUEST["msj"];
+$jugador_id=$_REQUEST["jugador"];
 
-//JUGADORES
-$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY nombre ASC;", $conexion);
+//GALERIA DE JUGADORES
+$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_galeria WHERE jugador=$jugador_id ORDER BY orden ASC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -104,52 +105,25 @@ function eliminarRegistro(registro) {
 
         <!-- Media table sample -->
         <div class="widget">
-            <div class="whead"><h6>Jugadores</h6></div>
-            <table cellpadding="0" cellspacing="0" width="100%" border="0" class="dTable">
-                <thead>
-                    <tr>
-                        <td class="sortCol"><div>Titulo</div></td>
-                        <td width="200" class="sortCol"><div>Posicion</div></td>
-                        <td width="100">Estado</td>
-                        <td width="100">Acciones</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while($fila_jugadores=mysql_fetch_array($rst_jugadores)) {
-                          $jugadores_id=$fila_jugadores["id"];
-                          $jugadores_nombre=$fila_jugadores["nombre"];
-                          $jugadores_apellidos=$fila_jugadores["apellidos"];
-                          $jugadores_posicion=$fila_jugadores["posicion"];
-                          $jugadores_publicar=$fila_jugadores["publicar"];
+            <div class="whead"><h6>Galería de Fotos</h6></div>
+            <div class="gallery">
+               <ul>
+                    <?php while($fila_jugadores=mysql_fetch_array($rst_jugadores)){
+                            $jugador_id=$fila_jugadores["id"];
+                            $jugador_imagen=$fila_jugadores["imagen"];
+                            $jugador_imagen_carpeta=$fila_jugadores["imagen_carpeta"];
                     ?>
-                    <tr>
-                        <td class="textL"><?php echo $jugadores_nombre." ".$jugadores_apellidos; ?></td>
-                        <td><?php echo $jugadores_posicion; ?></td>
-                        <td>
-                            <?php if($jugadores_publicar==1){ ?>
-                            <span class="label label-success">Activo</span>
-                            <?php }else{ ?>
-                            <span class="label">Inactivo</span>
-                            <?php } ?>
-                        </td>
-                        <td class="tableActs">
-                            <div class="btn-group" style="display: inline-block; margin-bottom: -4px;">
-                                <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li>
-                                        <a onclick="eliminarRegistro(<?php echo $jugadores_id; ?>);" href="javascript:;">
-                                        <span class="icos-trash"></span>Eliminar</a></li>
-                                    <li><a href="f-editar.php?id=<?php echo $jugadores_id; ?>" class="">
-                                        <span class="icos-pencil"></span>Modificar</a></li>
-                                    <li><a href="#" class=""><span class="icos-photos"></span>Fotos</a></li>
-                                    <li><a href="#" class=""><span class="icos-youtube"></span>Videos</a></li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
+                    <li>
+                        <a href="javascript:;" title="">
+                            <img src="../../../upload/<?php echo $jugador_imagen_carpeta."".$jugador_imagen; ?>" alt="" /></a>
+                        <div class="actions">
+                            <a href="f-editar.php?id=<?php echo $jugador_id; ?>" title="" class="edit"><img src="../images/icons/update.png" alt="" /></a>
+                            <a href="s-eliminar.php?id=<?php echo $jugador_id; ?>" title="" class="remove"><img src="../images/icons/delete.png" alt="" /></a>
+                        </div>
+                    </li>
                     <?php } ?>
-                </tbody>
-            </table>
+               </ul> 
+           </div>
         </div>
 
     </div>

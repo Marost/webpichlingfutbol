@@ -25,7 +25,7 @@ $rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_jugadores_galeria (url, nom
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
 	mysql_close($conexion);
-	header("Location:lista.php?msj=er");
+	header("Location:lista.php?jugador=&msj=er");
 } else {
 	mysql_close($conexion);
 	header("Location:lista.php?msj=ok");
