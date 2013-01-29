@@ -119,9 +119,9 @@ function eliminarRegistro(registro) {
                             <img src="../../../../upload/<?php echo $galeria_imagen_carpeta."thumb/".$galeria_imagen; ?>" alt="" /></a>
                         <div class="actions">
                             <a href="f-editar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $galeria_id; ?>" title="" class="edit">
-                                <img src="../../images/icons/update.png" alt="" /></a>
+                                <img src="../../../images/icons/update.png" alt="" /></a>
                             <a href="s-eliminar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $galeria_id; ?>" title="" class="remove">
-                                <img src="../../images/icons/delete.png" alt="" /></a>
+                                <img src="../../../images/icons/delete.png" alt="" /></a>
                         </div>
                     </li>
                     <?php } ?>
