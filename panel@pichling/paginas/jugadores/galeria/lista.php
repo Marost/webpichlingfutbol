@@ -86,7 +86,8 @@ function eliminarRegistro(registro) {
     <div class="wrapper">
 
         <ul class="middleNavR">
-            <li><a href="f-agregar.php" title="Agregar" class="tipN"><img src="../../../images/icons/middlenav/create.png" alt="" /></a></li>
+            <li><a href="f-agregar.php?jugador=<?php echo $jugador_id; ?>" title="Agregar" class="tipN">
+                <img src="../../../images/icons/middlenav/create.png" alt="" /></a></li>
         </ul>
 
         <?php if($mensaje=="ok"){ ?>
