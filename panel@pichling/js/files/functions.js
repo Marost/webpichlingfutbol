@@ -304,8 +304,8 @@ $(function() {
 	
 	$("#uploader").pluploadQueue({
 		runtimes : 'html5,html4',
-		url : '../../php/upload.php',
-		max_file_size : '10mb',
+		url : '/panel@pichling/php/upload.php',
+		max_file_size : '100mb',
 		chunk_size : '1mb',
 		unique_names : true,
 		dragdrop: false,
