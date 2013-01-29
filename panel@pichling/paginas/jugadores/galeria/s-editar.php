@@ -1,8 +1,8 @@
 <?php
 session_start();
-include("../../conexion/conexion.php");
-include("../../conexion/funciones.php");
-require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
+include("../../../conexion/conexion.php");
+include("../../../conexion/funciones.php");
+require_once('../../../js/plugins/thumbs/ThumbLib.inc.php');
 
 //DECLARACION DE VARIABLES
 $id=$_REQUEST["id"];
@@ -16,9 +16,9 @@ if($_POST['uploader_0_tmpname']==""){
 }else{
 	$carpeta=fechaCarpeta()."/";
 	$imagen=$_POST['uploader_0_tmpname'];
-	$thumb=PhpThumbFactory::create("../../../upload/".$imagen_carpeta."".$imagen."");
+	$thumb=PhpThumbFactory::create("../../../../upload/".$imagen_carpeta."".$imagen."");
 	$thumb{$cont}->adaptiveResize(180,200);
-	$thumb->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+	$thumb->save("../../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 }
 
 //INSERTANDO DATOS

@@ -1,8 +1,8 @@
 <?php 
 session_start();
-require_once("../../conexion/conexion.php");
-require_once("../../conexion/funciones.php");
-require_once("../../conexion/verificar_sesion.php");
+require_once("../../../conexion/conexion.php");
+require_once("../../../conexion/funciones.php");
+require_once("../../../conexion/verificar_sesion.php");
 
 //VARIABLES
 $id_url=$_REQUEST["id"];
@@ -24,21 +24,21 @@ $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <title>Administrador</title>
 
-<?php require_once("../../w-scripts.php"); ?>
+<?php require_once("../../../w-scripts.php"); ?>
 
 </head>
 
 <body>
 
 <!-- Top line begins -->
-<?php require_once("../../w-topline.php"); ?>
+<?php require_once("../../../w-topline.php"); ?>
 <!-- Top line ends -->
 
 
 <!-- Sidebar begins -->
 <div id="sidebar">
     
-    <?php require_once("../../w-sidebarmenu.php"); ?>
+    <?php require_once("../../../w-sidebarmenu.php"); ?>
     
     <!-- Secondary nav -->
     <div class="secNav">
@@ -93,8 +93,8 @@ $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
                             <div class="without floatL">
-                                <a href="../../../upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" class="lightbox">
-                                    <img src="../../../upload/<?php echo $nota_imagen_carpeta."thumb/".$nota_imagen; ?>" width="100" >
+                                <a href="../../../../upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" class="lightbox">
+                                    <img src="../../../../upload/<?php echo $nota_imagen_carpeta."thumb/".$nota_imagen; ?>" width="100" >
                                 </a>
                             </div>
                             <div class="widget floarL width60 margin1020">    

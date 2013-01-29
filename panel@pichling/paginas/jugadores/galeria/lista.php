@@ -1,8 +1,8 @@
 <?php 
 session_start();
-require_once("../../conexion/conexion.php");
-require_once("../../conexion/funciones.php");
-require_once("../../conexion/verificar_sesion.php");
+require_once("../../../conexion/conexion.php");
+require_once("../../../conexion/funciones.php");
+require_once("../../../conexion/verificar_sesion.php");
 
 //VARIABLES DE URL
 $mensaje=$_REQUEST["msj"];
@@ -19,7 +19,7 @@ $rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_galeria WHERE
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <title>Administrador</title>
 
-<?php require_once("../../w-scripts.php"); ?>
+<?php require_once("../../../w-scripts.php"); ?>
 
 <!-- ELIMINAR  -->
 <script type="text/javascript">
@@ -35,14 +35,14 @@ function eliminarRegistro(registro) {
 <body>
 
 <!-- Top line begins -->
-<?php require_once("../../w-topline.php"); ?>
+<?php require_once("../../../w-topline.php"); ?>
 <!-- Top line ends -->
 
 
 <!-- Sidebar begins -->
 <div id="sidebar">
     
-    <?php require_once("../../w-sidebarmenu.php"); ?>
+    <?php require_once("../../../w-sidebarmenu.php"); ?>
     
     <!-- Secondary nav -->
     <div class="secNav">
@@ -86,7 +86,7 @@ function eliminarRegistro(registro) {
     <div class="wrapper">
 
         <ul class="middleNavR">
-            <li><a href="f-agregar.php" title="Agregar" class="tipN"><img src="../../images/icons/middlenav/create.png" alt="" /></a></li>
+            <li><a href="f-agregar.php" title="Agregar" class="tipN"><img src="../../../images/icons/middlenav/create.png" alt="" /></a></li>
         </ul>
 
         <?php if($mensaje=="ok"){ ?>
@@ -115,7 +115,7 @@ function eliminarRegistro(registro) {
                     ?>
                     <li>
                         <a href="javascript:;" title="">
-                            <img src="../../../upload/<?php echo $jugador_imagen_carpeta."".$jugador_imagen; ?>" alt="" /></a>
+                            <img src="../../../../upload/<?php echo $jugador_imagen_carpeta."".$jugador_imagen; ?>" alt="" /></a>
                         <div class="actions">
                             <a href="f-editar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $jugador_id; ?>" title="" class="edit"><img src="../images/icons/update.png" alt="" /></a>
                             <a href="s-eliminar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $jugador_id; ?>" title="" class="remove"><img src="../images/icons/delete.png" alt="" /></a>

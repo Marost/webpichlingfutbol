@@ -1,8 +1,8 @@
 <?php 
 session_start();
-require_once("../../conexion/conexion.php");
-require_once("../../conexion/funciones.php");
-require_once("../../conexion/verificar_sesion.php");
+require_once("../../../conexion/conexion.php");
+require_once("../../../conexion/funciones.php");
+require_once("../../../conexion/verificar_sesion.php");
 
 //VARIABLES DE URL
 $jugador_id=$_REQUEST["jugador"];
@@ -15,21 +15,21 @@ $jugador_id=$_REQUEST["jugador"];
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <title>Administrador</title>
 
-<?php require_once("../../w-scripts.php"); ?>
+<?php require_once("../../../w-scripts.php"); ?>
 
 </head>
 
 <body>
 
 <!-- Top line begins -->
-<?php require_once("../../w-topline.php"); ?>
+<?php require_once("../../../w-topline.php"); ?>
 <!-- Top line ends -->
 
 
 <!-- Sidebar begins -->
 <div id="sidebar">
     
-    <?php require_once("../../w-sidebarmenu.php"); ?>
+    <?php require_once("../../../w-sidebarmenu.php"); ?>
     
     <!-- Secondary nav -->
     <div class="secNav">
