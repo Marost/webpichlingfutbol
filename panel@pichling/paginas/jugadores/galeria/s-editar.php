@@ -17,7 +17,7 @@ if($_POST['uploader_0_tmpname']==""){
 	$carpeta=fechaCarpeta()."/";
 	$imagen=$_POST['uploader_0_tmpname'];
 	$thumb=PhpThumbFactory::create("../../../../upload/".$imagen_carpeta."".$imagen."");
-	$thumb{$cont}->adaptiveResize(180,200);
+	$thumb->adaptiveResize(110,110);
 	$thumb->save("../../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 }
 
