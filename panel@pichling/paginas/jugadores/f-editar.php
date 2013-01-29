@@ -5,7 +5,7 @@ require_once("../../conexion/funciones.php");
 require_once("../../conexion/verificar_sesion.php");
 
 //VARIABLES
-$id_url=$_REQUEST["id"];
+$id_url=$_REQUEST["jugador"];
 
 //EDITAR
 $rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores WHERE id=$id_url;", $conexion);

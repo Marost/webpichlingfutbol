@@ -5,7 +5,6 @@ include("../../../conexion/funciones.php");
 require_once('../../../js/plugins/thumbs/ThumbLib.inc.php');
 
 //DECLARACION DE VARIABLES
-$nombre=$_POST["nombre"];
 $jugador_id=$_REQUEST["jugador"];
 
 //CONSULTA PARA SABER SI EXISTEN IMAGENES
@@ -23,8 +22,7 @@ if($num_notgaleria>0){
 		$thumb{$cont}=PhpThumbFactory::create("../../../../upload/".$imagen_carpeta."".$imagen."");
 		$thumb{$cont}->adaptiveResize(180,200);
 		$thumb{$cont}->save("../../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-		$imagen=$_POST['uploader_'.$cont.'_tmpname'];
-		mysql_query("INSERT INTO ".$tabla_suf."_jugadores_galeria(imagen, imagen_carpeta, ordenar, jugador) VALUES ('$imagen', '$imagen_carpeta', '$ordenar', '$jugador_id')",$conexion);
+		mysql_query("INSERT INTO ".$tabla_suf."_jugadores_galeria(imagen, imagen_carpeta, ordenar, jugador) VALUES ('$imagen', '$imagen_carpeta', $cont, $jugador_id)",$conexion);
 		$cont++; $cont_img++;
 	}
 }elseif($num_notgaleria==0){
@@ -34,7 +32,7 @@ if($num_notgaleria>0){
 		$thumb{$cont}->adaptiveResize(180,200);
 		$thumb{$cont}->save("../../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 		$imagen=$_POST['uploader_'.$cont.'_tmpname'];
-		mysql_query("INSERT INTO ".$tabla_suf."_jugadores_galeria(imagen, imagen_carpeta, ordenar, jugador) VALUES ('$imagen', '$imagen_carpeta', '$ordenar', '$jugador_id')",$conexion);
+		mysql_query("INSERT INTO ".$tabla_suf."_jugadores_galeria(imagen, imagen_carpeta, ordenar, jugador) VALUES ('$imagen', '$imagen_carpeta', $cont, $jugador_id)",$conexion);
 		$cont++;
 	}
 }

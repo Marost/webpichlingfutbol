@@ -91,7 +91,7 @@ $jugador_id=$_REQUEST["jugador"];
 
                     <div class="formRow">
                         <div class="body" align="center">
-                            <a href="lista.php" class="buttonL bBlack">Cancelar</a>
+                            <a href="lista.php?jugador=<?php echo $jugador_id; ?>" class="buttonL bBlack">Cancelar</a>
                             <input type="submit" class="buttonL bGreen" name="btn-guardar" value="Guardar datos">
                         </div>
                     </div>

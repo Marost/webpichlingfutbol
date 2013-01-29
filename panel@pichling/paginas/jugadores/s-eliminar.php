@@ -5,7 +5,7 @@ include("../../conexion/funciones.php");
 require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 
 //DECLARACION DE VARIABLES
-$id=$_REQUEST["id"];
+$id=$_REQUEST["jugador"];
 
 mysql_query("DELETE FROM ".$tabla_suf."_jugadores WHERE id=$id;", $conexion);
 
