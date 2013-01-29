@@ -6,29 +6,46 @@ require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 
 //DECLARACION DE VARIABLES
 $nombre=$_POST["nombre"];
+$jugador_id=$_REQUEST["jugador"];
 
-//IMAGEN
-if($_POST['uploader_0_tmpname']<>""){
-	$imagen=$_POST["uploader_0_tmpname"];
-	$imagen_carpeta=fechaCarpeta()."/";	
-	$thumb=PhpThumbFactory::create("../../../upload/".$imagen_carpeta."".$imagen."");
-	$thumb->adaptiveResize(300,280);
-	$thumb->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-}else{
-	$imagen="";
-	$imagen_carpeta="";
+//CONSULTA PARA SABER SI EXISTEN IMAGENES
+$rst_notgaleria=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_galeria WHERE jugador=$jugador_id", $conexion);
+$num_notgaleria=mysql_num_rows($rst_notgaleria);
+$fila_notgaleria=mysql_fetch_array($rst_notgaleria);
+
+
+if($num_notgaleria>0){
+	$cont=0;
+	$cont_img=$num_notgaleria;
+	while($_POST['uploader_'.$cont.'_tmpname']<>""){
+		$imagen=$_POST['uploader_'.$cont.'_tmpname'];
+		$imagen_carpeta=fechaCarpeta()."/";
+		$thumb{$cont}=PhpThumbFactory::create("../../../upload/".$imagen_carpeta."".$imagen."");
+		$thumb{$cont}->adaptiveResize(180,200);
+		$thumb{$cont}->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+		$imagen=$_POST['uploader_'.$cont.'_tmpname'];
+		mysql_query("INSERT INTO ".$tabla_suf."_jugadores_galeria(imagen, imagen_carpeta, ordenar, jugador) VALUES ('$imagen', '$imagen_carpeta', '$ordenar', '$jugador_id')",$conexion);
+		$cont++; $cont_img++;
+	}
+}elseif($num_notgaleria==0){
+	$cont=0;
+	while($_POST['uploader_'.$cont.'_tmpname']<>""){
+		$thumb{$cont}=PhpThumbFactory::create("../../../upload/".$imagen_carpeta."".$imagen."");
+		$thumb{$cont}->adaptiveResize(180,200);
+		$thumb{$cont}->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+		$imagen=$_POST['uploader_'.$cont.'_tmpname'];
+		mysql_query("INSERT INTO ".$tabla_suf."_jugadores_galeria(imagen, imagen_carpeta, ordenar, jugador) VALUES ('$imagen', '$imagen_carpeta', '$ordenar', '$jugador_id')",$conexion);
+		$cont++;
+	}
 }
-
-//INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_jugadores_galeria (url, nombre, apellidos, fecha_nac, nacionalidad, posicion, perfil, peso, estatura, club_actual, posicion_fija, publicar, seleccion, imagen, imagen_carpeta) VALUES('$url', '$nombre', '$apellidos', '$fecha_nac', '$nacionalidad', '$posicion', '$perfil', '$peso', '$estatura', '$club_actual', '$posicion_fija', $publicar, '$seleccion', '$imagen', '$imagen_carpeta');",$conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
 	mysql_close($conexion);
-	header("Location:lista.php?jugador=&msj=er");
+	header("Location:lista.php?jugador=$jugador_id&msj=er");
 } else {
 	mysql_close($conexion);
-	header("Location:lista.php?msj=ok");
+	header("Location:lista.php?jugador=$jugador_id&msj=ok");
 }
 
 ?>

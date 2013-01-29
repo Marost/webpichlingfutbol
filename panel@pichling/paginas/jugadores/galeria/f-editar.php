@@ -6,6 +6,7 @@ require_once("../../conexion/verificar_sesion.php");
 
 //VARIABLES
 $id_url=$_REQUEST["id"];
+$jugador_id=$_REQUEST["jugador"];
 
 //EDITAR
 $rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_galeria WHERE id=$id_url;", $conexion);
@@ -81,7 +82,7 @@ $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
     <!-- Main content -->
     <div class="wrapper">
 
-        <form id="submit-form" class="main" method="POST" action="s-editar.php?id=<?php echo $id_url; ?>">
+        <form id="submit-form" class="main" method="POST" action="s-editar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $id_url; ?>">
 
             <fieldset>
                 <div class="widget fluid">

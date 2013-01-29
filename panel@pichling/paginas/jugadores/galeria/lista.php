@@ -117,8 +117,8 @@ function eliminarRegistro(registro) {
                         <a href="javascript:;" title="">
                             <img src="../../../upload/<?php echo $jugador_imagen_carpeta."".$jugador_imagen; ?>" alt="" /></a>
                         <div class="actions">
-                            <a href="f-editar.php?id=<?php echo $jugador_id; ?>" title="" class="edit"><img src="../images/icons/update.png" alt="" /></a>
-                            <a href="s-eliminar.php?id=<?php echo $jugador_id; ?>" title="" class="remove"><img src="../images/icons/delete.png" alt="" /></a>
+                            <a href="f-editar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $jugador_id; ?>" title="" class="edit"><img src="../images/icons/update.png" alt="" /></a>
+                            <a href="s-eliminar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $jugador_id; ?>" title="" class="remove"><img src="../images/icons/delete.png" alt="" /></a>
                         </div>
                     </li>
                     <?php } ?>
