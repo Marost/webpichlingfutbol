@@ -24,7 +24,7 @@ if($_POST['uploader_0_tmpname']==""){
 //INSERTANDO DATOS
 $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_jugadores_galeria SET 
 	imagen='$imagen', 
-	imagen_carpeta='$imagen_carpeta' WHERE id=$jugador_id;", $conexion);
+	imagen_carpeta='$imagen_carpeta' WHERE id=$id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
