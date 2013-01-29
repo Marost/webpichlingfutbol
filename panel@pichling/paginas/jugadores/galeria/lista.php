@@ -9,7 +9,7 @@ $mensaje=$_REQUEST["msj"];
 $jugador_id=$_REQUEST["jugador"];
 
 //GALERIA DE JUGADORES
-$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_galeria WHERE jugador=$jugador_id ORDER BY orden ASC;", $conexion);
+$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_galeria WHERE jugador=$jugador_id ORDER BY ordenar ASC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -109,16 +109,16 @@ function eliminarRegistro(registro) {
             <div class="gallery">
                <ul>
                     <?php while($fila_jugadores=mysql_fetch_array($rst_jugadores)){
-                            $jugador_id=$fila_jugadores["id"];
-                            $jugador_imagen=$fila_jugadores["imagen"];
-                            $jugador_imagen_carpeta=$fila_jugadores["imagen_carpeta"];
+                            $galeria_id=$fila_jugadores["id"];
+                            $galeria_imagen=$fila_jugadores["imagen"];
+                            $galeria_imagen_carpeta=$fila_jugadores["imagen_carpeta"];
                     ?>
                     <li>
                         <a href="javascript:;" title="">
-                            <img src="../../../../upload/<?php echo $jugador_imagen_carpeta."".$jugador_imagen; ?>" alt="" /></a>
+                            <img src="../../../../upload/<?php echo $galeria_imagen_carpeta."".$galeria_imagen; ?>" alt="" /></a>
                         <div class="actions">
-                            <a href="f-editar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $jugador_id; ?>" title="" class="edit"><img src="../images/icons/update.png" alt="" /></a>
-                            <a href="s-eliminar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $jugador_id; ?>" title="" class="remove"><img src="../images/icons/delete.png" alt="" /></a>
+                            <a href="f-editar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $galeria_id; ?>" title="" class="edit"><img src="../images/icons/update.png" alt="" /></a>
+                            <a href="s-eliminar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $galeria_id; ?>" title="" class="remove"><img src="../images/icons/delete.png" alt="" /></a>
                         </div>
                     </li>
                     <?php } ?>
