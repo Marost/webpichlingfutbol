@@ -26,6 +26,9 @@ $poscancha_extremo_derecho=$fila_poscancha["extremo_derecho"];
 $poscancha_delantero=$fila_poscancha["delantero"];
 $poscancha_extremo_izquierdo=$fila_poscancha["extremo_izquierdo"];
 
+//GALERIA DE FOTOS
+$rst_galeria=mysql_query("SELECT * FROM pf_jugadores_galeria WHERE jugador=$jugador ORDER BY ordenar ASC", $conexion);
+
 ?>
 
 <?php if($tipo=="posicion"){ ?>
@@ -48,22 +51,15 @@ $poscancha_extremo_izquierdo=$fila_poscancha["extremo_izquierdo"];
 <?php if($tipo=="galeria"){ ?>
 <div class="galeria">
 
+    <?php while($fila_galeria=mysql_fetch_array($rst_galeria)){
+            $galeria_imagen=$fila_galeria["imagen"];
+            $galeria_imagen_carpeta=$fila_galeria["imagen_carpeta"];
+    ?>
     <div class="slider noShadow">
-        <a rel="prettyPhoto" href="imagenes/upload/galeria1.jpg">
-            <img class="peKbGallery" data-delay="5" src="imagenes/upload/galeria1.jpg" /></a>
+        <a rel="prettyPhoto" href="/upload/<?php echo $galeria_imagen_carpeta."".$galeria_imagen; ?>">
+            <img class="peKbGallery" data-delay="5" src="/upload/<?php echo $galeria_imagen_carpeta."".$galeria_imagen; ?>" alt="" /></a>
     </div>
-            
-            
-    <div class="slider noShadow">
-        <a rel="prettyPhoto" href="imagenes/upload/galeria2.jpg">
-            <img class="peKbGallery" data-delay="5" src="imagenes/upload/galeria2.jpg" /></a>
-    </div>
-            
-            
-    <div class="slider noShadow">
-        <a rel="prettyPhoto" href="imagenes/upload/galeria3.jpg">
-            <img class="peKbGallery" data-delay="5" src="imagenes/upload/galeria3.jpg" /></a>
-    </div>
+    <?php } ?>
     
 </div>
 <?php } ?>
