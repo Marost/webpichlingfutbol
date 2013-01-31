@@ -29,6 +29,17 @@ $poscancha_extremo_izquierdo=$fila_poscancha["extremo_izquierdo"];
 //GALERIA DE FOTOS
 $rst_galeria=mysql_query("SELECT * FROM pf_jugadores_galeria WHERE jugador=$jugador ORDER BY ordenar ASC", $conexion);
 
+//VIDEO SELECCIONADO
+$rst_video_selec=mysql_query("SELECT * FROM pf_jugadores_videos WHERE jugador=$jugador AND publicar=1 ORDER BY id DESC", $conexion);
+$fila_video_selec=mysql_fetch_array($rst_video_selec);
+
+//VARIABLES
+$video_select_youtube=$fila_video_selec["youtube"];
+$video_select_titulo=$fila_video_selec["titulo"];
+
+//VIDEO LISTA
+$rst_video_lista=mysql_query("SELECT * FROM pf_jugadores_videos WHERE jugador=$jugador AND publicar=1 ORDER BY id DESC", $conexion);
+
 ?>
 
 <?php if($tipo=="posicion"){ ?>
@@ -56,7 +67,7 @@ $rst_galeria=mysql_query("SELECT * FROM pf_jugadores_galeria WHERE jugador=$juga
             $galeria_imagen_carpeta=$fila_galeria["imagen_carpeta"];
     ?>
     <div class="slider noShadow">
-        <a rel="prettyPhoto" href="/upload/<?php echo $galeria_imagen_carpeta."".$galeria_imagen; ?>">
+        <a rel="prettyPhoto[jugador]" href="/upload/<?php echo $galeria_imagen_carpeta."".$galeria_imagen; ?>" title="">
             <img class="peKbGallery" data-delay="5" src="/upload/<?php echo $galeria_imagen_carpeta."".$galeria_imagen; ?>" alt="" /></a>
     </div>
     <?php } ?>
@@ -68,17 +79,26 @@ $rst_galeria=mysql_query("SELECT * FROM pf_jugadores_galeria WHERE jugador=$juga
 <div class="videos">
 
     <div class="select">
-        <iframe width="600" height="350" src="http://www.youtube.com/embed/7EHAEX0EpYU?rel=0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="600" height="350" src="http://www.youtube.com/embed/<?php echo $video_select_youtube; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <div class="items">
 
+        <?php while($fila_video_lista=mysql_fetch_array($rst_video_lista)){
+                $video_id=$fila_video_lista["id"];
+                $video_youtube=$fila_video_lista["youtube"];
+                $video_titulo=$fila_video_lista["titulo"];
+        ?>
         <article>
-            <a id="7EHAEX0EpYU" href="javascript:;">
+            <a id="<?php echo $video_youtube; ?>" href="javascript:;">
                 <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
-                <?php $youtube_ramonrodriguez2 = new SSDTube(); $youtube_ramonrodriguez2->identify("http://www.youtube.com/watch?v=7EHAEX0EpYU", true); ?>
-                <img src="<?php echo $youtube_ramonrodriguez2->thumbnail_1_url; ?>" width="120" height="90" alt="Edson Uribe" /></a>
+                <?php 
+                    $youtube.$video_id = new SSDTube(); 
+                    $youtube.$video_id->identify("http://www.youtube.com/watch?v=<?php echo $video_youtube; ?>", true);
+                ?>
+                <img src="<?php echo $youtube.$video_id->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" /></a>
         </article>
+        <?php } ?>
 
     </div>
 
