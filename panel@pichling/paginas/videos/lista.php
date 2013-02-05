@@ -8,7 +8,7 @@ require_once("../../conexion/verificar_sesion.php");
 $mensaje=$_REQUEST["msj"];
 
 //JUGADORES
-$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_noticias ORDER BY fecha_publicacion DESC;", $conexion);
+$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_videos ORDER BY fecha_publicacion DESC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -72,7 +72,7 @@ function eliminarRegistro(registro) {
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Noticias</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Videos</span>
     </div>
     
     <!-- Breadcrumbs line -->
@@ -104,7 +104,7 @@ function eliminarRegistro(registro) {
 
         <!-- Media table sample -->
         <div class="widget">
-            <div class="whead"><h6>Noticias</h6></div>
+            <div class="whead"><h6>Videos</h6></div>
             <table cellpadding="0" cellspacing="0" width="100%" border="0" class="dTable">
                 <thead>
                     <tr>

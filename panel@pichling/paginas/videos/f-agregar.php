@@ -61,7 +61,7 @@ $pub_hora=date("H:m:s");
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Noticias</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Videos</span>
     </div>
     
     <!-- Breadcrumbs line -->
@@ -82,20 +82,14 @@ $pub_hora=date("H:m:s");
                     
                     <div class="formRow">
                         <div class="grid3"><label>Titulo:</label></div>
-                        <div class="grid9"><input type="text" name="nombre" /></div>
-                    </div>
-
-                    <div class="widget">
-                        <div class="whead"><h6>Contenido</h6></div>
-                        <textarea class="ckeditor" name="contenido" /></textarea>
+                        <div class="grid9"><input type="text" name="titulo" /></div>
                     </div>
 
                     <div class="formRow">
-                        <div class="grid3"><label>Imagen:</label> </div>
+                        <div class="grid3"><label>Video:</label></div>
                         <div class="grid9">
-                            <div class="widget nomargin">    
-                                <div id="uploader">Tu navegador no soporta HTML5.</div>                    
-                            </div>
+                            <input type="text" name="video" />
+                            <span class="note">http://www.youtube.com/watch?v=<strong>5HCaW4Oddro</strong></span>
                         </div>
                     </div>
 
