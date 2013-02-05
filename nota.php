@@ -138,6 +138,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id;", $conex
 
         <!-- ADDTHIS -->
         <script>var addthis_config = {"data_track_addressbar":true};</script>
+        <script>var addthis_config = {"data_track_clickback":false}</script>
         <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50dcdc400c54dc87"></script>
 
     </head>

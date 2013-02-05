@@ -112,8 +112,9 @@
         </script>
 
         <!-- ADDTHIS -->
-        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50dcdc400c54dc87"></script>
+        <script>var addthis_config = {"data_track_addressbar":true};</script>
+        <script>var addthis_config = {"data_track_clickback":false}</script>
+        <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50dcdc400c54dc87"></script>
 
     </head>
     <body>
