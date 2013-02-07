@@ -2,11 +2,14 @@
 require_once("panel@pichling/conexion/conexion.php");
 require_once("panel@pichling/conexion/funciones.php");
 
+/* LIBRERIA DE CONEXION A YOUTUBE */
+include("libs/ssdtube/SSDTube.php");
+
 //VARIABLES DE URL
 $url_id=$_REQUEST["id"];
 
-//VIDEOS
-$rst_videoss=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fechaActual' AND publicar=1;", $conexion);
+//LISTA VIDEOS
+$rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fechaActual' AND publicar=1;", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -123,10 +126,25 @@ $rst_videoss=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fec
         }
         </script>
 
-        <!-- ADDTHIS -->
-        <script>var addthis_config = {"data_track_addressbar":true};</script>
-        <script>var addthis_config = {"data_track_clickback":false}</script>
-        <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50dcdc400c54dc87"></script>
+        <!-- VIDEOS -->
+        <script src="libs/swipe-effect-slider/js/jquery-1.8.3.min.js"></script>
+        <script>
+            var jVideos = jQuery.noConflict();
+
+            jVideos(document).on("ready", startJugador);
+            jVideos(document).on("ready", startJugadorPos);
+
+            function startJugador(){
+                jVideos(".videos .items article a").on("click", clickJugadorVideo);
+            }
+
+            function clickJugadorVideo(datos){
+                var vid = datos.currentTarget.id;
+                jVideos(".videos .items article a").removeClass("active");
+                jVideos(".videos .select iframe").attr("src", "http://www.youtube.com/embed/"+vid+"?rel=0");
+                jVideos(".videos .items article a#"+vid).addClass("active");
+            }        
+        </script>
 
     </head>
     <body>
@@ -150,37 +168,37 @@ $rst_videoss=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fec
                     <?php require_once("w-icons.php"); ?>
 
                     <section id="news">
-                        
-                        <section id="nwizq">
-                            <h2><?php echo $nota_titulo; ?></h2>
-                            
-                            <div id="nwizq-img">
-                                <img src="upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" alt="<?php echo $nota_titulo; ?>">
+
+                        <section id="nwizq" class="an100">
+
+                            <div class="videos">
+
+                                <div class="select">
+                                    <iframe width="850" height="400" src="http://www.youtube.com/embed/<?php echo $video_select_youtube; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
+                                </div>
+
+                                <div class="items">
+
+                                    <?php while($fila_videos=mysql_fetch_array($rst_videos)){
+                                            $video_id=$fila_videos["id"];
+                                            $video_youtube=$fila_videos["youtube"];
+                                            $video_titulo=$fila_videos["titulo"];
+                                    ?>
+                                    <article>
+                                        <a id="<?php echo $video_youtube; ?>" href="javascript:;">
+                                            <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
+                                            <?php 
+                                                $youtube.$video_id = new SSDTube(); 
+                                                $youtube.$video_id->identify("http://www.youtube.com/watch?v=<?php echo $video_youtube; ?>", true);
+                                            ?>
+                                            <img src="<?php echo $youtube.$video_id->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" /></a>
+                                    </article>
+                                    <?php } ?>
+
+                                </div>
+
                             </div>
                             
-                            
-                        </section>
-
-                        <section id="nwder">
-                            
-                            <aside>
-                                <h3>Más noticias</h3>
-                                <ul>
-                                    <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
-                                            $noticias_id=$fila_noticias["id"];
-                                            $noticias_url=$fila_noticias["url"];
-                                            $noticias_titulo=$fila_noticias["titulo"];
-                                    ?>
-                                    <li><a href="nota/<?php echo $noticias_id."-".$noticias_url; ?>" title="<?php echo $noticias_titulo; ?>">
-                                        <?php echo $noticias_titulo; ?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            </aside>
-
-                            <aside class="publicidad">
-                                <img src="https://www.google.com/help/hc/images/adsense/adsense_185665_adformat-text_336x280_en.png" alt="">
-                            </aside>
-
                         </section>
 
                     </section>

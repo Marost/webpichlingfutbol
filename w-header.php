@@ -11,9 +11,9 @@
         <ul>
             <li><a href="/">Inicio</a></li>
             <li><a href="nosotros">Nosotros</a></li>
-            <li><a href="#">Galería</a></li>
-            <li><a href="#">Entrevistas</a></li>
-            <li><a href="#">Noticias</a></li>
+            <li><a href="videos">Galería</a></li>
+            <li><a href="entrevistas">Entrevistas</a></li>
+            <li><a href="noticias">Noticias</a></li>
             <li><a href="contacto">Contactenos</a></li>
         </ul>
     </nav>
