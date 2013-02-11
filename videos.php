@@ -191,6 +191,7 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
                                         <a id="<?php echo $video_youtube; ?>" href="javascript:;">
                                             <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
                                             <img src="<?php echo $youtube->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" />
+                                            <p><?php echo $video_titulo; ?></p>
                                         </a>
                                     </article>
                                     <?php } ?>
