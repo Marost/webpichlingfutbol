@@ -140,8 +140,11 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
 
             function clickJugadorVideo(datos){
                 var vid = datos.currentTarget.id;
+                var vtitle = datos.currentTarget.title;
                 jVideos(".videos .items article a").removeClass("active");
+                jVideos(".videos .select").removeClass("ocultar");
                 jVideos(".videos .select iframe").attr("src", "http://www.youtube.com/embed/"+vid+"?rel=0");
+                jVideos(".videos .select p").html(vtitle);
                 jVideos(".videos .items article a#"+vid).addClass("active");
             }        
         </script>
@@ -173,8 +176,11 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
 
                             <div class="videos">
 
-                                <div class="select">
-                                    <iframe width="850" height="400" src="http://www.youtube.com/embed/<?php echo $video_select_youtube; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
+                                <h2>Galería de Videos</h2>
+
+                                <div class="select ocultar">
+                                    <iframe width="850" height="450" src="http://www.youtube.com/embed/<?php echo $video_select_youtube; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
+                                    <p></p>
                                 </div>
 
                                 <div class="items">
@@ -188,7 +194,7 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
                                             $youtube->identify($urlyoutube, true);
                                     ?>
                                     <article>
-                                        <a id="<?php echo $video_youtube; ?>" href="javascript:;">
+                                        <a id="<?php echo $video_youtube; ?>" href="javascript:;" title="<?php echo $video_titulo; ?>">
                                             <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
                                             <img src="<?php echo $youtube->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" />
                                             <p><?php echo $video_titulo; ?></p>
