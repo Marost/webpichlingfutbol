@@ -13,7 +13,7 @@ $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
 $nota_nombre=$fila_nota["titulo"];
-$nota_video=$fila_nota["video"];
+$nota_video=$fila_nota["youtube"];
 $nota_fecha_pub=explode(" ", $fila_nota["fecha_publicacion"]);
 $nota_pub_fecha=$nota_fecha_pub[0];
 $nota_pub_hora=$nota_fecha_pub[1];

@@ -9,7 +9,7 @@ include("libs/ssdtube/SSDTube.php");
 $url_id=$_REQUEST["id"];
 
 //LISTA VIDEOS
-$rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fechaActual' AND publicar=1;", $conexion);
+$rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fechaActual' AND publicar=1 ORDER BY fecha_publicacion DESC", $conexion);
 
 ?>
 <!DOCTYPE html>
