@@ -191,7 +191,8 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
                                                 $youtube."".$video_id=new SSDTube(); 
                                                 $youtube."".$video_id->identify("http://www.youtube.com/watch?v=<?php echo $video_youtube; ?>", true);
                                             ?>
-                                            <img src="<?php echo $youtube.$video_id->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" /></a>
+                                            <img src="<?php echo $youtube."".$video_id->thumbnail_1_url; ?>" 
+                                                    width="120" height="90" alt="<?php echo $video_titulo; ?>" /></a>
                                     </article>
                                     <?php } ?>
 
