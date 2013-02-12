@@ -20,7 +20,7 @@ if($num_notgaleria>0){
 		$thumb{$cont}=PhpThumbFactory::create("../../../upload/".$imagen_carpeta."".$imagen."");
 		$thumb{$cont}->adaptiveResize(110,110);
 		$thumb{$cont}->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-		mysql_query("INSERT INTO ".$tabla_suf."_slider(imagen, imagen_carpeta, ordenar, jugador) VALUES ('$imagen', '$imagen_carpeta', $cont_img, $jugador_id)",$conexion);
+		mysql_query("INSERT INTO ".$tabla_suf."_slider(imagen, imagen_carpeta, orden) VALUES ('$imagen', '$imagen_carpeta', $cont_img)",$conexion);
 		$cont++; $cont_img++;
 	}
 }elseif($num_notgaleria==0){
@@ -31,7 +31,7 @@ if($num_notgaleria>0){
 		$thumb{$cont}->adaptiveResize(110,110);
 		$thumb{$cont}->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 		$imagen=$_POST['uploader_'.$cont.'_tmpname'];
-		mysql_query("INSERT INTO ".$tabla_suf."_slider(imagen, imagen_carpeta, ordenar, jugador) VALUES ('$imagen', '$imagen_carpeta', $cont, $jugador_id)",$conexion);
+		mysql_query("INSERT INTO ".$tabla_suf."_slider(imagen, imagen_carpeta, orden) VALUES ('$imagen', '$imagen_carpeta', $cont)",$conexion);
 		$cont++;
 	}
 }
