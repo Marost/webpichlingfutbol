@@ -189,12 +189,11 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
                                             $video_id=$fila_videos["id"];
                                             $video_youtube=$fila_videos["youtube"];
                                             $video_titulo=$fila_videos["titulo"];
-                                            $urlyoutube="http://www.youtube.com/watch?v='".$video_youtube."'";
+                                            $urlyoutube="http://www.youtube.com/watch?v=".$video_youtube."";
                                             $youtube = new SSDTube();
                                             $youtube->identify($urlyoutube, true);
                                     ?>
                                     <article>
-                                        <?php echo $urlyoutube; ?>
                                         <a id="<?php echo $video_youtube; ?>" href="javascript:;" title="<?php echo $video_titulo; ?>">
                                             <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
                                             <img src="<?php echo $youtube->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" />
