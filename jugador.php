@@ -225,7 +225,10 @@ $jugador_imagen_carpeta=$fila_jugador["imagen_carpeta"];
                             
                             <h2><?php echo $jugador_nombre." ".$jugador_apellidos; ?></h2>
 
-                            <img src="upload/<?php echo $jugador_imagen_carpeta."thumb/".$jugador_imagen; ?>" width="300" height="280" alt="<?php echo $jugador_nombre." ".$jugador_apellidos; ?>" title="<?php echo $jugador_nombre." ".$jugador_apellidos; ?>">
+                            <div>
+                                <img src="upload/<?php echo $jugador_imagen_carpeta."thumb/".$jugador_imagen; ?>" 
+                                alt="<?php echo $jugador_nombre." ".$jugador_apellidos; ?>">
+                            </div>
 
                             <table class="jugador-datos">
                                 <tr>
