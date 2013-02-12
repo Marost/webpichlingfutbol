@@ -680,7 +680,7 @@ nav a:hover {
   top: 30px;
 }
 #news #nwizq .videos .items article a p {
-  margin-top: 10px;
+  margin: 10px 0 0 0;
   color: #000;
   font-weight: bold;
 }

@@ -149,6 +149,28 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
             }        
         </script>
 
+        <!-- ALTO DE DIV -->
+        <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript">
+        var jald = jQuery.noConflict();
+
+        function equalHeight(group) {
+           tallest = 0;
+           group.each(function() {
+              thisHeight = jald(this).height();
+              if(thisHeight > tallest) {
+                 tallest = thisHeight;
+              }
+           });
+           group.height(tallest);
+        }
+
+        jald(document).ready(function() {
+           equalHeight(jald(".videos .items article"));
+        });
+
+        </script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
