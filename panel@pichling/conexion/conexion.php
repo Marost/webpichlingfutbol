@@ -22,6 +22,7 @@ global $usuario_nombre;
 global $usuario_apellido;
 global $usuario_email;
 global $web;
+global $web_nombre;
 global $fechaActual;
 
 //VARIABLES
@@ -34,6 +35,7 @@ $fechaActual=date("Y-m-d H:i:s");
 $rst_empresa=mysql_query("SELECT * FROM ".$tabla_suf."_empresa WHERE id=1;", $conexion);
 $fila_empresa=mysql_fetch_array($rst_empresa);
 $web=$fila_empresa["web"];
+$web_nombre=$fila_empresa["nombre"];
 
 //URL DE ARCHIVOS
 $url_admin=$web."".$carpeta_admin."/";
