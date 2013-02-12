@@ -196,7 +196,7 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
 
                         <section id="nwizq" class="an100">
 
-                            <div class="videos">
+                            <div class="videos" name="video">
 
                                 <h2>Galería de Videos</h2>
 
@@ -216,7 +216,7 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
                                             $youtube->identify($urlyoutube, true);
                                     ?>
                                     <article>
-                                        <a id="<?php echo $video_youtube; ?>" href="javascript:;" title="<?php echo $video_titulo; ?>">
+                                        <a id="<?php echo $video_youtube; ?>" href="#video" title="<?php echo $video_titulo; ?>">
                                             <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
                                             <img src="<?php echo $youtube->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" />
                                             <p><?php echo $video_titulo; ?></p>
