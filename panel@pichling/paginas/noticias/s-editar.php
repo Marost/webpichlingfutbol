@@ -20,6 +20,9 @@ if ($_POST["publicar"]<>""){ $publicar=$_POST["publicar"]; }else{ $publicar=0; }
 if($_POST['uploader_0_tmpname']<>""){
 	$imagen=$_POST["uploader_0_tmpname"];
 	$imagen_carpeta=fechaCarpeta()."/";
+	$thumb=PhpThumbFactory::create("../../../upload/".$imagen_carpeta."".$imagen."");
+	$thumb->adaptiveResize(125,125);
+	$thumb->save("../../../upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 }else{
 	$imagen=$_POST["imagen"];
 	$imagen_carpeta=$_POST["imagen_carpeta"];
