@@ -226,12 +226,12 @@ require_once("panel@pichling/conexion/funciones.php");
                                     <ul>
                                         <li>
                                             <span class="icon icon-home"></span>
-                                            <p>Cristobal de Peralta N° 110 Oficina 1002 - Santiago de Surco</p>
+                                            <p>Av. Primavera 1796 - Torre Alpha Of. 701 - Surco</p>
                                         </li>
 
                                         <li>
                                             <span class="icon icon-phone"></span>
-                                            <p>455-1549</p>
+                                            <p>(511) 437-6855</p>
                                         </li>
 
                                         <li>

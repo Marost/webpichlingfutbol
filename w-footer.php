@@ -1,6 +1,6 @@
 <div class="footer-container">
     <footer class="wrapper">
-        <p>Cristobal de Peralta N° 110 - Oficina 1002 - Santiago de Surco</p>
-        <p>Telefono: 4370297 / 4376855</p>
+        <p>Av. Primavera 1796 - Torre Alpha Of. 701 - Surco</p>
+        <p>Telefono: (511) 437-6855</p>
     </footer>
 </div>
