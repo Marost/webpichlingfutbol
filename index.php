@@ -7,6 +7,9 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
 
 //SLIDER
 $rst_slider=mysql_query("SELECT * FROM pf_slider ORDER BY id DESC", $conexion);
+
+//SLIDER DE OFICINA
+$rst_slider_oficina=mysql_query("SELECT * FROM pf_slider_oficina ORDER BY id DESC", $conexion);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -182,7 +185,6 @@ $rst_slider=mysql_query("SELECT * FROM pf_slider ORDER BY id DESC", $conexion);
                     <div id="slider" style="display:none;">
                         <ul class="allinone_bannerRotator_list">
                             <?php while($fila_slider=mysql_fetch_array($rst_slider)){
-                                    $slider_id=$fila_slider["id"];
                                     $slider_imagen=$fila_slider["imagen"];
                                     $slider_imagen_carpeta=$fila_slider["imagen_carpeta"];
                             ?>
@@ -193,14 +195,12 @@ $rst_slider=mysql_query("SELECT * FROM pf_slider ORDER BY id DESC", $conexion);
                     
                     <div id="slider-oficina" style="display:none;">
                         <ul class="allinone_bannerRotator_list">
-                            <li><img src="imagenes/oficina/img1.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img2.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img3.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img4.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img5.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img6.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img7.jpg" alt="" /></li>
-                            <li><img src="imagenes/oficina/img8.jpg" alt="" /></li>
+                            <?php while($fila_slider_oficina=mysql_fetch_array($rst_slider_oficina)){
+                                    $slider_of_imagen=$fila_slider_oficina["imagen"];
+                                    $slider_of_imagen_carpeta=$fila_slider_oficina["imagen_carpeta"];
+                            ?>
+                            <li><img src="upload/<?php echo $slider_of_imagen_carpeta."".$slider_of_imagen; ?>" alt="" /></li>
+                            <?php } ?>
                         </ul>            
                     </div>
 
