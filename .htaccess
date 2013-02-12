@@ -342,7 +342,7 @@ RewriteRule ^contacto$                          /contacto.php
 RewriteRule ^videos$                            /videos.php
 RewriteRule ^noticias$                          /noticias.php
 RewriteRule ^nota/([0-9]*)-(.*)$                /nota.php?id=$1&url=$2
-RewriteRule ^entrevistas$                          /entrevistas.php
+RewriteRule ^entrevistas$                       /entrevistas.php
 RewriteRule ^entrevista/([0-9]*)-(.*)$          /entrevista.php?id=$1&url=$2
 RewriteRule ^panel@pichling/$                   /panel@pichling/login.php
 

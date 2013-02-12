@@ -1,3 +1,27 @@
+<?php
+require_once("panel@pichling/conexion/conexion.php");
+require_once("panel@pichling/conexion/funciones.php");
+
+//VARIABLES DE URL
+$url_id=$_REQUEST["id"];
+
+//NOTICIA
+$rst_nota=mysql_query("SELECT * FROM pf_entrevista WHERE id=$url_id;", $conexion);
+$fila_nota=mysql_fetch_array($rst_nota);
+
+//VARIABLES
+$nota_id=$fila_nota["id"];
+$nota_url=$fila_nota["url"];
+$nota_titulo=$fila_nota["titulo"];
+$nota_contenido=$fila_nota["contenido"];
+$nota_imagen=$fila_nota["imagen"];
+$nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
+$nota_fecha_pub=$fila_nota["fecha_publicacion"];
+
+//MAS ENTREVISTAS
+$rst_noticias=mysql_query("SELECT * FROM pf_entrevista WHERE id<>$url_id AND publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC", $conexion);
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -5,9 +29,19 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Pichling Representaciones</title>
+        <title><?php echo $nota_titulo; ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <base href="<?php echo $web; ?>">
+
+        <!-- OPEN GRAPH -->
+        <meta property="og:title" content="<?php echo $nota_titulo; ?>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="<?php echo $url_final; ?>" />
+        <meta property="og:image" content="<?php echo $url_imagen; ?>" />
+        <meta property="og:site_name" content="<?php echo $web_nombre; ?>" />
+        <meta property="og:description" content="<?php echo soloDescripcion($nota_contenido); ?>" />
+        <meta property="fb:admins" content="1376286793" />
 
         <!-- ESTILOS -->
         <link rel="stylesheet" href="css/normalize.min.css">
@@ -140,41 +174,24 @@
                     <section id="news">
                         
                         <section id="nwizq">
-                            <h2>Paolo Guerrero en el once ideal de Sudamérica, según encuesta de "El País"</h2>
-                            <p>El delantero peruano fue el segundo más votado de todo el sondeo, solo por detrás del brasileño Neymar en la delantera</p>
-
+                            <h2><?php echo $nota_titulo; ?></h2>
+                            
                             <div id="nwizq-img">
-                                <img src="http://elcomercio.e3.pe/66/ima/0/0/5/5/2/552505.jpg" alt="">
+                                <img src="upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" alt="<?php echo $nota_titulo; ?>">
                             </div>
                             
                             <div class="addthis_toolbox addthis_default_style ">
                                 <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
                                 <a class="addthis_button_tweet" tw:count="horizontal"></a>
                                 <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
-                                <a class="addthis_button_pinterest_pinit" pi:pinit:url="" pi:pinit:media="" pi:pinit:layout="horizontal"></a>
+                                <a class="addthis_button_pinterest_pinit" 
+                                pi:pinit:url="<?php echo $web; ?>nota/<?php echo $nota_id."-".$nota_url; ?>" 
+                                pi:pinit:media="<?php echo $web; ?>upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" 
+                                pi:pinit:layout="horizontal"></a>
                                 <a class="addthis_counter addthis_pill_style"></a>
                             </div>
 
-                            <p>La obtención del título del Mundial de Clubes con el Corinthians fue determinante para el ascenso en la carrera del peruano Paolo Guerrero. En medio de la discusión sobre si se le deben o no entregar los Laureles Deportivos, el delantero fue considerado en el once ideal de Sudamérica en la tradicional encuesta que realiza el diario “El País” de Uruguay, que por primera vez le dio la chance a sus lectores de votar.</p>
- 
-                            <p>Guerrero hace dupla con el brasileño Neymar en la delantera. De hecho, el ‘Depredador’ fue el segundo jugador más votado de la encuesta con 43.843, solo por detrás de la joya brasileña, quien sumó 53.958 votos de la gente.</p>
-                             
-                            <p>Matías Rodríguez, lateral argentino de la Universidad de Chile, quedó en tercer lugar con 43.188 votos, mientras que Ronaldinho cuarto con 40.305 votos. En tanto, José Perkerman fue votado como el mejor técnico.</p>
-                             
-                            <p>El mejor futbolista del continente, denominado premio “Rey de América”, será elegido por los periodistas de América y los resultados se divulgarán cuando finalice el año (se dice que el 30 de diciembre).</p>
-                             
-                            <p>EL ONCE DE LA GENTE:</p>
-                            Agustín Orión (Boca Juniors)
-                            Matías Rodríguez (Universidad de Chile)
-                            Osvaldo González (Universidad de Chile)
-                            Aquivaldo Mosquera (América de México)
-                            Eugenio Mena (Santos)
-                            Charles Aranguiz (Universidad de Chile)
-                            Pablo Guiñazú (Inter de Porto Alegre)
-                            Walter Montillo (Cruzeiro)
-                            Ronaldinho (Atlético Mineiro)
-                            Paolo Guerrero (Corinthians)
-                            Neymar (Santos)
+                            <?php echo $nota_contenido; ?>
                         </section>
 
                         <section id="nwder">
@@ -182,23 +199,14 @@
                             <aside>
                                 <h3>Más noticias</h3>
                                 <ul>
-                                    <li>Fernando Allocco confirmó su fichaje por Universitario de Deportes</li>
- 
-                                    <li>Mario Leguizamón confirmó que jugará en Universitario de Deportes</li>
-                                     
-                                    <li>Universitario canceló la gira a Europa y viajaría a Arequipa</li>
-                                     
-                                    <li>El DT de la ‘U’ Ángel Comizzo llegó a Lima y recibió bienvenida de hinchas</li>
-                                     
-                                    <li>Guerrero haría dupla con Pato: Corinthians confirmó negociaciones</li>
-                                     
-                                    <li>Cristal: "Nuestro grupo en Libertadores es muy duro, pero pudo ser peor"</li>
-                                     
-                                    <li>Copa Libertadores 2012, la campaña que los clubes peruanos no deben repetir</li>
-                                     
-                                    <li>Rivales de Cristal en la Libertadores: así llegan Palmeiras y Libertad</li>
-                                     
-                                    <li>Copa Libertadores: Entérate cómo llegan los rivales de Real Garcilaso</li>
+                                    <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
+                                            $noticias_id=$fila_noticias["id"];
+                                            $noticias_url=$fila_noticias["url"];
+                                            $noticias_titulo=$fila_noticias["titulo"];
+                                    ?>
+                                    <li><a href="nota/<?php echo $noticias_id."-".$noticias_url; ?>" title="<?php echo $noticias_titulo; ?>">
+                                        <?php echo $noticias_titulo; ?></a></li>
+                                    <?php } ?>
                                 </ul>
                             </aside>
 
@@ -220,4 +228,3 @@
 
     </body>
 </html>
-    

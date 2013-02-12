@@ -3,7 +3,7 @@
 $rst_posicion=mysql_query("SELECT * FROM pf_posicion_fija ORDER BY id ASC;", $conexion);
 
 //ENTREVISTA DEL MES
-$rst_entrevista=mysql_query("SELECT * FROM pf_entrevista ORDER BY fecha_publicacion ASC LIMIT 1;", $conexion);
+$rst_entrevista=mysql_query("SELECT * FROM pf_entrevista WHERE fecha_publicacion<='$fechaActual' AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 1;", $conexion);
 $fila_entrevista=mysql_fetch_array($rst_entrevista);
 $entrevista_titulo=$fila_entrevista["titulo"];
 $entrevista_contenido=$fila_entrevista["contenido"];
@@ -71,7 +71,8 @@ $entrevista_imagen_carpeta=$fila_entrevista["imagen_carpeta"];
             <h2><?php echo $entrevista_titulo; ?></h2>
 
             <p style="text-align:center;">
-                <img src="imagenes/upload/<?php echo $entrevista_imagen_carpeta."".$entrevista_imagen; ?>" alt="<?php echo $entrevista_titulo; ?>">
+                <img src="upload/<?php echo $entrevista_imagen_carpeta."".$entrevista_imagen; ?>" 
+                alt="<?php echo $entrevista_titulo; ?>">
             </p>
 
             <?php echo $entrevista_contenido; ?>
