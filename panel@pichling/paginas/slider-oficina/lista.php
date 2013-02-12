@@ -8,7 +8,7 @@ require_once("../../conexion/verificar_sesion.php");
 $mensaje=$_REQUEST["msj"];
 
 //GALERIA DE JUGADORES
-$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_slider ORDER BY id DESC;", $conexion);
+$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_slider_oficina ORDER BY id DESC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -72,7 +72,7 @@ function eliminarRegistro(registro) {
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Slider</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Slider de Oficina</span>
     </div>
     
     <!-- Breadcrumbs line -->
@@ -105,7 +105,7 @@ function eliminarRegistro(registro) {
 
         <!-- Media table sample -->
         <div class="widget">
-            <div class="whead"><h6>Slider</h6></div>
+            <div class="whead"><h6>Slider de Oficina</h6></div>
             <div class="gallery">
                <ul>
                     <?php while($fila_jugadores=mysql_fetch_array($rst_jugadores)){
