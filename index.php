@@ -3,7 +3,7 @@ require_once("panel@pichling/conexion/conexion.php");
 require_once("panel@pichling/conexion/funciones.php");
 
 //NOTICIAS
-$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$fechaActual' LIMIT 2;", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 2;", $conexion);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
