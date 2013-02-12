@@ -4,6 +4,9 @@ require_once("panel@pichling/conexion/funciones.php");
 
 //NOTICIAS
 $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 2;", $conexion);
+
+//SLIDER
+$rst_slider=mysql_query("SELECT * FROM pf_slider ORDER BY id DESC", $conexion);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -178,11 +181,13 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
 
                     <div id="slider" style="display:none;">
                         <ul class="allinone_bannerRotator_list">
-                            <li><img src="imagenes/slider/img1.jpg" alt="" /></li>
-                            <li><img src="imagenes/slider/img2.jpg" alt="" /></li>
-                            <li><img src="imagenes/slider/img3.jpg" alt="" /></li>
-                            <li><img src="imagenes/slider/img4.jpg" alt="" /></li>
-                            <li><img src="imagenes/slider/img5.jpg" alt="" /></li>
+                            <?php while($fila_slider=mysql_fetch_array($rst_slider)){
+                                    $slider_id=$fila_slider["id"];
+                                    $slider_imagen=$fila_slider["imagen"];
+                                    $slider_imagen_carpeta=$fila_slider["imagen_carpeta"];
+                            ?>
+                            <li><img src="upload/<?php echo $slider_imagen_carpeta."".$slider_imagen; ?>" alt="" /></li>
+                            <?php } ?>
                         </ul>            
                     </div>
                     
