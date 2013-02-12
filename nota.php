@@ -18,8 +18,12 @@ $nota_imagen=$fila_nota["imagen"];
 $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
 $nota_fecha_pub=$fila_nota["fecha_publicacion"];
 
+//URL
+$url_final=$web."nota/".$nota_id."-".$nota_url;
+$url_imagen=$web."upload/".$nota_imagen_carpeta."".$nota_imagen;
+
 //MAS NOTICIAS
-$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id;", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id AND publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -33,6 +37,15 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id;", $conex
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <base href="<?php echo $web; ?>">
+
+        <!-- OPEN GRAPH -->
+        <meta property="og:title" content="<?php echo $nota_titulo; ?>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="<?php echo $url_final; ?>" />
+        <meta property="og:image" content="<?php echo $url_imagen; ?>" />
+        <meta property="og:site_name" content="<?php echo $web_nombre; ?>" />
+        <meta property="og:description" content="<?php echo soloDescripcion($nota_contenido); ?>" />
+        <meta property="fb:admins" content="1376286793" />
 
         <!-- ESTILOS -->
         <link rel="stylesheet" href="css/normalize.min.css">
