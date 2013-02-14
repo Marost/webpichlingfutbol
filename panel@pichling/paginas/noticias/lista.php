@@ -108,7 +108,7 @@ function eliminarRegistro(registro) {
             <table cellpadding="0" cellspacing="0" width="100%" border="0" class="dTable">
                 <thead>
                     <tr>
-                        <td class="sortCol"><div>Registro</div></td>
+                        <td><div>Registro</div></td>
                         <td width="200">Fecha publicación</td>
                         <td width="100">Estado</td>
                         <td width="100">Acciones</td>
