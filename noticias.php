@@ -6,7 +6,7 @@ require_once("panel@pichling/conexion/funciones.php");
 $url_id=$_REQUEST["id"];
 
 //MAS NOTICIAS
-$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$fechaActual' AND publicar=1 ORDER BY fecha_publicacion DESC", $conexion);
 
 ?>
 <!DOCTYPE html>
