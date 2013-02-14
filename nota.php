@@ -115,7 +115,6 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id AND publi
                             </aside>
 
                             <aside class="publicidad">
-                                <aside class="publicidad">
                                 <script type="text/javascript"><!--
                                     google_ad_client = "ca-pub-3674889010429322";
                                     /* PR - 336x280 */
@@ -127,7 +126,6 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id AND publi
                                     <script type="text/javascript"
                                     src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                                 </script>
-                            </aside>
                             </aside>
 
                         </section>

@@ -6,7 +6,7 @@ require_once("panel@pichling/conexion/funciones.php");
 $url_id=$_REQUEST["id"];
 
 //MAS NOTICIAS
-$rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM pf_entrevistas WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
                         
                         <section id="nwizq">
                             
-                            <h2 class="titulo-categoria">Noticias</h2>
+                            <h2 class="titulo-categoria">Entrevistas</h2>
 
                             <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
                                     $nota_id=$fila_noticias["id"];
@@ -65,7 +65,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE fecha_publicacion<='$
                                 </div>
 
                                 <div class="datos">
-                                    <h3><a href="nota/<?php echo $nota_id."-".$nota_url; ?>">
+                                    <h3><a href="entrevista/<?php echo $nota_id."-".$nota_url; ?>">
                                         <?php echo $nota_titulo; ?></a></h3>
                                     <p><?php echo $nota_contenido; ?></p>
                                 </div>
