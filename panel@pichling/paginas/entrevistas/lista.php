@@ -104,7 +104,7 @@ function eliminarRegistro(registro) {
         <!-- Media table sample -->
         <div class="widget">
             <div class="whead"><h6>Entrevistas</h6></div>
-            <table cellpadding="0" cellspacing="0" width="100%" border="0" class="dTable">
+            <table cellpadding="0" cellspacing="0" width="100%" border="0" class="tDefault">
                 <thead>
                     <tr>
                         <td><div>Registro</div></td>
