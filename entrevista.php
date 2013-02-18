@@ -104,7 +104,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_entrevista WHERE id<>$url_id AND pub
                                             $noticias_url=$fila_noticias["url"];
                                             $noticias_titulo=$fila_noticias["titulo"];
                                     ?>
-                                    <li><a href="nota/<?php echo $noticias_id."-".$noticias_url; ?>" title="<?php echo $noticias_titulo; ?>">
+                                    <li><a href="entrevista/<?php echo $noticias_id."-".$noticias_url; ?>" title="<?php echo $noticias_titulo; ?>">
                                         <?php echo $noticias_titulo; ?></a></li>
                                     <?php } ?>
                                 </ul>

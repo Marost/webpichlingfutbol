@@ -61,7 +61,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_entrevista WHERE fecha_publicacion<=
                             <article class="nota-item">
 
                                 <div class="imagen">
-                                    <img src="upload/<?php echo $nota_imagen_carpeta."thumb/".$nota_imagen; ?>" alt="<?php echo $nota_titulo; ?>">
+                                    <img src="upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" alt="<?php echo $nota_titulo; ?>" width="125">
                                 </div>
 
                                 <div class="datos">
