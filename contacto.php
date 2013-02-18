@@ -70,7 +70,7 @@ require_once("panel@pichling/conexion/funciones.php");
                         <section id="nwizq" class="an100">
 
                             <h2>Contacto</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer velit enim, consequat pellentesque pellentesque ac, rutrum sed enim. Pellentesque interdum pharetra urna, vitae dapibus metus vulputate sed.</p>
+                            <p> </p>
 
                             <section class="contacto-mapa">
 
