@@ -23,7 +23,7 @@ $entrevista_imagen_carpeta=$fila_entrevista["imagen_carpeta"];
                 <a id="enl-lista-entrevista" href="javascript:;">Entrevistas</a>
             </li>
             <li class="last">
-                <a id="enl-lista-galeria" href="javascript:;">Galería</a>
+                <a id="enl-lista-galeria" href="videos">Galería</a>
             </li>
         </ul>
 
