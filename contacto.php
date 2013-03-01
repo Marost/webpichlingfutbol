@@ -23,7 +23,7 @@ require_once("panel@pichling/conexion/funciones.php");
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-        <script src="libs/form-css3/contact/light/placeholder.js"></script>
+        <!--<script src="libs/form-css3/contact/light/placeholder.js"></script>-->
         <script>
             var jForm = jQuery.noConflict();
             jForm(function(){
@@ -43,6 +43,10 @@ require_once("panel@pichling/conexion/funciones.php");
                 }
             });
         </script>
+
+        <!-- ENVIO DE ARCHIVOS -->
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="libs/form-contacto/envio.js"></script>
 
     </head>
     <body>
@@ -76,18 +80,19 @@ require_once("panel@pichling/conexion/funciones.php");
 
                                 <h2>Envianos un mensaje</h2>
 
-                                <form action="" class="contact-form" method="POST">
+                                <form id="form-contacto" class="contact-form" method="post">
 
-                                    <label for="name">Nombre <span>(requerido)</span></label>
-                                    <input type="text" name="name" class="form-input" required />
+                                    <label for="nombre">Nombre <span>(requerido)</span></label>
+                                    <input type="text" name="nombre" id="nombre" class="form-input" required />
                                     
                                     <label for="email">Email <span>(requerido)</span></label>
-                                    <input type="email" name="email" class="form-input" required />
+                                    <input type="email" name="email" id="email" class="form-input" required />
                                     
-                                    <label for="message">Mensaje <span>(requerido)</span></label>
-                                    <textarea name="message" class="form-input" required></textarea>
+                                    <label for="mensaje">Mensaje <span>(requerido)</span></label>
+                                    <textarea name="mensaje" id="mensaje" class="form-input" required></textarea>
                                     
-                                    <input class="form-btn" type="submit" value="Enviar mensaje" />   
+                                    <button class="form-btn" id="btn-enviar">Enviar mensaje</button>
+                                    <img class="ocultar" id="form-progressbar" src="/imagenes/form-progressbar.gif" width="32" height="32" alt="Cargando...">
 
                                 </form>
                                 
