@@ -113,7 +113,7 @@ require_once("panel@pichling/conexion/funciones.php");
 
                                         <li>
                                             <span class="icon icon-phone"></span>
-                                            <p>(511) 437-6855</p>
+                                            <p>(511) 344-2459</p>
                                         </li>
 
                                         <li>
