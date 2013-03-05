@@ -85,10 +85,10 @@ $rst_slider_oficina=mysql_query("SELECT * FROM pf_slider_oficina ORDER BY id DES
                     <section id="main-news">
                         
                         <section id="mnew-video">
-                            <h2>Videos</h2>
+                            <h2>Mira el pincelazo de Renzo Sheput</h2>
 
                             <div>
-                                <iframe width="455" height="256" src="http://www.youtube.com/embed/SiRMXc18X2A?rel=0" frameborder="0" allowfullscreen></iframe>
+                                <iframe width="455" height="256" src="http://www.youtube.com/embed/0Qr4CMLSAss?rel=0" frameborder="0" allowfullscreen></iframe>
                             </div>
 
                         </section>
