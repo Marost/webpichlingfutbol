@@ -9,13 +9,12 @@ $id_url=$_REQUEST["id"];
 $jugador_id=$_REQUEST["jugador"];
 
 //EDITAR
-$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_videos WHERE id=$id_url;", $conexion);
+$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_club WHERE id=$id_url;", $conexion);
 $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
-$nota_titulo=$fila_nota["titulo"];
-$nota_youtube=$fila_nota["youtube"];
-$nota_publicar=$fila_nota["publicar"];
+$nota_club=$fila_nota["club"];
+$nota_anio=$fila_nota["anio"];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -91,23 +90,13 @@ $nota_publicar=$fila_nota["publicar"];
                     <div class="whead"><h6>Editar</h6></div>
                     
                     <div class="formRow">
-                        <div class="grid3"><label>Titulo:</label></div>
-                        <div class="grid9"><input type="text" name="titulo" value="<?php echo $nota_titulo; ?>" /></div>
+                        <div class="grid3"><label>Club:</label></div>
+                        <div class="grid9"><input type="text" name="club" value="<?php echo $nota_club; ?>" /></div>
                     </div>
 
                     <div class="formRow">
-                        <div class="grid3"><label>Video:</label></div>
-                        <div class="grid9">
-                            <input type="text" name="video" value="<?php echo $ ?>" />
-                            <span class="note">http://www.youtube.com/watch?v=<strong>5HCaW4Oddro</strong></span>
-                        </div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Publicar:</label></div>
-                        <div class="grid9 enabled_disabled">
-                            <div class="floatL mr10"><input type="checkbox" id="check4" <?php if($nota_publicar==1){ ?>checked<?php } ?> value="1" name="publicar" /></div>
-                        </div>
+                        <div class="grid3"><label>Año:</label></div>
+                        <div class="grid9"><input type="text" name="anio" value="<?php echo $nota_anio; ?>" /></div>
                     </div>
 
                     <div class="formRow">

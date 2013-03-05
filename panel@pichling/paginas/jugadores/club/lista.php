@@ -1,14 +1,15 @@
 <?php 
 session_start();
-require_once("../../conexion/conexion.php");
-require_once("../../conexion/funciones.php");
-require_once("../../conexion/verificar_sesion.php");
+require_once("../../../conexion/conexion.php");
+require_once("../../../conexion/funciones.php");
+require_once("../../../conexion/verificar_sesion.php");
 
 //VARIABLES DE URL
 $mensaje=$_REQUEST["msj"];
+$jugador_id=$_REQUEST["jugador"];
 
-//JUGADORES
-$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY nombre ASC;", $conexion);
+//VIDEO DE JUGADORES
+$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_club WHERE jugador=$jugador_id ORDER BY anio DESC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -18,13 +19,13 @@ $rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores ORDER BY nomb
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <title>Administrador</title>
 
-<?php require_once("../../w-scripts.php"); ?>
+<?php require_once("../../../w-scripts.php"); ?>
 
 <!-- ELIMINAR  -->
 <script type="text/javascript">
-function eliminarRegistro(registro) {
+function eliminarRegistro(registro, jugador) {
     if(confirm("¿Está seguro de borrar este registro?")) {
-        document.location.href="s-eliminar.php?id="+registro;
+        document.location.href="s-eliminar.php?id="+registro+"&jugador="+jugador;
     }
 }
 </script>
@@ -34,14 +35,14 @@ function eliminarRegistro(registro) {
 <body>
 
 <!-- Top line begins -->
-<?php require_once("../../w-topline.php"); ?>
+<?php require_once("../../../w-topline.php"); ?>
 <!-- Top line ends -->
 
 
 <!-- Sidebar begins -->
 <div id="sidebar">
     
-    <?php require_once("../../w-sidebarmenu.php"); ?>
+    <?php require_once("../../../w-sidebarmenu.php"); ?>
     
     <!-- Secondary nav -->
     <div class="secNav">
@@ -85,7 +86,8 @@ function eliminarRegistro(registro) {
     <div class="wrapper">
 
         <ul class="middleNavR">
-            <li><a href="f-agregar.php" title="Agregar" class="tipN"><img src="../../images/icons/middlenav/create.png" alt="" /></a></li>
+            <li><a href="f-agregar.php?jugador=<?php echo $jugador_id; ?>" title="Agregar" class="tipN">
+                <img src="../../../images/icons/middlenav/create.png" alt="" /></a></li>
         </ul>
 
         <?php if($mensaje=="ok"){ ?>
@@ -104,46 +106,33 @@ function eliminarRegistro(registro) {
 
         <!-- Media table sample -->
         <div class="widget">
-            <div class="whead"><h6>Jugadores</h6></div>
-            <table cellpadding="0" cellspacing="0" width="100%" border="0" class="dTable">
+            <div class="whead"><h6>Clubes</h6></div>
+            <table cellpadding="0" cellspacing="0" width="100%" border="0" class="tDefault">
                 <thead>
                     <tr>
-                        <td class="sortCol"><div>Titulo</div></td>
-                        <td width="200" class="sortCol"><div>Posicion</div></td>
-                        <td width="100">Estado</td>
+                        <td><div>Club</div></td>
+                        <td width="100">Año</td>
                         <td width="100">Acciones</td>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while($fila_jugadores=mysql_fetch_array($rst_jugadores)) {
                           $jugadores_id=$fila_jugadores["id"];
-                          $jugadores_nombre=$fila_jugadores["nombre"];
-                          $jugadores_apellidos=$fila_jugadores["apellidos"];
-                          $jugadores_posicion=$fila_jugadores["posicion"];
-                          $jugadores_publicar=$fila_jugadores["publicar"];
+                          $jugadores_club=$fila_jugadores["club"];
+                          $jugadores_anio=$fila_jugadores["anio"];
                     ?>
                     <tr>
-                        <td class="textL"><?php echo $jugadores_nombre." ".$jugadores_apellidos; ?></td>
-                        <td><?php echo $jugadores_posicion; ?></td>
-                        <td>
-                            <?php if($jugadores_publicar==1){ ?>
-                            <span class="label label-success">Activo</span>
-                            <?php }else{ ?>
-                            <span class="label">Inactivo</span>
-                            <?php } ?>
-                        </td>
+                        <td class="textL"><?php echo $jugadores_club; ?></td>
+                        <td><?php echo $jugadores_anio; ?></td>
                         <td class="tableActs">
                             <div class="btn-group" style="display: inline-block; margin-bottom: -4px;">
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
                                 <ul class="dropdown-menu pull-right">
                                     <li>
-                                        <a onclick="eliminarRegistro(<?php echo $jugadores_id; ?>);" href="javascript:;">
+                                        <a onclick="eliminarRegistro(<?php echo $jugadores_id; ?>, <?php echo $jugador_id; ?>);" href="javascript:;">
                                         <span class="icos-trash"></span>Eliminar</a></li>
-                                    <li><a href="f-editar.php?jugador=<?php echo $jugadores_id; ?>" class="">
+                                    <li><a href="f-editar.php?id=<?php echo $jugadores_id; ?>&jugador=<?php echo $jugador_id; ?>" class="">
                                         <span class="icos-pencil"></span>Modificar</a></li>
-                                    <li><a href="galeria/lista.php?jugador=<?php echo $jugadores_id; ?>" class=""><span class="icos-photos"></span>Fotos</a></li>
-                                    <li><a href="#" class=""><span class="icos-youtube"></span>Videos</a></li>
-                                    <li><a href="club/lista.php?jugador=<?php echo $jugadores_id; ?>" class=""><span class="icos-cup"></span>Clubes</a></li>
                                 </ul>
                             </div>
                         </td>

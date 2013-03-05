@@ -4,18 +4,8 @@ require_once("../../../conexion/conexion.php");
 require_once("../../../conexion/funciones.php");
 require_once("../../../conexion/verificar_sesion.php");
 
-//VARIABLES
-$id_url=$_REQUEST["id"];
+//VARIABLES DE URL
 $jugador_id=$_REQUEST["jugador"];
-
-//EDITAR
-$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_videos WHERE id=$id_url;", $conexion);
-$fila_nota=mysql_fetch_array($rst_nota);
-
-//VARIABLES
-$nota_titulo=$fila_nota["titulo"];
-$nota_youtube=$fila_nota["youtube"];
-$nota_publicar=$fila_nota["publicar"];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -83,31 +73,21 @@ $nota_publicar=$fila_nota["publicar"];
     <!-- Main content -->
     <div class="wrapper">
 
-        <form id="submit-form" class="main" method="POST" action="s-editar.php?jugador=<?php echo $jugador_id; ?>&id=<?php echo $id_url; ?>">
+        <form id="submit-form" class="main" method="POST" action="s-guardar.php?jugador=<?php echo $jugador_id; ?>">
 
             <fieldset>
                 <div class="widget fluid">
                     
-                    <div class="whead"><h6>Editar</h6></div>
+                    <div class="whead"><h6>Agregar</h6></div>
                     
                     <div class="formRow">
-                        <div class="grid3"><label>Titulo:</label></div>
-                        <div class="grid9"><input type="text" name="titulo" value="<?php echo $nota_titulo; ?>" /></div>
+                        <div class="grid3"><label>Club:</label></div>
+                        <div class="grid9"><input type="text" name="club" /></div>
                     </div>
 
                     <div class="formRow">
-                        <div class="grid3"><label>Video:</label></div>
-                        <div class="grid9">
-                            <input type="text" name="video" value="<?php echo $ ?>" />
-                            <span class="note">http://www.youtube.com/watch?v=<strong>5HCaW4Oddro</strong></span>
-                        </div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Publicar:</label></div>
-                        <div class="grid9 enabled_disabled">
-                            <div class="floatL mr10"><input type="checkbox" id="check4" <?php if($nota_publicar==1){ ?>checked<?php } ?> value="1" name="publicar" /></div>
-                        </div>
+                        <div class="grid3"><label>Año:</label></div>
+                        <div class="grid9"><input type="text" name="anio" /></div>
                     </div>
 
                     <div class="formRow">

@@ -6,13 +6,13 @@ require_once('../../../js/plugins/thumbs/ThumbLib.inc.php');
 
 //DECLARACION DE VARIABLES
 $id=$_REQUEST["id"];
-$nombre=$_POST["nombre"];
+$club=$_POST["club"];
+$anio=$_POST["anio"];
 $jugador_id=$_REQUEST["jugador"];
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_jugadores_videos SET 
-	imagen='$imagen', 
-	imagen_carpeta='$imagen_carpeta' WHERE id=$id;", $conexion);
+$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_jugadores_club SET 
+	club='$club', anio='$anio' WHERE id=$id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
