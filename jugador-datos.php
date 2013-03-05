@@ -40,6 +40,9 @@ $video_select_titulo=$fila_video_selec["titulo"];
 //VIDEO LISTA
 $rst_video_lista=mysql_query("SELECT * FROM pf_jugadores_videos WHERE jugador=$jugador AND publicar=1 ORDER BY id DESC", $conexion);
 
+//CLUBES
+$rst_club=mysql_query("SELECT * FROM pf_jugadores_club WHERE jugador=$jugador ORDER BY anio DESC", $conexion);
+
 ?>
 
 <?php if($tipo=="posicion"){ ?>
@@ -104,3 +107,25 @@ $rst_video_lista=mysql_query("SELECT * FROM pf_jugadores_videos WHERE jugador=$j
 
 </div>
 <?php  }?>
+
+<?php if($tipo=="clubes"){ ?>
+<div class="clubes">
+
+    <table>
+        <tr>
+            <td class="titulo">Año</td>
+            <td class="titulo">Equipo</td>
+        </tr>
+        <?php while($fila_club=mysql_fetch_array($rst_club)){
+                $club_anio=$fila_club["anio"];
+                $club_club=$fila_club["club"];
+        ?>
+        <tr>
+            <td><?php echo $club_anio; ?></td>
+            <td><?php echo $club_club; ?></td>
+        </tr>
+        <?php } ?>
+    </table>
+
+</div>
+<?php } ?>
