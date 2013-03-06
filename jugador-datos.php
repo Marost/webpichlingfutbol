@@ -111,7 +111,7 @@ $rst_club=mysql_query("SELECT * FROM pf_jugadores_club WHERE jugador=$jugador OR
 <?php if($tipo=="clubes"){ ?>
 <div class="clubes">
 
-    <table>
+    <table align="center">
         <tr>
             <td class="titulo">Año</td>
             <td class="titulo">Equipo</td>
@@ -121,7 +121,7 @@ $rst_club=mysql_query("SELECT * FROM pf_jugadores_club WHERE jugador=$jugador OR
                 $club_club=$fila_club["club"];
         ?>
         <tr>
-            <td><?php echo $club_anio; ?></td>
+            <td class="anio"><?php echo $club_anio; ?></td>
             <td><?php echo $club_club; ?></td>
         </tr>
         <?php } ?>
