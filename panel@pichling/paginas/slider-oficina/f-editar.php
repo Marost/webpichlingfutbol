@@ -39,28 +39,6 @@ $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
     
     <?php require_once("../../w-sidebarmenu.php"); ?>
     
-    <!-- Secondary nav -->
-    <div class="secNav">
-        <div class="secWrapper">
-            <div class="secTop">
-                <div class="balance">                    
-                </div>
-            </div>
-            
-            <div class="divider"><span></span></div>
-            
-            <!-- Sidebar subnav -->
-            <ul class="subNav">
-                <li><a href="../entrevistas/lista.php" title=""><span class="icos-frames"></span>Entrevistas</a></li>
-                <li><a href="lista.php" title="" class="this"><span class="icos-frames"></span>Jugadores</a></li>
-                <li><a href="../noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
-                <li><a href="../posiciones/lista.php" title=""><span class="icos-frames"></span>Posiciones</a></li>
-            </ul>
-            
-            <div class="divider"><span></span></div>
-                    
-        </div> 
-    </div>
 </div>
 <!-- Sidebar ends -->    
 	
