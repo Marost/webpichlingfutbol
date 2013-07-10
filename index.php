@@ -72,7 +72,7 @@ $rst_slider_oficina=mysql_query("SELECT * FROM pf_slider_oficina ORDER BY id DES
 
                     <section id="main-cont-bienvenido">
                         <h2>Bienvenido</h2>
-                        <p>Bienvenidos a la Pagina Web de Pichling Representaciones. Somos una empresa de representación de Jugadores y Técnicos de futbol, que trabaja con Agentes asociados en Argentina, Colombia y España. 
+                        <p>Bienvenidos a la Pagina Web de Pichling Representaciones. Somos una empresa de representación de Jugadores y Técnicos de futbol, que trabaja con Agentes asociados en Chile, Argentina, Colombia e Israel. 
                             Caracterizados, todos, por la seriedad, confiabilidad y transparencia en sus operaciones.
                             Esperamos que la información que mostramos sea de su interés y les sirvan como base para iniciar conversaciones sobre futuros negocios con nuestros representados.</p>
 
@@ -85,10 +85,11 @@ $rst_slider_oficina=mysql_query("SELECT * FROM pf_slider_oficina ORDER BY id DES
                     <section id="main-news">
                         
                         <section id="mnew-video">
-                            <h2>Mira el pincelazo de Renzo Sheput</h2>
+                            <h2>Mira el golazo de Sheput ante Pacífico</h2>
 
                             <div>
-                                <iframe width="455" height="256" src="http://www.youtube.com/embed/0Qr4CMLSAss?rel=0" frameborder="0" allowfullscreen></iframe>
+                                <iframe width="455" height="256" src="http://www.youtube.com/embed/6tjyw_j-9Z4?rel=0" 
+                                frameborder="0" allowfullscreen></iframe>
                             </div>
 
                         </section>
