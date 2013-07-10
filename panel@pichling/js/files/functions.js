@@ -553,7 +553,7 @@ $(function() {
 	}
 	else {
 		$('#sidebar').addClass('without');
-		$('#content').css('margin-left','100px');//.addClass('withoutSide');
+		$('#content').css('margin-left','327px');//.addClass('withoutSide');
 		$('#footer > .wrapper').addClass('fullOne');
 		};
 
