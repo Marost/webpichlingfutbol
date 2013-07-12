@@ -12,6 +12,8 @@
         <li><a href="<?php echo $url_admin; ?>paginas/noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
         <li><a href="<?php echo $url_admin; ?>paginas/posiciones/lista.php" title="" ><span class="icos-frames"></span>Posiciones</a></li>
         <li><a href="<?php echo $url_admin; ?>paginas/usuarios/lista.php" title="" ><span class="icos-frames"></span>Usuarios</a></li>
+        <li><a href="<?php echo $url_admin; ?>paginas/slider/lista.php" title="" ><span class="icos-frames"></span>Slider Superior</a></li>
         <li><a href="<?php echo $url_admin; ?>paginas/videos/lista.php" title="" ><span class="icos-frames"></span>Videos</a></li>
+        <li><a href="<?php echo $url_admin; ?>paginas/videos-principal/lista.php" title="" ><span class="icos-frames"></span>Video principal</a></li>
     </ul>
 </div>
