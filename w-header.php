@@ -22,4 +22,13 @@
         <img src="imagenes/header-representante.png" widht="432" height="61" >
     </aside>
 
+    <aside id="social-media">
+
+        <ul>
+            <li><a target="_blank" class="facebook" href="http://facebook.com/pichlingfutbol">Facebook</a></li>
+            <li><a target="_blank" class="twitter" href="http://twitter.com/PichlingFutbol">Twitter</a></li>
+        </ul>
+
+    </aside>
+
 </section>

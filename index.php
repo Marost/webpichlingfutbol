@@ -10,6 +10,15 @@ $rst_slider=mysql_query("SELECT * FROM pf_slider ORDER BY id DESC", $conexion);
 
 //SLIDER DE OFICINA
 $rst_slider_oficina=mysql_query("SELECT * FROM pf_slider_oficina ORDER BY id DESC", $conexion);
+
+//VIDEO PRINCIPAL
+$rst_videopr=mysql_query("SELECT * FROM pf_video_principal WHERE publicar=1 ORDER BY fecha_publicacion DESC LIMIT 1;", $conexion);
+$fila_videopr=mysql_fetch_array($rst_videopr);
+
+//VARIABLES
+$videopr_titulo=$fila_videopr["titulo"];
+$videopr_video=$fila_videopr["youtube"];
+
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -85,10 +94,10 @@ $rst_slider_oficina=mysql_query("SELECT * FROM pf_slider_oficina ORDER BY id DES
                     <section id="main-news">
                         
                         <section id="mnew-video">
-                            <h2>Mira el golazo de Sheput ante Pacífico</h2>
+                            <h2><?php echo $videopr_titulo; ?></h2>
 
                             <div>
-                                <iframe width="455" height="256" src="http://www.youtube.com/embed/6tjyw_j-9Z4?rel=0" 
+                                <iframe width="455" height="256" src="http://www.youtube.com/embed/<?php echo $videopr_video; ?>?rel=0" 
                                 frameborder="0" allowfullscreen></iframe>
                             </div>
 
