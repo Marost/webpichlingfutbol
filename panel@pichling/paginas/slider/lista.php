@@ -8,7 +8,7 @@ require_once("../../conexion/verificar_sesion.php");
 $mensaje=$_REQUEST["msj"];
 
 //GALERIA DE JUGADORES
-$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_slider ORDER BY id DESC;", $conexion);
+$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_slider ORDER BY orden ASC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -17,6 +17,22 @@ $rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_slider ORDER BY id DESC
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <title>Administrador</title>
+
+<!-- ORDENAR -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.8.5/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    var jq = jQuery.noConflict();
+    jq(document).ready(function() {
+        jq("#lista-galeria").sortable({
+          handle : '.handle',
+          update : function () {
+            var order = jq('#lista-galeria').sortable('serialize');
+            jq("#info").load("s-ordenar.php?"+order);
+          }
+        });
+    });
+</script>
 
 <?php require_once("../../w-scripts.php"); ?>
 
@@ -85,20 +101,24 @@ function eliminarRegistro(registro) {
         <div class="widget">
             <div class="whead"><h6>Slider</h6></div>
             <div class="gallery">
-               <ul>
+               <ul id="lista-galeria">
                     <?php while($fila_jugadores=mysql_fetch_array($rst_jugadores)){
                             $galeria_id=$fila_jugadores["id"];
                             $galeria_imagen=$fila_jugadores["imagen"];
                             $galeria_imagen_carpeta=$fila_jugadores["imagen_carpeta"];
                     ?>
-                    <li>
+                    <li id="listItem_<?php echo $galeria_id; ?>" class="alto">
                         <a href="javascript:;" title="">
-                            <img src="../../../upload/<?php echo $galeria_imagen_carpeta."thumb/".$galeria_imagen; ?>" alt="" /></a>
+                            <img src="../../../upload/<?php echo $galeria_imagen_carpeta."thumb/".$galeria_imagen; ?>" alt="" />
+                        </a>
                         <div class="actions">
                             <a href="f-editar.php?id=<?php echo $galeria_id; ?>" title="" class="edit">
                                 <img src="../../images/icons/update.png" alt="" /></a>
                             <a href="s-eliminar.php?id=<?php echo $galeria_id; ?>" title="" class="remove">
                                 <img src="../../images/icons/delete.png" alt="" /></a>
+                            <a href="" title="" class="move handle">
+                                <img src="../../images/icons/move.png" alt="" />
+                            </a>
                         </div>
                     </li>
                     <?php } ?>
