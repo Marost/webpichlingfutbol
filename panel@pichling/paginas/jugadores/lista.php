@@ -120,7 +120,7 @@ function eliminarRegistro(registro) {
                                     <li><a href="f-editar.php?jugador=<?php echo $jugadores_id; ?>" class="">
                                         <span class="icos-pencil"></span>Modificar</a></li>
                                     <li><a href="galeria/lista.php?jugador=<?php echo $jugadores_id; ?>" class=""><span class="icos-photos"></span>Fotos</a></li>
-                                    <li><a href="#" class=""><span class="icos-youtube"></span>Videos</a></li>
+                                    <li><a href="videos/lista.php?jugador=<?php echo $jugadores_id; ?>" class=""><span class="icos-youtube"></span>Videos</a></li>
                                     <li><a href="club/lista.php?jugador=<?php echo $jugadores_id; ?>" class=""><span class="icos-cup"></span>Clubes</a></li>
                                 </ul>
                             </div>

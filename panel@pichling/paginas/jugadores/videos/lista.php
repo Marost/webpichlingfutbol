@@ -9,7 +9,7 @@ $mensaje=$_REQUEST["msj"];
 $jugador_id=$_REQUEST["jugador"];
 
 //VIDEO DE JUGADORES
-$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_video WHERE jugador=$jugador_id ORDER BY id DESC;", $conexion);
+$rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_videos WHERE jugador=$jugador_id ORDER BY id DESC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

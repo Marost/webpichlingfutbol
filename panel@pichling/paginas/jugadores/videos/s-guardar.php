@@ -11,7 +11,7 @@ $youtube=$_POST["youtube"];
 $publicar=1;
 
 //GUARDAR
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_jugadores_video (titulo, youtube, publicar, jugador)
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_jugadores_videos (titulo, youtube, publicar, jugador)
 	VALUES (".htmlspecialchars($titulo).", '$youtube', $publicar, $jugador_id)", $conexion);
 
 if (mysql_errno()!=0){

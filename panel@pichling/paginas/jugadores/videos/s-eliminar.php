@@ -8,7 +8,7 @@ require_once('../../../js/plugins/thumbs/ThumbLib.inc.php');
 $id=$_REQUEST["id"];
 $jugador_id=$_REQUEST["jugador"];
 
-mysql_query("DELETE FROM ".$tabla_suf."_jugadores_galeria WHERE id=$id;", $conexion);
+mysql_query("DELETE FROM ".$tabla_suf."_jugadores_videos WHERE id=$id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
