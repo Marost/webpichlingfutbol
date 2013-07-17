@@ -96,10 +96,10 @@ $rst_club=mysql_query("SELECT * FROM pf_jugadores_club WHERE jugador=$jugador OR
             <a id="<?php echo $video_youtube; ?>" href="javascript:;">
                 <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
                 <?php 
-                    $youtube.$video_id = new SSDTube(); 
-                    $youtube.$video_id->identify("http://www.youtube.com/watch?v=<?php echo $video_youtube; ?>", true);
+                    $youtube = new SSDTube(); 
+                    $youtube->identify("http://www.youtube.com/watch?v=".$video_youtube."", true);
                 ?>
-                <img src="<?php echo $youtube.$video_id->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" /></a>
+                <img src="<?php echo $youtube->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" /></a>
         </article>
         <?php } ?>
 
