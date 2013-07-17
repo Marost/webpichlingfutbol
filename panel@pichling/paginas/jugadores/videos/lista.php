@@ -23,9 +23,9 @@ $rst_jugadores=mysql_query("SELECT * FROM ".$tabla_suf."_jugadores_videos WHERE 
 
 <!-- ELIMINAR  -->
 <script type="text/javascript">
-function eliminarRegistro(registro) {
+function eliminarRegistro(registro, jugador) {
     if(confirm("¿Está seguro de borrar este registro?")) {
-        document.location.href="s-eliminar.php?id="+registro;
+        document.location.href="s-eliminar.php?id="+registro+"&jugador="+jugador;
     }
 }
 </script>
@@ -101,7 +101,6 @@ function eliminarRegistro(registro) {
                     ?>
                     <tr>
                         <td class="textL"><?php echo $jugadores_titulo; ?></td>
-                        <td><?php echo $jugadores_posicion; ?></td>
                         <td>
                             <?php if($jugadores_publicar==1){ ?>
                             <span class="label label-success">Activo</span>
@@ -114,9 +113,9 @@ function eliminarRegistro(registro) {
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
                                 <ul class="dropdown-menu pull-right">
                                     <li>
-                                        <a onclick="eliminarRegistro(<?php echo $jugadores_id; ?>);" href="javascript:;">
+                                        <a onclick="eliminarRegistro(<?php echo $jugadores_id; ?>, <?php echo $jugador_id; ?>);" href="javascript:;">
                                         <span class="icos-trash"></span>Eliminar</a></li>
-                                    <li><a href="f-editar.php?jugador=<?php echo $jugadores_id; ?>" class="">
+                                    <li><a href="f-editar.php?id=<?php echo $jugadores_id; ?>&jugador=<?php echo $jugador_id; ?>" class="">
                                         <span class="icos-pencil"></span>Modificar</a></li>
                                 </ul>
                             </div>

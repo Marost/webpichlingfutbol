@@ -76,7 +76,7 @@ $nota_publicar=$fila_nota["publicar"];
                     <div class="formRow">
                         <div class="grid3"><label>Video:</label></div>
                         <div class="grid9">
-                            <input type="text" name="video" value="<?php echo $ ?>" />
+                            <input type="text" name="video" value="<?php echo $nota_youtube; ?>" />
                             <span class="note">http://www.youtube.com/watch?v=<strong>5HCaW4Oddro</strong></span>
                         </div>
                     </div>
