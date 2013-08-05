@@ -74,11 +74,8 @@ require_once("panel@pichling/conexion/funciones.php");
                         <section id="nwizq" class="an100">
 
                             <h2>Contacto</h2>
-                            <p> </p>
 
                             <section class="contacto-mapa">
-
-                                <h2>Envianos un mensaje</h2>
 
                                 <form id="form-contacto" class="contact-form" method="post">
 
@@ -98,32 +95,38 @@ require_once("panel@pichling/conexion/funciones.php");
                                 
                             </section>
 
-                            <section class="contacto-mapa">
+                            <section class="foto-oficina">
 
-                                <h2>Encuentranos en:</h2>
-
-                                <iframe width="495" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.pe/maps/ms?msa=0&amp;msid=217338416310728973847.0004c1d8fdb4ead94c443&amp;ie=UTF8&amp;t=m&amp;ll=-12.107925,-76.969496&amp;spn=0.003147,0.0053&amp;z=17&amp;output=embed"></iframe>
-
-                                <div>
-                                    <ul>
-                                        <li>
-                                            <span class="icon icon-home"></span>
-                                            <p>Av. Primavera 1796 - Torre Alpha Of. 701 - Surco</p>
-                                        </li>
-
-                                        <li>
-                                            <span class="icon icon-phone"></span>
-                                            <p>(511) 344-2459</p>
-                                        </li>
-
-                                        <li>
-                                            <span class="icon icon-email"></span>
-                                            <p>contacto@pichlingfutbol.com</p>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <h2>Nuestras oficinas:</h2>
+                                
+                                <img src="imagenes/oficina/img1.jpg" alt="Oficina" width="535" height="324">
 
                             </section>
+
+                        </section>
+
+                        <section class="mapa">
+
+                            <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.pe/maps/ms?msa=0&amp;msid=217338416310728973847.0004c1d8fdb4ead94c443&amp;ie=UTF8&amp;t=m&amp;ll=-12.107925,-76.969496&amp;spn=0.003147,0.0053&amp;z=17&amp;output=embed"></iframe>
+
+                            <div>
+                                <ul>
+                                    <li>
+                                        <span class="icon icon-home"></span>
+                                        <p>Av. Primavera 1796 - Torre Alpha Of. 701 - Surco</p>
+                                    </li>
+
+                                    <li>
+                                        <span class="icon icon-phone"></span>
+                                        <p>(511) 344-2459</p>
+                                    </li>
+
+                                    <li>
+                                        <span class="icon icon-email"></span>
+                                        <p>contacto@pichlingfutbol.com</p>
+                                    </li>
+                                </ul>
+                            </div>
 
                         </section>
 
