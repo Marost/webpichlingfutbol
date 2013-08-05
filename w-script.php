@@ -1,6 +1,7 @@
 <!-- ESTILOS -->
 <link rel="stylesheet" href="css/normalize.min.css">
 <link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/icons.css">
 
 <!-- FUENTE -->
 <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
