@@ -81,7 +81,7 @@ $rst_noticias=mysql_query("SELECT * FROM pf_noticias WHERE id<>$url_id AND publi
                             <h2><?php echo $nota_titulo; ?></h2>
                             
                             <div id="nwizq-img">
-                                <img src="upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" alt="<?php echo $nota_titulo; ?>">
+                                <img width="620" src="upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" alt="<?php echo $nota_titulo; ?>">
                             </div>
                             
                             <div class="addthis_toolbox addthis_default_style ">
