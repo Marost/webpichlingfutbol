@@ -32,6 +32,22 @@ $videopr_video=$fila_videopr["youtube"];
         <meta name="viewport" content="width=device-width">
         <base href="<?php echo $web; ?>">
 
+        <!-- POPUP -->
+        <link href="libs/popup-reveal/reveal.css" rel="stylesheet" type="text/css" media="all">
+        <script src="http://code.jquery.com/jquery-1.6.min.js"></script>
+        <script src="libs/popup-reveal/jquery.reveal.js"></script>
+        <script>
+            var jPopUp = jQuery.noConflict();
+            jPopUp(document).ready(function(){
+                jPopUp("#myModal").reveal({
+                     animation: 'none',                   //fade, fadeAndPop, none
+                     animationspeed: 300,                       //how fast animtions are
+                     closeonbackgroundclick: true,              //if you click background will modal close?
+                     dismissmodalclass: 'close-reveal-modal'    //the class of a button or element that will close an open modal
+                });
+            });
+        </script>
+
         <?php require_once("w-script.php"); ?>
 
     </head>
@@ -135,6 +151,11 @@ $videopr_video=$fila_videopr["youtube"];
         </div> <!-- #main-container -->
 
         <?php require_once("w-footer.php"); ?>
+
+        <div id="myModal" data-reveal-id="myModal" data-animation="none" class="reveal-modal">
+            <img src="imagenes/navidad-2013.jpg" alt="">
+            <a class="close-reveal-modal">&#215;</a>
+        </div>
 
     </body>
 </html>
