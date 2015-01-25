@@ -1,3 +1,5 @@
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
 <!-- ESTILOS -->
 <link rel="stylesheet" href="css/normalize.min.css">
 <link rel="stylesheet" href="css/estilos.css">
