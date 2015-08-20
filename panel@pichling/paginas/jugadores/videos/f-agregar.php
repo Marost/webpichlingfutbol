@@ -64,6 +64,15 @@ $jugador_id=$_REQUEST["jugador"];
                     </div>
 
                     <div class="formRow">
+                        <div class="grid3"><label>Imagen:</label> </div>
+                        <div class="grid9">
+                            <div class="widget nomargin">    
+                                <div id="uploader">Tu navegador no soporta HTML5.</div>                    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formRow">
                         <div class="grid3"><label>Video:</label></div>
                         <div class="grid9">
                             <input type="text" name="video" />

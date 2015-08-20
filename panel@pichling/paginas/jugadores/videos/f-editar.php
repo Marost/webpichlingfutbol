@@ -14,6 +14,8 @@ $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
 $nota_titulo=$fila_nota["titulo"];
+$nota_imagen=$fila_nota["imagen"];
+$nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
 $nota_youtube=$fila_nota["youtube"];
 $nota_publicar=$fila_nota["publicar"];
 
@@ -71,6 +73,22 @@ $nota_publicar=$fila_nota["publicar"];
                     <div class="formRow">
                         <div class="grid3"><label>Titulo:</label></div>
                         <div class="grid9"><input type="text" name="titulo" value="<?php echo $nota_titulo; ?>" /></div>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="grid3"><label>Imagen:</label> </div>
+                        <div class="grid9">
+                            <div class="without floatL">
+                                <a href="/upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" class="lightbox">
+                                    <img src="/upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" width="100" >
+                                </a>
+                            </div>
+                            <div class="widget floarL width60 margin1020">    
+                                <div id="uploader">Tu navegador no soporta HTML5.</div>
+                                <input type="hidden" name="imagen" value="<?php echo $nota_imagen; ?>">
+                                <input type="hidden" name="imagen_carpeta" value="<?php echo $nota_imagen_carpeta; ?>">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="formRow">

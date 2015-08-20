@@ -10,9 +10,17 @@ $titulo=$_POST["titulo"];
 $youtube=$_POST["video"];
 $publicar=1;
 
+if($_POST['uploader_0_tmpname']<>""){
+	$imagen=$_POST["uploader_0_tmpname"];
+	$imagen_carpeta=fechaCarpeta()."/";	
+}else{
+	$imagen="";
+	$imagen_carpeta="";
+}
+
 //GUARDAR
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_jugadores_videos (titulo, youtube, publicar, jugador)
-	VALUES ('".htmlspecialchars($titulo)."', '$youtube', $publicar, $jugador_id)", $conexion);
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_jugadores_videos (titulo, imagen, imagen_carpeta, youtube, publicar, jugador)
+	VALUES ('".htmlspecialchars($titulo)."', '$imagen', '$imagen_carpeta', '$youtube', $publicar, $jugador_id)", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

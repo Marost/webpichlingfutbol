@@ -10,12 +10,20 @@ $titulo=$_POST["titulo"];
 $jugador_id=$_REQUEST["jugador"];
 $youtube=$_POST["video"];
 
+if($_POST['uploader_0_tmpname']<>""){
+	$imagen=$_POST["uploader_0_tmpname"];
+	$imagen_carpeta=fechaCarpeta()."/";
+}else{
+	$imagen=$_POST["imagen"];
+	$imagen_carpeta=$_POST["imagen_carpeta"];
+}
+
 //PUBLICAR
 if ($_POST["publicar"]<>""){ $publicar=$_POST["publicar"]; }else{ $publicar=0; }
 
 //INSERTANDO DATOS
 $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_jugadores_videos SET titulo='".htmlspecialchars($titulo)."',
-youtube='$youtube', jugador=$jugador_id, publicar=$publicar WHERE id=$id;", $conexion);
+	imagen='$imagen', imagen_carpeta='$imagen_carpeta', youtube='$youtube', jugador=$jugador_id, publicar=$publicar WHERE id=$id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

@@ -89,17 +89,15 @@ $rst_club=mysql_query("SELECT * FROM pf_jugadores_club WHERE jugador=$jugador OR
 
         <?php while($fila_video_lista=mysql_fetch_array($rst_video_lista)){
                 $video_id=$fila_video_lista["id"];
+                $video_imagen=$fila_video_lista["imagen"];
+                $video_imagen_carpeta=$fila_video_lista["imagen_carpeta"];
                 $video_youtube=$fila_video_lista["youtube"];
                 $video_titulo=$fila_video_lista["titulo"];
         ?>
         <article>
             <a id="<?php echo $video_youtube; ?>" href="javascript:;">
                 <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
-                <?php 
-                    $youtube = new SSDTube(); 
-                    $youtube->identify("http://www.youtube.com/watch?v=".$video_youtube."", true);
-                ?>
-                <img src="<?php echo $youtube->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" /></a>
+                <img src="/upload/<?php echo $video_imagen_carpeta."".$video_imagen; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" /></a>
         </article>
         <?php } ?>
 
