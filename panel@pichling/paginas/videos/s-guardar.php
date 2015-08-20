@@ -12,9 +12,17 @@ $pub_hora=$_POST["pub_hora"];
 $fecha_publicacion=$pub_fecha." ".$pub_hora;
 $publicar=1;
 
+if($_POST['uploader_0_tmpname']<>""){
+	$imagen=$_POST["uploader_0_tmpname"];
+	$imagen_carpeta=fechaCarpeta()."/";	
+}else{
+	$imagen="";
+	$imagen_carpeta="";
+}
+
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_videos (titulo, youtube, fecha_publicacion, publicar) 
-	VALUES('".htmlspecialchars($titulo)."', '$video', '$fecha_publicacion', $publicar);",$conexion);
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_videos (titulo, imagen, imagen_carpeta, youtube, fecha_publicacion, publicar) 
+	VALUES('".htmlspecialchars($titulo)."', '$imagen', '$imagen_carpeta', '$video', '$fecha_publicacion', $publicar);",$conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

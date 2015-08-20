@@ -209,16 +209,16 @@ $rst_videos=mysql_query("SELECT * FROM pf_videos WHERE fecha_publicacion<='$fech
 
                                     <?php while($fila_videos=mysql_fetch_array($rst_videos)){
                                             $video_id=$fila_videos["id"];
-                                            $video_youtube=$fila_videos["youtube"];
                                             $video_titulo=$fila_videos["titulo"];
+                                            $video_imagen=$fila_videos["imagen"];
+                                            $video_imagen_carpeta=$fila_videos["imagen_carpeta"];
+                                            $video_youtube=$fila_videos["youtube"];                                            
                                             $urlyoutube="http://www.youtube.com/watch?v=".$video_youtube."";
-                                            $youtube = new SSDTube();
-                                            $youtube->identify($urlyoutube, true);
                                     ?>
                                     <article>
                                         <a id="<?php echo $video_youtube; ?>" href="videos#video" title="<?php echo $video_titulo; ?>">
                                             <img class="play" src="imagenes/icon-play.png" alt="Play" width="48" height="48">
-                                            <img src="<?php echo $youtube->thumbnail_1_url; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" />
+                                            <img src="/upload/<?php echo $video_imagen_carpeta."".$video_imagen; ?>" width="120" height="90" alt="<?php echo $video_titulo; ?>" />
                                             <p><?php echo $video_titulo; ?></p>
                                         </a>
                                     </article>
