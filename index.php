@@ -32,7 +32,7 @@ $videopr_video=$fila_videopr["youtube"];
         <meta name="viewport" content="width=device-width">
         <base href="<?php echo $web; ?>">
 
-        <!-- POPUP -->
+        <!-- POPUP 
         <link href="libs/popup-reveal/reveal.css" rel="stylesheet" type="text/css" media="all">
         <script src="http://code.jquery.com/jquery-1.6.min.js"></script>
         <script src="libs/popup-reveal/jquery.reveal.js"></script>
@@ -46,7 +46,7 @@ $videopr_video=$fila_videopr["youtube"];
                      dismissmodalclass: 'close-reveal-modal'    //the class of a button or element that will close an open modal
                 });
             });
-        </script>
+        </script>-->
 
         <?php require_once("w-script.php"); ?>
 
@@ -152,10 +152,12 @@ $videopr_video=$fila_videopr["youtube"];
 
         <?php require_once("w-footer.php"); ?>
 
+        <!--
         <div id="myModal" data-reveal-id="myModal" data-animation="none" class="reveal-modal">
             <img src="imagenes/navidad-2013.jpg" alt="">
             <a class="close-reveal-modal">&#215;</a>
         </div>
+        -->
 
     </body>
 </html>

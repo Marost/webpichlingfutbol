@@ -19,7 +19,7 @@
     </nav>
 
     <aside>
-        <img src="imagenes/header-representante.png" widht="432" height="61" >
+        
     </aside>
 
     <aside id="social-media">

@@ -68,16 +68,16 @@ $entrevista_imagen_carpeta=$fila_entrevista["imagen_carpeta"];
 
         <div id="lista-entrevista" class="ic-contenido">                                
 
-            <!-- <h2>?php echo $entrevista_titulo; ?></h2>
+            <h2><?php echo $entrevista_titulo; ?></h2>
 
             <p style="text-align:center;">
-                <img src="upload/?php echo $entrevista_imagen_carpeta."".$entrevista_imagen; ?>" 
-                alt="?php echo $entrevista_titulo; ?>">
+                <img src="upload/<?php echo $entrevista_imagen_carpeta."".$entrevista_imagen; ?>" 
+                alt="<?php echo $entrevista_titulo; ?>">
             </p>
 
-            ?php echo $entrevista_contenido; ?> -->
+            <?php echo $entrevista_contenido; ?>
 
-            <h2 style="text-align: center;">¡Pronto nuevas entrevistas!</h2>
+            <!-- <h2 style="text-align: center;">¡Pronto nuevas entrevistas!</h2> -->
 
         </div>
 
